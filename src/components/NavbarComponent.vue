@@ -1,5 +1,5 @@
 <template>
-<nav class="navbar navbar-expand-lg fixed-top" style="background-color:#0a192f">
+<nav class="navbar navbar-expand-md fixed-top" style="background-color:#0a192f">
   <div class="container-fluid m-0 px-4" id="nav-container">
 
     <transition name="fade">
@@ -188,6 +188,16 @@ nav {
 }
 
 @media (max-width: 992px) {
+  #nav-body {
+    width: 70%;
+    height: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+}
+
+@media (max-width: 768px) {
 #offcanvasNavbar {
     width: 80%;
     display: flex;
