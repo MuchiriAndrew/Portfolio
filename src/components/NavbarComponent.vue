@@ -4,15 +4,15 @@
 
     <transition name="fade">
     <a v-if="show" class="navbar-brand" href="#">
-        <svg width="50" height="50" viewBox="0 0 304 281" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M149.712 6.17764C151.148 5.43861 152.852 5.43862 154.288 6.17764L280.924 71.3543C282.589 72.2113 283.636 73.9271 283.636 75.8V205.2C283.636 207.073 282.589 208.789 280.924 209.646L154.288 274.822C152.852 275.561 151.148 275.561 149.712 274.822L23.076 209.646C21.4108 208.789 20.3641 207.073 20.3641 205.2V75.8C20.3641 73.9271 21.4108 72.2113 23.076 71.3543L149.712 6.17764Z" stroke="#0075FF" stroke-width="10"/>
+        <svg width="40" height="40" viewBox="0 0 304 281" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M149.712 6.17764C151.148 5.43861 152.852 5.43862 154.288 6.17764L280.924 71.3543C282.589 72.2113 283.636 73.9271 283.636 75.8V205.2C283.636 207.073 282.589 208.789 280.924 209.646L154.288 274.822C152.852 275.561 151.148 275.561 149.712 274.822L23.076 209.646C21.4108 208.789 20.3641 207.073 20.3641 205.2V75.8C20.3641 73.9271 21.4108 72.2113 23.076 71.3543L149.712 6.17764Z" stroke="#0075FF" stroke-width="20"/>
         <path d="M118.942 201H89.2827L134.474 70.0909H170.142L215.27 201H185.611L152.82 100.006H151.797L118.942 201ZM117.088 149.544H187.145V171.149H117.088V149.544Z" fill="#0075FF"/>
         </svg>
     </a>
     </transition>
 
     <div v-if="show" style="border:none" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-expanded="false" aria-label="Toggle navigation">
-      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#fff" class="bi bi-list" viewBox="0 0 16 16">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#fff" class="bi bi-list" viewBox="0 0 16 16">
       <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
     </svg>
     </div>
