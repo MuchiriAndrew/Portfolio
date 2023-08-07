@@ -1,5 +1,5 @@
 <template>
-<nav class="navbar navbar-expand-lg fixed-top p-0 " style="background-color:#0a192f">
+<nav class="navbar navbar-expand-lg fixed-top" style="background-color:#0a192f">
   <div class="container-fluid m-0 px-4" id="nav-container">
 
     <transition name="fade">
