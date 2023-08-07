@@ -5,8 +5,8 @@
     <transition name="fade">
     <a v-if="show" class="navbar-brand" id="logo" href="#">
         <svg width="40" height="40" viewBox="0 0 304 281" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M149.712 6.17764C151.148 5.43861 152.852 5.43862 154.288 6.17764L280.924 71.3543C282.589 72.2113 283.636 73.9271 283.636 75.8V205.2C283.636 207.073 282.589 208.789 280.924 209.646L154.288 274.822C152.852 275.561 151.148 275.561 149.712 274.822L23.076 209.646C21.4108 208.789 20.3641 207.073 20.3641 205.2V75.8C20.3641 73.9271 21.4108 72.2113 23.076 71.3543L149.712 6.17764Z" stroke="#0075FF" stroke-width="20"/>
-        <path d="M118.942 201H89.2827L134.474 70.0909H170.142L215.27 201H185.611L152.82 100.006H151.797L118.942 201ZM117.088 149.544H187.145V171.149H117.088V149.544Z" fill="#0075FF"/>
+        <path d="M149.712 6.17764C151.148 5.43861 152.852 5.43862 154.288 6.17764L280.924 71.3543C282.589 72.2113 283.636 73.9271 283.636 75.8V205.2C283.636 207.073 282.589 208.789 280.924 209.646L154.288 274.822C152.852 275.561 151.148 275.561 149.712 274.822L23.076 209.646C21.4108 208.789 20.3641 207.073 20.3641 205.2V75.8C20.3641 73.9271 21.4108 72.2113 23.076 71.3543L149.712 6.17764Z" stroke="#64ffda" stroke-width="20"/>
+        <path d="M118.942 201H89.2827L134.474 70.0909H170.142L215.27 201H185.611L152.82 100.006H151.797L118.942 201ZM117.088 149.544H187.145V171.149H117.088V149.544Z" fill="#64ffda"/>
         </svg>
     </a>
     </transition>
@@ -14,7 +14,7 @@
 
     <div style="border:none" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-expanded="false" aria-label="Toggle navigation">
       <transition name="toggle">
-    <svg v-if="show" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#0075FF" class="bi bi-list" viewBox="0 0 16 16">
+    <svg v-if="show" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#64ffda" class="bi bi-list" viewBox="0 0 16 16">
       <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
     </svg>
     </transition>
@@ -25,7 +25,7 @@
 
       <div class="offcanvas-header justify-content-end">
         <div id="close-btn" data-bs-dismiss="offcanvas" aria-label="Close">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#FFF" class="bi bi-x" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#64ffda" class="bi bi-x" viewBox="0 0 16 16">
             <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
             </svg>
         </div>
