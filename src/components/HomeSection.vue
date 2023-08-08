@@ -133,7 +133,7 @@ span {
 
 @media (max-width: 768px) {
 #txt-wrapper {
-  padding-left: unset;
+  padding-left: 15px;
   padding-top: unset;
   width: 100%;
   display: flex;
