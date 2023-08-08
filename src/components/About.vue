@@ -1,11 +1,14 @@
 <template>
     <div id="wrapper2">
-        <h2>02. About Me</h2>
-        <div id="txt-wrapper">
+        <h2 class="mb-5"><span>02.</span> About Me</h2>
+        <div id="txt-wrapper"
+        v-motion
+        :initial = "{opacity:0, x:100}"
+        :visibleOnce = "{opacity:1, x:0}"
+        >
             <div id="txt-col" class="">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus a ex reiciendis. Amet tenetur velit distinctio iste maxime voluptatibus, quis porro autem, voluptas, ab praesentium? Consectetur mollitia magnam accusantium quaerat sit, eligendi, optio cumque pariatur exercitationem labore dolores nemo eum, alias error libero perspiciatis excepturi maiores quas. Voluptates, earum quis?</p>
                 <h4>My skills</h4>
-
                 <div id="skills" class="mt-3">
                     <div id="col1">
                         <ul id="frontend">
@@ -39,10 +42,9 @@
 
                     </div>
                 </div>
-
             </div>
 
-            <div id="img-col" class="">
+            <div  id="img-col" class="">
                 <div id="myimg">
                     <img class="img-fluid rounded-3" src="../assets/myimg.jpg" alt="me">
                 </div>
@@ -53,11 +55,27 @@
 
 <script>
 export default {
+    data() {
+        return{
+
+        }
+    },
+    mounted() {
+
+    }
 
 }
 </script>
 
 <style scoped>
+
+.about-fade-enter-from{opacity: 0 ;}
+.about-fade-enter-to{opacity: 1;}
+.about-fade-enter-active{transition: all 0.8s ease-in-out;}
+
+.content-fade-enter-from{opacity: 0;}
+.content-fade-enter-to{opacity: 1;}
+.content-fade-enter-active{transition: all 0.8s ease-in-out;}
 
 #wrapper2 {
     background: #0a192f;
@@ -73,6 +91,12 @@ export default {
 #wrapper2 h2 {
     width: 90%;
     text-align: start;
+    font-size: 26px;
+    color: hsl(239, 57%, 85%);
+}
+#wrapper2 h2 span {
+    color: #64ffda;
+    font-size: 26px;
 }
 
 #wrapper2 h2 b {
@@ -97,18 +121,18 @@ export default {
 }
 
 #txt-col p {
-    color: hsl(239, 57%, 85%);
+    color: hsl(223, 19%, 93%);
     font-size: 16px;
 }
 
 #txt-col h4 {
-    color: #0075FF;
+    color: #00a6ff;
     font-size: 28px;
     font-family: Poppins;
 }
 
 li {
-    color:hsl(211, 10%, 45%);
+    color:hsl(239, 57%, 85%);
 
 }
 #skills {
@@ -142,6 +166,7 @@ h5 {
 #myimg {
     width: 400px;
     height: 400px;
+    box-shadow: #0a192f 10px -10px 0px -3px, #64ffda 10px -10px;
 }
 
 @media (max-width: 992px) {
@@ -225,7 +250,7 @@ h5 {
 }
 
 #txt-wrapper {
-    height: 100%;
+    height: 110vh;
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -247,7 +272,7 @@ h5 {
     height: 40%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -267,6 +292,14 @@ h5 {
     justify-content: center;
     align-items: center;
     text-align: start;
+}
+
+#txt-wrapper {
+    height: 180vh;
+}
+
+#img-col {
+    justify-content: center;
 }
 
 #myimg {
