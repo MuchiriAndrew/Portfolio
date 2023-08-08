@@ -7,7 +7,9 @@
             :visibleOnce="{
                 opacity: 1,
                 transition: {
-                delay: 800,
+                delay:400,
+                duration: 800,
+                ease: 'easeInOut'
                 },
             }" class="mb-5"><span>02.</span> About Me</h2>
         <div v-motion
@@ -17,7 +19,9 @@
             :visibleOnce="{
                 opacity: 1,
                 transition: {
-                delay: 800,
+                delay:400,
+                duration: 800,
+                ease: 'easeInOut'
                 },
             }" id="txt-wrapper">
             <div id="txt-col" class="">
