@@ -15,9 +15,11 @@
         <div v-motion
             :initial="{
                 opacity: 0,
+                y:100
             }"
             :visibleOnce="{
                 opacity: 1,
+                y:0,
                 transition: {
                 delay:400,
                 duration: 800,
@@ -70,18 +72,6 @@
         </div>
     </div>
 </template>
-
-//  v-motion
-
-//   :initial="{
-//     opacity: 0,
-//   }"
-//   :enter="{
-//     opacity: 1,
-//     transition: {
-//       delay: 3000,
-//     },
-//   }"
 
 <script>
 export default {

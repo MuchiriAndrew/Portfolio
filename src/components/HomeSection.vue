@@ -3,7 +3,7 @@
 
 <transition name="home-fade">
     <div v-if="show1" id="txt-wrapper">
-        <p>Hi there, I'm</p>
+        <p>Hi there, my name is</p>
         <h1>Andrew Muchiri</h1>
         <h3>Full-Stack Developer</h3>
         <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore omnis tenetur quo est libero, eaque, deserunt dolorem et id veritatis doloremque distinctio. Odit veniam sapiente necessitatibus, minima tempora dolorem velit nostrum? Excepturi rerum officiis pariatur magni veritatis. Officiis, eveniet error odio deleniti expedita saepe nemo nisi fugiat consequuntur! Maiores, asperiores!</span>
