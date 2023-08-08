@@ -5,7 +5,10 @@ import router from './router'
 import 'bootstrap/dist/css/bootstrap.css'
 
 
-createApp(App).use(router,MotionPlugin).mount('#app')
-// app.use(MotionPlugin)
+const app = createApp(App)
+app.use(router)
+app.use(MotionPlugin)
+app.mount('#app')
+
 import 'bootstrap/dist/js/bootstrap.js'
 

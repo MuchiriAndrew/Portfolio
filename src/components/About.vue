@@ -1,11 +1,25 @@
 <template>
     <div id="wrapper2">
-        <h2 class="mb-5"><span>02.</span> About Me</h2>
-        <div id="txt-wrapper"
-        v-motion
-        :initial = "{opacity:0, x:100}"
-        :visibleOnce = "{opacity:1, x:0}"
-        >
+        <h2 v-motion
+            :initial="{
+                opacity: 0,
+            }"
+            :visibleOnce="{
+                opacity: 1,
+                transition: {
+                delay: 800,
+                },
+            }" class="mb-5"><span>02.</span> About Me</h2>
+        <div v-motion
+            :initial="{
+                opacity: 0,
+            }"
+            :visibleOnce="{
+                opacity: 1,
+                transition: {
+                delay: 800,
+                },
+            }" id="txt-wrapper">
             <div id="txt-col" class="">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus a ex reiciendis. Amet tenetur velit distinctio iste maxime voluptatibus, quis porro autem, voluptas, ab praesentium? Consectetur mollitia magnam accusantium quaerat sit, eligendi, optio cumque pariatur exercitationem labore dolores nemo eum, alias error libero perspiciatis excepturi maiores quas. Voluptates, earum quis?</p>
                 <h4>My skills</h4>
@@ -44,7 +58,7 @@
                 </div>
             </div>
 
-            <div  id="img-col" class="">
+            <div id="img-col" class="">
                 <div id="myimg">
                     <img class="img-fluid rounded-3" src="../assets/myimg.jpg" alt="me">
                 </div>
@@ -52,6 +66,18 @@
         </div>
     </div>
 </template>
+
+//  v-motion
+
+//   :initial="{
+//     opacity: 0,
+//   }"
+//   :enter="{
+//     opacity: 1,
+//     transition: {
+//       delay: 3000,
+//     },
+//   }"
 
 <script>
 export default {
