@@ -1,15 +1,15 @@
 <template>
   <div class="home">
     <NavbarComponent />
-    <Body />
+    <HomeSection />
   </div>
 </template>
 
 <script>
 import NavbarComponent from "../components/NavbarComponent.vue"
-import Body from "../components/Body.vue"
+import HomeSection from "../components/HomeSection.vue"
 export default {
   name: 'HomeView',
-  components: {NavbarComponent, Body}
+  components: {NavbarComponent, HomeSection}
 }
 </script>
