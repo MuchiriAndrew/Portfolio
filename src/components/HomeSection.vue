@@ -36,15 +36,12 @@ export default {
 .home-fade-enter-to{opacity: 1;}
 .home-fade-enter-active{transition: all 0.8s ease-in-out;}
 
-* {
-    background: #0a192f;
-}
-
 #wrapper1 {
-    min-height: max-content;
-    height: 100vh;
+    background: #0a192f;
+    min-height: 100vh;
+    height: max-content;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -55,7 +52,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
 }
 
 #txt-wrapper h1 {
@@ -126,7 +123,7 @@ span {
     min-height: max-content;
     height: 150vh;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
 }
 }
@@ -155,7 +152,7 @@ span {
     min-height: max-content;
     height: 130vh;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
 }
 #txt-wrapper {
