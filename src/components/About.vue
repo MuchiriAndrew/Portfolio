@@ -260,7 +260,7 @@ h5 {
 @media (max-width: 768px) {
 #wrapper2 {
     background: #0a192f;
-    min-height: 130vh;
+    min-height: 140vh;
     height: max-content;
     display: flex;
     flex-direction: column;
@@ -305,7 +305,7 @@ h5 {
 @media screen and (max-height:720px) and (max-width:768px) {
 #wrapper2 {
     background: #0a192f;
-    min-height: 180vh;
+    min-height: 190vh;
     height: max-content;
     display: flex;
     flex-direction: column;
