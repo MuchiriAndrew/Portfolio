@@ -71,7 +71,7 @@
                 duration: 400,
                 ease: 'easeInOut'
                 },
-            }" id="resume"><a href="#">Download Resume</a></div>
+            }" id="resume"><a :href="pdfUrl" download = "resume.pdf">Download Resume</a></div>
     </div>
 
     </div>
@@ -81,7 +81,7 @@
 export default {
   data() {
     return {
-
+      pdfUrl : "./resume.pdf"
     }
   },
 

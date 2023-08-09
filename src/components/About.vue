@@ -56,6 +56,7 @@
                             <li>MongoDB</li>
                             <li>Render</li>
                             <li>Amazon Web Services</li>
+                            <li>Postman</li>
                             <li>GIT</li>
                             <li>GitHub</li>
                         </ul>
@@ -201,14 +202,14 @@ h5 {
     height: 80%;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
 }
     #img-col {
     width: 50%;
     height: 800px;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -237,14 +238,14 @@ h5 {
     height: 80%;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
 }
     #img-col {
     width: 50%;
     height: 800px;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
 }
 
