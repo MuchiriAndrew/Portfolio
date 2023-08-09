@@ -11,7 +11,7 @@
                 duration: 800,
                 ease: 'easeInOut'
                 },
-            }" class="mb-5"><span>02.</span> About Me</h2>
+            }" class="mb-lg-5"><span>02.</span> About Me</h2>
         <div v-motion
             :initial="{
                 opacity: 0,
@@ -27,7 +27,7 @@
                 },
             }" id="txt-wrapper">
             <div id="txt-col" class="">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus a ex reiciendis. Amet tenetur velit distinctio iste maxime voluptatibus, quis porro autem, voluptas, ab praesentium? Consectetur mollitia magnam accusantium quaerat sit, eligendi, optio cumque pariatur exercitationem labore dolores nemo eum, alias error libero perspiciatis excepturi maiores quas. Voluptates, earum quis?</p>
+                <p>Hello, my name is Andrew Muchiri. I am a software engineer based in Nairobi, Kenya. I am 20 years old and currently a third year Computer Science at Kenyatta University. I enjoy coming up with creative solutions using various technologies in order to solve complex issues. My love for writing code began when I started studying Computer Science and voila! I  guess I found my passion. Besides creating beautiful and efficient web applications, I am an avid chess player and occassionally take part in chess tournaments where I have a blast! <br> I aspire to be a renowned 10x developer who prioritizes delivering efficient software on time and one that exceeds client expectations.</p>
                 <h4>My skills</h4>
                 <div id="skills" class="mt-3">
                     <div id="col1">
@@ -135,6 +135,7 @@ export default {
 #txt-col p {
     color: hsl(223, 19%, 93%);
     font-size: 16px;
+    font-family: Poppins;
 }
 
 #txt-col h4 {
@@ -180,10 +181,14 @@ h5 {
     height: 400px;
     box-shadow: #0a192f 10px -10px 0px -3px, #64ffda 10px -10px;
 }
+#myimg:hover {
+   scale: 1.05;
+   transition: 0.3s ease-in-out;
+}
 
 @media (max-width: 992px) {
 #txt-wrapper {
-    height: 80%;
+    height: 60%;
     width: 90%;
     display: flex;
     flex-direction: row;
@@ -200,7 +205,7 @@ h5 {
 }
     #img-col {
     width: 50%;
-    height: 80%;
+    height: 800px;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -211,9 +216,10 @@ h5 {
     width: 300px;
     height: 300px;
 }
-
-
-
+#myimg:hover {
+   scale: unset;
+   transition: unset;
+}
 }
 
 @media (max-width: 992px) and (max-height: 500px)  {
@@ -235,7 +241,7 @@ h5 {
 }
     #img-col {
     width: 50%;
-    height: 80%;
+    height: 800px;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -256,13 +262,13 @@ h5 {
     height: max-content;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     text-align: start;
 }
 
 #txt-wrapper {
-    height: 110vh;
+    height: max-content;
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -280,6 +286,8 @@ h5 {
 }
 
 #img-col {
+    padding-top: 30px;
+    padding-bottom: 30px;
     width: 100%;
     height: 40%;
     display: flex;
@@ -289,8 +297,8 @@ h5 {
 }
 
 #myimg {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
 }
 }
 
@@ -307,7 +315,7 @@ h5 {
 }
 
 #txt-wrapper {
-    height: 180vh;
+    height: max-content;
 }
 
 #img-col {

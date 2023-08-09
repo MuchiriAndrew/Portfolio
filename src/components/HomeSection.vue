@@ -25,7 +25,7 @@
                 opacity: 1,
                 y:0,
                 transition: {
-                delay:500,
+                delay:600,
                 duration: 800,
                 ease: 'easeInOut'
                 },
@@ -39,11 +39,11 @@
                 opacity: 1,
                 y:0,
                 transition: {
-                delay:600,
+                delay:800,
                 duration: 800,
                 ease: 'easeInOut'
                 },
-            }">Full-Stack Developer</h3>
+            }">I build cool stuff that lives on the web</h3>
         <span v-motion
             :initial="{
                 opacity: 0,
@@ -53,11 +53,11 @@
                 opacity: 1,
                 y:0,
                 transition: {
-                delay:700,
+                delay:1000,
                 duration: 800,
                 ease: 'easeInOut'
                 },
-            }">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore omnis tenetur quo est libero, eaque, deserunt dolorem et id veritatis doloremque distinctio. Odit veniam sapiente necessitatibus, minima tempora dolorem velit nostrum? Excepturi rerum officiis pariatur magni veritatis. Officiis, eveniet error odio deleniti expedita saepe nemo nisi fugiat consequuntur! Maiores, asperiores!</span>
+            }">Highly motivated and hardworking software engineer with a passion for Full-Stack Web development. Proficient in using cutting-edge technologies to come up with innovative solutions. I love writing code and creating beautiful and efficient softwares. I believe that true happiness comes from closing 100 chrome tabs after solving an obscure programming bug and not from anywhere else.</span>
         <div v-motion
             :initial="{
                 opacity: 0,
@@ -67,7 +67,7 @@
                 opacity: 1,
                 y:0,
                 transition: {
-                delay:800,
+                delay:1200,
                 duration: 800,
                 ease: 'easeInOut'
                 },
@@ -114,7 +114,7 @@ export default {
 #txt-wrapper h1 {
   font-family: Poppins;
   font-size: 80px;
-  color: hsl(239, 57%, 85%);
+  color: hsl(223, 19%, 93%);
 }
 
 #txt-wrapper p {
@@ -130,10 +130,10 @@ export default {
 }
 
 span {
-  font-family: Fira Code;
+  font-family: Poppins;
   font-size: 16px;
   text-align: start;
-  color: hsl(211, 10%, 45%);
+  color: hsl(239, 57%, 85%);
 }
 
 #resume {

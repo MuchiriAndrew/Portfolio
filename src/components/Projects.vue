@@ -249,7 +249,7 @@ export default {
 }
 
 #column p {
-    font-family: Fira Code;
+    font-family: Poppins;
     font-size: 12px;
     color: hsl(223, 19%, 93%);
 }
@@ -310,6 +310,10 @@ export default {
     display: flex;
     flex-direction: column;
 }
+#image-div:hover {
+    scale: unset;
+    transition: unset;
+}
 }
 
 @media (max-width: 768px){
@@ -318,6 +322,11 @@ export default {
     height: max-content;
     display: flex;
     flex-direction: column;
+}
+
+#image-div:hover {
+    scale: unset;
+    transition: unset;
 }
 }
 
