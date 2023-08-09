@@ -183,7 +183,7 @@ h5 {
 }
 #myimg:hover {
    scale: 1.05;
-   transition: 0.3s ease-in-out;
+   transition: 0.8s ease-in-out;
 }
 
 @media (max-width: 992px) {

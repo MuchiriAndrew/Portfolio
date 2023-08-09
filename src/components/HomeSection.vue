@@ -71,7 +71,7 @@
                 duration: 400,
                 ease: 'easeInOut'
                 },
-            }" id="resume">Download Resume</div>
+            }" id="resume"><a href="#">Download Resume</a></div>
     </div>
 
     </div>
@@ -141,19 +141,29 @@ span {
   height: 50px;
   border: 2px solid #64ffda;
   margin-top: 20px;
+}
+#resume:hover {
+  background: #64ffda;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+#resume a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #64ffda;
   font-family: Fira Code;
   font-size: 16px;
   font-weight: 500;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
 }
-#resume:hover {
-  background: #64ffda;
+
+#resume a:hover {
   color: #0a192f;
   transition: 0.3s ease-in-out;
-  cursor: pointer;
 }
 
 @media (max-width: 992px) and (min-width: 768px)  {

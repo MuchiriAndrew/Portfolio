@@ -10,7 +10,7 @@
                 y:0,
                 transition: {
                 delay:400,
-                duration: 600,
+                duration: 400,
                 ease: 'easeInOut'
                 },
             }"><span>05. </span>Contact</h2>
@@ -25,7 +25,7 @@
                 y:0,
                 transition: {
                 delay:600,
-                duration: 600,
+                duration: 400,
                 ease: 'easeInOut'
                 },
             }">Contact Me</h1>
@@ -39,7 +39,7 @@
                 y:0,
                 transition: {
                 delay:800,
-                duration: 600,
+                duration: 400,
                 ease: 'easeInOut'
                 },
             }">My inbox is always open. Whether you need some help on a project or you just want to say hi, send me a message and I will get back to you</p>
@@ -53,11 +53,11 @@
                 y:0,
                 transition: {
                 delay:1000,
-                duration: 600,
+                duration: 400,
                 ease: 'easeInOut'
                 },
-            }" id="message" class="rounded-3">
-                <a href="#">Shoot me a message!</a>
+            }" id="message" class="rounded-3 mt-5">
+                <a href="mailto:kariukia225@gmail.com">Shoot me a message!</a>
             </div>
         </div>
 
@@ -73,7 +73,7 @@
                 y:0,
                 transition: {
                 delay:400,
-                duration: 600,
+                duration: 400,
                 ease: 'easeInOut'
                 },
             }">
@@ -93,7 +93,7 @@
                 y:0,
                 transition: {
                 delay:600,
-                duration: 600,
+                duration: 400,
                 ease: 'easeInOut'
                 },
             }">
@@ -112,7 +112,7 @@
                 y:0,
                 transition: {
                 delay:800,
-                duration: 600,
+                duration: 400,
                 ease: 'easeInOut'
                 },
             }">
@@ -123,7 +123,50 @@
                 </li>
             </ul>
 
-            <p>Designed and Created by Andrew Muchiri</p>
+            <p v-motion
+            :initial="{
+                opacity: 0,
+                y:20
+            }"
+            :visibleOnce="{
+                opacity: 1,
+                y:0,
+                transition: {
+                delay:1000,
+                duration: 400,
+                ease: 'easeInOut'
+                },
+            }" class="mt-5">kariukia225@gmail.com</p>
+
+            <p v-motion
+            :initial="{
+                opacity: 0,
+                y:20
+            }"
+            :visibleOnce="{
+                opacity: 1,
+                y:0,
+                transition: {
+                delay:1200,
+                duration: 400,
+                ease: 'easeInOut'
+                },
+            }">+254 786 638 466</p>
+
+            <p v-motion
+            :initial="{
+                opacity: 0,
+                y:20
+            }"
+            :visibleOnce="{
+                opacity: 1,
+                y:0,
+                transition: {
+                delay:1400,
+                duration: 400,
+                ease: 'easeInOut'
+                },
+            }">Designed and Created by Andrew Muchiri</p>
 
         </div>
 
@@ -189,7 +232,6 @@ export default {
     width: 180px;
     height: 50px;
     border: 1px solid #64ffda;
-
 }
 #message:hover {
     background: #64ffda;

@@ -260,7 +260,7 @@ export default {
 }
 #image-div:hover {
     scale: 1.05;
-    transition: 0.3s ease-in-out;
+    transition: 0.8s ease-in-out;
 }
 #links {
     display: flex;
@@ -297,10 +297,26 @@ export default {
 #collab {
     text-decoration: none;
     color: #64ffda;
+    display: inline-block;
+    position: relative;
 }
-#collab:hover {
-    text-decoration: underline;
-    transition: 0.8s ease-in-out;
+
+#collab::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #65ffda;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+#collab:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 @media (max-width: 992px) and (min-width: 768px) {
