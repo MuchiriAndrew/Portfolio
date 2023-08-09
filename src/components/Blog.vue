@@ -83,9 +83,12 @@ export default {
 #wrapper4 h2 {
     padding-bottom: 10vh;
     width: 90%;
+    height: 20vh;
     text-align: start;
     font-size: 26px;
     color: hsl(239, 57%, 85%);
+    display: flex;
+    align-items: flex-end;
 }
 
 #wrapper4 h2 span {
@@ -94,13 +97,12 @@ export default {
 }
 
 #content-wrapper {
-    padding-bottom: 10vh;
+    height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 90%;
-    height: max-content;
     text-align: center;
 }
 
