@@ -13,7 +13,7 @@
                 x:0,
                 transition: {
                 delay:400,
-                duration: 800,
+                duration: 400,
                 ease: 'easeInOut'
                 },
             }" class="navbar-brand" id="logo" href="#">
@@ -37,7 +37,7 @@
                 x:0,
                 transition: {
                 delay:400,
-                duration: 800,
+                duration: 400,
                 ease: 'easeInOut'
                 },
             }" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#64ffda" class="bi bi-list" viewBox="0 0 16 16">
@@ -70,7 +70,7 @@
                 y:0,
                 transition: {
                 delay:400,
-                duration: 800,
+                duration: 400,
                 ease: 'easeInOut'
                 },
             }" class="nav-item ">
@@ -86,8 +86,8 @@
                 opacity: 1,
                 y:0,
                 transition: {
-                delay:500,
-                duration: 800,
+                delay:600,
+                duration: 400,
                 ease: 'easeInOut'
                 },
             }" class="nav-item">
@@ -103,8 +103,8 @@
                 opacity: 1,
                 y:0,
                 transition: {
-                delay:600,
-                duration: 800,
+                delay:800,
+                duration: 400,
                 ease: 'easeInOut'
                 },
             }" class="nav-item">
@@ -120,8 +120,8 @@
                 opacity: 1,
                 y:0,
                 transition: {
-                delay:700,
-                duration: 800,
+                delay:1000,
+                duration: 400,
                 ease: 'easeInOut'
                 },
             }" class="nav-item">
@@ -137,8 +137,8 @@
                 opacity: 1,
                 y:0,
                 transition: {
-                delay:800,
-                duration: 800,
+                delay:1200,
+                duration: 400,
                 ease: 'easeInOut'
                 },
             }" class="nav-item">

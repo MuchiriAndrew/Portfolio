@@ -11,7 +11,7 @@
                 duration: 800,
                 ease: 'easeInOut'
                 },
-            }" class="mb-lg-5"><span>02.</span> About Me</h2>
+            }" class="mb-5"><span>02.</span> About Me</h2>
         <div v-motion
             :initial="{
                 opacity: 0,
@@ -262,7 +262,7 @@ h5 {
     height: max-content;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     text-align: start;
 }

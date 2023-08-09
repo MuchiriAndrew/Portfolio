@@ -12,7 +12,7 @@
                 y:0,
                 transition: {
                 delay:400,
-                duration: 800,
+                duration: 400,
                 ease: 'easeInOut'
                 },
             }">Hi there, I'm</p>
@@ -26,10 +26,10 @@
                 y:0,
                 transition: {
                 delay:600,
-                duration: 800,
+                duration: 400,
                 ease: 'easeInOut'
                 },
-            }">Andrew Muchiri</h1>
+            }">Andrew Muchiri.</h1>
         <h3 v-motion
             :initial="{
                 opacity: 0,
@@ -40,10 +40,10 @@
                 y:0,
                 transition: {
                 delay:800,
-                duration: 800,
+                duration: 400,
                 ease: 'easeInOut'
                 },
-            }">I build cool stuff that lives on the web</h3>
+            }">I build cool stuff that lives on the web.</h3>
         <span v-motion
             :initial="{
                 opacity: 0,
@@ -54,7 +54,7 @@
                 y:0,
                 transition: {
                 delay:1000,
-                duration: 800,
+                duration: 400,
                 ease: 'easeInOut'
                 },
             }">Highly motivated and hardworking software engineer with a passion for Full-Stack Web development. Proficient in using cutting-edge technologies to come up with innovative solutions. I love writing code and creating beautiful and efficient softwares. I believe that true happiness comes from closing 100 chrome tabs after solving an obscure programming bug and not from anywhere else.</span>
@@ -68,7 +68,7 @@
                 y:0,
                 transition: {
                 delay:1200,
-                duration: 800,
+                duration: 400,
                 ease: 'easeInOut'
                 },
             }" id="resume">Download Resume</div>

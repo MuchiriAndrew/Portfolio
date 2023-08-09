@@ -10,7 +10,7 @@
                 y:0,
                 transition: {
                 delay:400,
-                duration: 800,
+                duration: 500,
                 ease: 'easeInOut'
                 },
             }"><span>04. </span>Blog</h2>
@@ -25,7 +25,7 @@
                 y:0,
                 transition: {
                 delay:600,
-                duration: 800,
+                duration: 500,
                 ease: 'easeInOut'
                 },
             }">My Blog Page</h1>
@@ -39,7 +39,7 @@
                 y:0,
                 transition: {
                 delay:800,
-                duration: 800,
+                duration: 500,
                 ease: 'easeInOut'
                 },
             }">Whether it's a technical article about something I've learnt and want to share or just any one of my thoughts, I post them all inside my blog. Feel free to check it out.</p>
@@ -53,7 +53,7 @@
                 y:0,
                 transition: {
                 delay:1000,
-                duration: 800,
+                duration: 500,
                 ease: 'easeInOut'
                 },
             }" href="#">Click Here</a>
