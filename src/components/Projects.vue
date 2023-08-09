@@ -295,6 +295,8 @@ export default {
 }
 
 #collab {
+    font-size: 12px;
+    font-family: Poppins;
     text-decoration: none;
     color: #64ffda;
     display: inline-block;

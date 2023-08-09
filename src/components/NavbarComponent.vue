@@ -74,7 +74,7 @@
                 ease: 'easeInOut'
                 },
             }" class="nav-item ">
-            <a class="nav-link" href="#"><span>01.&nbsp;</span>Home</a>
+            <a class="nav-link" href="#wrapper1"><span>01.&nbsp;</span>Home</a>
           </li>
 
           <li v-motion
@@ -91,7 +91,7 @@
                 ease: 'easeInOut'
                 },
             }" class="nav-item">
-            <a class="nav-link" href="#"><span>02.&nbsp;</span>About Me</a>
+            <a class="nav-link" href="#wrapper2"><span>02.&nbsp;</span>About Me</a>
           </li>
 
           <li v-motion
@@ -108,7 +108,7 @@
                 ease: 'easeInOut'
                 },
             }" class="nav-item">
-            <a class="nav-link" href="#"><span>03.&nbsp;</span>Projects</a>
+            <a class="nav-link" href="#wrapper3"><span>03.&nbsp;</span>Projects</a>
           </li>
 
           <li v-motion
@@ -125,7 +125,7 @@
                 ease: 'easeInOut'
                 },
             }" class="nav-item">
-            <a class="nav-link" href="#"><span>04.&nbsp;</span>Blog</a>
+            <a class="nav-link" href="#wrapper4"><span>04.&nbsp;</span>Blog</a>
           </li>
 
           <li v-motion
@@ -142,7 +142,7 @@
                 ease: 'easeInOut'
                 },
             }" class="nav-item">
-            <a class="nav-link" href="#"><span>05.&nbsp;</span>Contact</a>
+            <a class="nav-link" href="#wrapper5"><span>05.&nbsp;</span>Contact</a>
           </li>
         </ul>
       </div>
