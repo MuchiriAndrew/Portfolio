@@ -300,4 +300,11 @@ svg {
 }
 }
 
+@media (max-width: 992px) and (max-height: 500px)  {
+    #wrapper5 {
+        min-height: 150vh;
+        height: max-content;
+    }
+}
+
 </style>
