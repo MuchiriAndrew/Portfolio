@@ -89,14 +89,6 @@ export default {
 
 <style scoped>
 
-.about-fade-enter-from{opacity: 0 ;}
-.about-fade-enter-to{opacity: 1;}
-.about-fade-enter-active{transition: all 0.8s ease-in-out;}
-
-.content-fade-enter-from{opacity: 0;}
-.content-fade-enter-to{opacity: 1;}
-.content-fade-enter-active{transition: all 0.8s ease-in-out;}
-
 #wrapper2 {
     background: #0a192f;
     min-height: 100vh;

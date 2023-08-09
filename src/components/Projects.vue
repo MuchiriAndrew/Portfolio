@@ -29,11 +29,15 @@
                 ease: 'easeInOut'
                 },
             }" id="column" class="col-12 col-lg-4 p-4">
-                    <div id="image-div" class="rounded-3 ">
+            <div>
+                <div id="image-div" class="rounded-3 ">
                         <img class="img-fluid rounded-3" src="../assets/portfolio.png" alt="portfolio">
                     </div>
-                    <h3>Portfolio Website</h3>
-                    <p>My personal portfolio website made using Vuejs for the frontend and Ruby on Rails for the backend on the blog page. Also used Bootstrap and the vueuse/motion library for the on scroll animations</p>
+                        <h3>Portfolio Website</h3>
+                        <p>My personal portfolio website made using Vuejs for the frontend and Ruby on Rails for the backend on the blog page. Also used Bootstrap and the vueuse/motion library for the on scroll animations</p>
+            </div>
+
+
                     <div id="links">
                         <div class="rounded-3" id="btns"><a href="https://andrew-muchiri.onrender.com/">Live Demo</a></div>
                         <div class="rounded-3" id="btns"><a href="https://github.com/MuchiriAndrew/Portfolio">GitHub Repo</a></div>
@@ -54,11 +58,15 @@
                 ease: 'easeInOut'
                 },
             }" id="column" class="col-12 col-lg-4 p-4 mb-4">
-                    <div id="image-div" class="rounded-3">
-                        <img class="img-fluid rounded-3" src="../assets/comments.png" alt="portfolio">
+                    <div>
+                        <div id="image-div" class="rounded-3">
+                                <img class="img-fluid rounded-3" src="../assets/comments.png" alt="portfolio">
+                            </div>
+                            <h3>Interactive comments</h3>
+                            <p>This was a project I worked on together with my talented friend <a id="collab" href="https://github.com/Gerald-006">Gerald Jackson</a>. A fullstack social media app in which users can create their own accounts and be able to post, update and delete their comments as well as reply to other people's comments. The frontend was done using Vuejs and the backend using Ruby on Rails</p>
+
                     </div>
-                    <h3>Interactive comments</h3>
-                    <p>This was a project I worked on together with my talented friend <a id="collab" href="https://github.com/Gerald-006">Gerald Jackson</a>. A fullstack social media app in which users can create their own accounts and be able to post, update and delete their comments as well as reply to other people's comments. The frontend was done using Vuejs and the backend using Ruby on Rails</p>
+
                     <div id="links">
                         <div class="rounded-3" id="btns"><a href="https://interactive-comments-a6k7.onrender.com/">Live Demo</a></div>
                         <div class="rounded-3" id="btns"><a href="https://github.com/MuchiriAndrew/Interactive-Comments-Section">GitHub Repo</a></div>
@@ -79,11 +87,14 @@
                 ease: 'easeInOut'
                 },
             }" id="column" class="col-12 col-lg-4 p-4">
-                    <div id="image-div" class="rounded-3">
-                        <img class="img-fluid rounded-3" src="../assets/countries.png" alt="portfolio">
+                    <div>
+                        <div id="image-div" class="rounded-3">
+                                <img class="img-fluid rounded-3" src="../assets/countries.png" alt="portfolio">
+                            </div>
+                            <h3>REST Countries API</h3>
+                            <p>This Web app uses the REST countries 3rd party API which allows the user to search for any country by name/region and it then displays data on the country. It also uses the leaflet API which shows the country's position on the World Map. The whole project was done using React and Bootstrap</p>
                     </div>
-                    <h3>REST Countries API</h3>
-                    <p>This Web app uses the REST countries 3rd party API which allows the user to search for any country by name/region and it then displays data on the country. It also uses the leaflet API which shows the country's position on the World Map. The whole project was done using React and Bootstrap</p>
+
                     <div id="links">
                         <div class="rounded-3" id="btns"><a href="https://rest-countries-api-project.onrender.com/">Live Demo</a></div>
                         <div class="rounded-3" id="btns"><a href="https://github.com/MuchiriAndrew/Front-End-Projects/tree/master/REST%20countries%20API%20project">GitHub Repo</a></div>
@@ -106,11 +117,14 @@
                 ease: 'easeInOut'
                 },
             }" id="column" class="col-12 col-lg-4 p-4">
-                    <div id="image-div" class="rounded-3">
-                        <img class="img-fluid rounded-3" src="../assets/ip-address.jpg" alt="portfolio">
+                    <div>
+                        <div id="image-div" class="rounded-3">
+                                <img class="img-fluid rounded-3" src="../assets/ip-address.jpg" alt="portfolio">
+                            </div>
+                            <h3>IP Address Tracker</h3>
+                            <p>This Web App uses the Geolocation API by IPify which displays data on an IP Address given to it and the React Leaflet API to show the location of the IP Address on the World Map. The whole project was done using React and Bootstrap</p>
                     </div>
-                    <h3>IP Address Tracker</h3>
-                    <p>This Web App uses the Geolocation API by IPify which displays data on an IP Address given to it and the React Leaflet API to show the location of the IP Address on the World Map. The whole project was done using React and Bootstrap</p>
+
                     <div id="links">
                         <div class="rounded-3" id="btns"><a href="https://ip-address-tracker-j5c7.onrender.com/">Live Demo</a></div>
                         <div class="rounded-3" id="btns"><a href="https://github.com/MuchiriAndrew/Front-End-Projects/tree/master/IP%20address%20tracker">GitHub Repo</a></div>
@@ -131,11 +145,14 @@
                 ease: 'easeInOut'
                 },
             }" id="column" class="col-12 col-lg-4 p-4">
-                    <div id="image-div" class="rounded-3">
-                        <img class="img-fluid rounded-3" src="../assets/space.png" alt="portfolio">
+                    <div>
+                            <div id="image-div" class="rounded-3">
+                                <img class="img-fluid rounded-3" src="../assets/space.png" alt="portfolio">
+                            </div>
+                            <h3>Space Tourism Website</h3>
+                            <p>A multi-page space tourism website done using React, Bootstrap and Framer Motion for the subtle animations. A purely frontend project that challenged my skills.</p>
                     </div>
-                    <h3>Space Tourism Website</h3>
-                    <p>A multi-page space tourism website done using React, Bootstrap and Framer Motion for the subtle animations. A purely frontend project that challenged my skills.</p>
+
                     <div id="links">
                         <div class="rounded-3" id="btns"><a href="https://space-tourism-lxuk.onrender.com/">Live Demo</a></div>
                         <div class="rounded-3" id="btns"><a href="https://github.com/MuchiriAndrew/Space-Tourism">GitHub Repo</a></div>
@@ -156,11 +173,14 @@
                 ease: 'easeInOut'
                 },
             }" id="column" class="col-12 col-lg-4 p-4">
-                    <div id="image-div" class="rounded-3">
-                        <img class="img-fluid rounded-3" src="../assets/ecommerce.png" alt="portfolio">
+                    <div>
+                            <div id="image-div" class="rounded-3">
+                                <img class="img-fluid rounded-3" src="../assets/ecommerce.png" alt="portfolio">
+                            </div>
+                            <h3>E-Commerce Product Page</h3>
+                            <p>Another noteworthy frontend project done using Vuejs and Bootstrap. Challenged me to work with cart functionality, using the local storage function in JavaScript and Bootstrap's Modal for the lightbox gallery</p>
                     </div>
-                    <h3>E-Commerce Product Page</h3>
-                    <p>Another noteworthy frontend project done using Vuejs and Bootstrap. Challenged me to work with cart functionality, using the local storage function in JavaScript and Bootstrap's Modal for the lightbox gallery</p>
+
                     <div id="links">
                         <div class="rounded-3" id="btns"><a href="https://product-page-an5n.onrender.com">Live Demo</a></div>
                         <div class="rounded-3" id="btns"><a href="https://github.com/MuchiriAndrew/Front-End-Projects/tree/master/e-commerce%20product%20page">GitHub Repo</a></div>
@@ -180,7 +200,7 @@ export default {
 <style scoped>
 #wrapper3 {
     background: #0a192f;
-    min-height: 100vh;
+    min-height: 200vh;
     height: max-content;
     display: flex;
     flex-direction: column;
@@ -214,9 +234,12 @@ export default {
 }
 
 #column {
-    height: 550px;
+    min-height: 500px;
+    height: max-content;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
 }
 
 #column h3 {
@@ -234,6 +257,10 @@ export default {
 #image-div {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
      margin-bottom: 10px;
+}
+#image-div:hover {
+    scale: 1.05;
+    transition: 0.3s ease-in-out;
 }
 #links {
     display: flex;
@@ -276,17 +303,19 @@ export default {
     transition: 0.8s ease-in-out;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 992px) and (min-width: 768px) {
     #column {
-    height: 650px;
+    min-height: 650px;
+    height: max-content;
     display: flex;
     flex-direction: column;
 }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px){
     #column {
-    height: 500px;
+    min-height: 500px;
+    height: max-content;
     display: flex;
     flex-direction: column;
 }

@@ -1,15 +1,78 @@
 <template>
   <div class="container-fluid" id="wrapper1">
 
-<transition name="home-fade">
-    <div v-if="show1" id="txt-wrapper">
-        <p>Hi there, my name is</p>
-        <h1>Andrew Muchiri</h1>
-        <h3>Full-Stack Developer</h3>
-        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore omnis tenetur quo est libero, eaque, deserunt dolorem et id veritatis doloremque distinctio. Odit veniam sapiente necessitatibus, minima tempora dolorem velit nostrum? Excepturi rerum officiis pariatur magni veritatis. Officiis, eveniet error odio deleniti expedita saepe nemo nisi fugiat consequuntur! Maiores, asperiores!</span>
-        <div id="resume">Download Resume</div>
+    <div id="txt-wrapper">
+        <p v-motion
+            :initial="{
+                opacity: 0,
+                y:20
+            }"
+            :enter="{
+                opacity: 1,
+                y:0,
+                transition: {
+                delay:400,
+                duration: 800,
+                ease: 'easeInOut'
+                },
+            }">Hi there, I'm</p>
+        <h1 v-motion
+            :initial="{
+                opacity: 0,
+                y:20
+            }"
+            :enter="{
+                opacity: 1,
+                y:0,
+                transition: {
+                delay:500,
+                duration: 800,
+                ease: 'easeInOut'
+                },
+            }">Andrew Muchiri</h1>
+        <h3 v-motion
+            :initial="{
+                opacity: 0,
+                y:20
+            }"
+            :enter="{
+                opacity: 1,
+                y:0,
+                transition: {
+                delay:600,
+                duration: 800,
+                ease: 'easeInOut'
+                },
+            }">Full-Stack Developer</h3>
+        <span v-motion
+            :initial="{
+                opacity: 0,
+                y:20
+            }"
+            :enter="{
+                opacity: 1,
+                y:0,
+                transition: {
+                delay:700,
+                duration: 800,
+                ease: 'easeInOut'
+                },
+            }">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore omnis tenetur quo est libero, eaque, deserunt dolorem et id veritatis doloremque distinctio. Odit veniam sapiente necessitatibus, minima tempora dolorem velit nostrum? Excepturi rerum officiis pariatur magni veritatis. Officiis, eveniet error odio deleniti expedita saepe nemo nisi fugiat consequuntur! Maiores, asperiores!</span>
+        <div v-motion
+            :initial="{
+                opacity: 0,
+                y:20
+            }"
+            :enter="{
+                opacity: 1,
+                y:0,
+                transition: {
+                delay:800,
+                duration: 800,
+                ease: 'easeInOut'
+                },
+            }" id="resume">Download Resume</div>
     </div>
-</transition>
 
     </div>
 </template>
@@ -18,24 +81,17 @@
 export default {
   data() {
     return {
-      show1:false,
+
     }
   },
 
   mounted() {
-      setTimeout(() => {
-        this.show1 = true
-    }, 900);
-  },
+
+}
 }
 </script>
 
 <style scoped>
-
-.home-fade-enter-from{opacity: 0;transform:translateY(20px) ;}
-.home-fade-enter-to{opacity: 1;}
-.home-fade-enter-active{transition: all 0.8s ease-in-out;}
-
 #wrapper1 {
     background: #0a192f;
     min-height: 100vh;
