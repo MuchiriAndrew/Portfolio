@@ -15,7 +15,7 @@
                 },
             }"><span>05. </span>Contact</h2>
         <div id="content-wrapper" class="">
-                <h1 v-motion
+            <h1 v-motion
             :initial="{
                 opacity: 0,
                 y:20
@@ -168,7 +168,7 @@ export default {
     justify-content: space-around;
     align-items: center;
     width: 90%;
-    height: 40vh;
+    height: max-content;
     text-align: center;
 }
 
