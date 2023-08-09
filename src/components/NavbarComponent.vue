@@ -60,7 +60,7 @@
 
       <div class="offcanvas-body p-0" id="nav-body">
         <ul class="navbar-nav">
-          <li v-motion
+          <li data-bs-dismiss="offcanvas" aria-label="Close" v-motion
             :initial="{
                 opacity: 0,
                 y:-20
@@ -77,7 +77,7 @@
             <a class="nav-link" href="#wrapper1"><span>01.&nbsp;</span>Home</a>
           </li>
 
-          <li v-motion
+          <li data-bs-dismiss="offcanvas" aria-label="Close" v-motion
             :initial="{
                 opacity: 0,
                 y:-20
@@ -94,7 +94,7 @@
             <a class="nav-link" href="#wrapper2"><span>02.&nbsp;</span>About Me</a>
           </li>
 
-          <li v-motion
+          <li data-bs-dismiss="offcanvas" aria-label="Close" v-motion
             :initial="{
                 opacity: 0,
                 y:-20
@@ -111,7 +111,7 @@
             <a class="nav-link" href="#wrapper3"><span>03.&nbsp;</span>Projects</a>
           </li>
 
-          <li v-motion
+          <li data-bs-dismiss="offcanvas" aria-label="Close" v-motion
             :initial="{
                 opacity: 0,
                 y:-20
@@ -128,7 +128,7 @@
             <a class="nav-link" href="#wrapper4"><span>04.&nbsp;</span>Blog</a>
           </li>
 
-          <li v-motion
+          <li data-bs-dismiss="offcanvas" aria-label="Close" v-motion
             :initial="{
                 opacity: 0,
                 y:-20
