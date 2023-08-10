@@ -299,7 +299,7 @@ export default {
     font-family: Poppins;
     text-decoration: none;
     color: #64ffda;
-    display: inline-block;
+    /* display: inline-block; */
     position: relative;
 }
 

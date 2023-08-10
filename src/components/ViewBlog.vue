@@ -20,7 +20,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #wrapper7 {
     min-height: 100vh;
     height: max-content;
