@@ -98,12 +98,12 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: start;
+    text-align: flex-start;
 }
 
 #wrapper2 h2 {
     width: 90%;
-    text-align: start;
+    text-align: flex-start;
     font-size: 26px;
     color: hsl(239, 57%, 85%);
 }
