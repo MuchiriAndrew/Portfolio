@@ -1,8 +1,10 @@
 <template>
-  <div id="wrapper6">
+<ViewBlog v-if= "isSelected" :currentItem = "currentItem" :isSelected = "isSelected"/>
+
+  <div v-else id="wrapper6">
     <h1 class="mt-3">Blogs</h1>
 
-    <div v-if="loading">Loading...</div>
+    <div id="loading" v-if="loading">Loading...</div>
 
     <div v-else id="content-wrapper" class="">
       <ul id="navbar" class="nav">
@@ -15,24 +17,25 @@
       </ul>
 
       <div id="blog-list" v-for="item in renderedData" :key="item">
-        <div id="blog-item" class="rounded-3 p-4 mt-3">
+        <a style="text-decoration:none" @click = "handleClicked(item)">
+          <div id="blog-item" class="rounded-3 p-4 mt-3">
           <h3>{{item.title}}</h3>
           <p>{{item.content.substr(0, 100) + '...'}}</p>
           <span>Written By Muchiri</span>
           <span>{{item.created_at}}</span>
         </div>
+        </a>
       </div>
-
-
     </div>
-
-
   </div>
 </template>
 
 <script>
 
+import ViewBlog from "../components/ViewBlog.vue"
+
 export default {
+  components:{ViewBlog},
   data() {
     return {
       isArticle: true,
@@ -43,7 +46,9 @@ export default {
       articleData: [],
       otherData:[],
       renderedData:[],
-      loading:true
+      loading:true,
+      isSelected:false,
+      currentItem:[]
     }
   },
 
@@ -63,6 +68,11 @@ export default {
       this.color2 = "#65ffda"
       this.color1 = "hsl(239, 57%, 85%)"
       this.renderedData = this.otherData
+    },
+
+    handleClicked(item) {
+      this.isSelected = true
+      this.currentItem = item
     },
 
     async fetchArticles() {
@@ -201,6 +211,11 @@ h1 {
 
 #links-2:hover {
   background: #233554;
+}
+
+#loading {
+  color: #64ffda;
+  font-size: 16px;
 }
 
 @media (max-width: 768px) {
