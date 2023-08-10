@@ -21,8 +21,8 @@
           <div id="blog-item" class="rounded-3 p-4 mt-3">
           <h3>{{item.title}}</h3>
           <p>{{item.content.substr(0, 100) + '...'}}</p>
-          <span>Written By Muchiri</span>
-          <span>{{item.created_at}}</span>
+          <span>{{item.source}}</span>
+          <span>{{item.timestamp}}</span>
         </div>
         </a>
       </div>
