@@ -2,9 +2,9 @@
   <div id="wrapper6">
     <h1 class="mt-3">Blogs</h1>
 
-    <!-- <div v-if="loading">Loading...</div> -->
+    <div v-if="loading">Loading...</div>
 
-    <div id="content-wrapper" class="">
+    <div v-else id="content-wrapper" class="">
       <ul id="navbar" class="nav">
         <li class="nav-item m-0">
           <a id="links-1" class="nav-link" aria-current="page" href="#" @click = "handleTechnical">Technical Articles</a>
@@ -14,18 +14,16 @@
         </li>
       </ul>
 
-      <div id="blog-item" class="rounded-3 p-4 mt-3">
-        <h3>This is the blog title</h3>
-        <p>Blog Snippet : Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum rem repellat suscipit maiores iusto nisi ut repellendus cupiditate ipsam itaque?</p>
-        <span>Written By Muchiri</span>
-        <span>9.21 AM</span>
+      <div id="blog-list" v-for="item in renderedData" :key="item">
+        <div id="blog-item" class="rounded-3 p-4 mt-3">
+          <h3>{{item.title}}</h3>
+          <p>{{item.content.substr(0, 100) + '...'}}</p>
+          <span>Written By Muchiri</span>
+          <span>{{item.created_at}}</span>
+        </div>
       </div>
-      <div id="blog-item" class="rounded-3 p-4 mt-3">
-        <h3>This is the blog title</h3>
-        <p>Blog Snippet : Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum rem repellat suscipit maiores iusto nisi ut repellendus cupiditate ipsam itaque?</p>
-        <span>Written By Muchiri</span>
-        <span>9.21 AM</span>
-      </div>
+
+
     </div>
 
 
@@ -33,7 +31,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 
 export default {
   data() {
@@ -68,52 +65,32 @@ export default {
       this.renderedData = this.otherData
     },
 
-    // async fetchArticles() {
-    //   fetch('https://blog-backend-eh5g.onrender.com/articles', {
-    //     method: 'GET',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify(newComment),
-    // })
-    // .catch(err => console.log(err))
-    // console.log("push reached")
-    // },
+    async fetchArticles() {
+      const response = await fetch("https://blog-backend-eh5g.onrender.com/articles");
+      this.articleData = await response.json();
+      // console.log(this.articleData);
+    },
 
-    // async fetchOthers() {
-    //   const response = await fetch("https://blog-backend-eh5g.onrender.com/others");
-    //   this.otherData = await response.json();
-    //   console.log(this.otherData);
-    // },
+    async fetchOthers() {
+      const response = await fetch("https://blog-backend-eh5g.onrender.com/others");
+      this.otherData = await response.json();
+      // console.log(this.otherData);
+    },
 
-    // async loadData() {
-    //   await this.fetchArticles();
-    //   await this.fetchOthers();
-    // },
+    async loadData() {
+      await this.fetchArticles();
+      await this.fetchOthers();
+    },
   },
 
   async mounted() {
-    // try {
-    //  const response = await fetch("https://blog-backend-eh5g.onrender.com/articles");
-    //   this.articleData = await response.json();
-    // } catch (error) {
-    //   console.error("Error loading data:", error);
-    // }
-
-    // try {
-    //     await axios.get('https://blog-backend-eh5g.onrender.com/articles')
-    //     .then(response => {
-    //       console.log(response);
-    //     })
-    //   } catch (error) {
-    //     console.log('Error adding user', error);
-    // }
-
-    const getArticles = async() => {
-      const response = await fetch("https://blog-backend-eh5g.onrender.com/articles")
-      const data = await response.json()
-      return data
+    try {
+      await this.loadData();
+      this.loading = false;
+      this.renderedData = this.articleData
+    } catch (error) {
+      console.error("Error loading data:", error);
     }
-    getArticles()
-    .then(data => console.log('data found', data))
   },
 
 }
@@ -162,6 +139,11 @@ h1 {
   align-items: center;
 }
 
+#blog-list {
+  height: max-content;
+  width: 100%;
+}
+
 #blog-item {
   width: 100%;
   background: #233554;
@@ -175,13 +157,13 @@ h1 {
 }
 
 #blog-item h3 {
-  font-family: Fira Code;
+  font-family: Poppins;
   color: #64ffda;
 
 }
 #blog-item p {
   color: hsl(223, 19%, 93%);
-
+  font-family: Poppins;
 }
 #blog-item span {
   color: hsl(239, 57%, 85%);
