@@ -68,7 +68,7 @@
                     </div>
 
                     <div id="links">
-                        <div class="rounded-3" id="btns"><a href="https://interactive-comments-a6k7.onrender.com/">Live Demo</a></div>
+                        <div class="rounded-3" id="btns"><a href="https://interactive-comments-a6k7.onrender.com/home/60">Live Demo</a></div>
                         <div class="rounded-3" id="btns"><a href="https://github.com/MuchiriAndrew/Interactive-Comments-Section">GitHub Repo</a></div>
                     </div>
                 </div>
