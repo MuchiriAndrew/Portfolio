@@ -264,6 +264,7 @@ export default {
 }
 
 #socials ul {
+    padding: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
