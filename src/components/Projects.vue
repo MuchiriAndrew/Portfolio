@@ -39,8 +39,8 @@
 
 
                     <div id="links">
-                        <div class="rounded-3" id="btns"><a href="https://andrew-muchiri.onrender.com/">Live Demo</a></div>
-                        <div class="rounded-3" id="btns"><a href="https://github.com/MuchiriAndrew/Portfolio">GitHub Repo</a></div>
+                        <div class="rounded-3" id="btns"><a target="_blank" href="https://andrew-muchiri.onrender.com/">Live Demo</a></div>
+                        <div class="rounded-3" id="btns"><a target="_blank" href="https://github.com/MuchiriAndrew/Portfolio">GitHub Repo</a></div>
                     </div>
                 </div>
 
@@ -68,8 +68,8 @@
                     </div>
 
                     <div id="links">
-                        <div class="rounded-3" id="btns"><a href="https://interactive-comments-a6k7.onrender.com/home/60">Live Demo</a></div>
-                        <div class="rounded-3" id="btns"><a href="https://github.com/MuchiriAndrew/Interactive-Comments-Section">GitHub Repo</a></div>
+                        <div class="rounded-3" id="btns"><a target="_blank" href="https://interactive-comments-a6k7.onrender.com/home/60">Live Demo</a></div>
+                        <div class="rounded-3" id="btns"><a target="_blank" href="https://github.com/MuchiriAndrew/Interactive-Comments-Section">GitHub Repo</a></div>
                     </div>
                 </div>
 
@@ -96,8 +96,8 @@
                     </div>
 
                     <div id="links">
-                        <div class="rounded-3" id="btns"><a href="https://rest-countries-api-project.onrender.com/">Live Demo</a></div>
-                        <div class="rounded-3" id="btns"><a href="https://github.com/MuchiriAndrew/Front-End-Projects/tree/master/REST%20countries%20API%20project">GitHub Repo</a></div>
+                        <div class="rounded-3" id="btns"><a target="_blank" href="https://rest-countries-api-project.onrender.com/">Live Demo</a></div>
+                        <div class="rounded-3" id="btns"><a target="_blank" href="https://github.com/MuchiriAndrew/Front-End-Projects/tree/master/REST%20countries%20API%20project">GitHub Repo</a></div>
                     </div>
                 </div>
             </div>
@@ -126,8 +126,8 @@
                     </div>
 
                     <div id="links">
-                        <div class="rounded-3" id="btns"><a href="https://ip-address-tracker-j5c7.onrender.com/">Live Demo</a></div>
-                        <div class="rounded-3" id="btns"><a href="https://github.com/MuchiriAndrew/Front-End-Projects/tree/master/IP%20address%20tracker">GitHub Repo</a></div>
+                        <div class="rounded-3" id="btns"><a target="_blank" href="https://ip-address-tracker-j5c7.onrender.com/">Live Demo</a></div>
+                        <div class="rounded-3" id="btns"><a target="_blank" href="https://github.com/MuchiriAndrew/Front-End-Projects/tree/master/IP%20address%20tracker">GitHub Repo</a></div>
                     </div>
                 </div>
 
@@ -154,8 +154,8 @@
                     </div>
 
                     <div id="links">
-                        <div class="rounded-3" id="btns"><a href="https://space-tourism-lxuk.onrender.com/">Live Demo</a></div>
-                        <div class="rounded-3" id="btns"><a href="https://github.com/MuchiriAndrew/Space-Tourism">GitHub Repo</a></div>
+                        <div class="rounded-3" id="btns"><a target="_blank" href="https://space-tourism-lxuk.onrender.com/">Live Demo</a></div>
+                        <div class="rounded-3" id="btns"><a target="_blank" href="https://github.com/MuchiriAndrew/Space-Tourism">GitHub Repo</a></div>
                     </div>
                 </div>
 
@@ -182,8 +182,8 @@
                     </div>
 
                     <div id="links">
-                        <div class="rounded-3" id="btns"><a href="https://product-page-an5n.onrender.com">Live Demo</a></div>
-                        <div class="rounded-3" id="btns"><a href="https://github.com/MuchiriAndrew/Front-End-Projects/tree/master/e-commerce%20product%20page">GitHub Repo</a></div>
+                        <div class="rounded-3" id="btns"><a target="_blank" href="https://product-page-an5n.onrender.com">Live Demo</a></div>
+                        <div class="rounded-3" id="btns"><a target="_blank" href="https://github.com/MuchiriAndrew/Front-End-Projects/tree/master/e-commerce%20product%20page">GitHub Repo</a></div>
                     </div>
                 </div>
             </div>

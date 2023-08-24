@@ -83,13 +83,13 @@ export default {
     async fetchArticles() {
       const response = await fetch("https://blog-backend-eh5g.onrender.com/articles");
       this.articleData = await response.json();
-      // console.log(this.articleData);
+      localStorage.setItem('articleData', JSON.stringify(this.articleData))
     },
 
     async fetchOthers() {
       const response = await fetch("https://blog-backend-eh5g.onrender.com/others");
       this.otherData = await response.json();
-      // console.log(this.otherData);
+      localStorage.setItem('otherData', JSON.stringify(this.otherData))
     },
 
     async loadData() {
