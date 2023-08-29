@@ -83,13 +83,11 @@ export default {
     async fetchArticles() {
       const response = await fetch("https://blog.andrewmuchiri.com/articles");
       this.articleData = await response.json();
-      localStorage.setItem('articleData', JSON.stringify(this.articleData))
     },
 
     async fetchOthers() {
       const response = await fetch("https://blog.andrewmuchiri.com/others");
       this.otherData = await response.json();
-      localStorage.setItem('otherData', JSON.stringify(this.otherData))
     },
 
     async loadData() {
