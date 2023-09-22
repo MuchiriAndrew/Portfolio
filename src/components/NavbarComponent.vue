@@ -212,6 +212,7 @@ nav {
   left: 0;
   z-index: 999;
   transition: all 300ms ease-in-out;
+  /* opacity: 0.989; */
 }
 
 #nav-container {

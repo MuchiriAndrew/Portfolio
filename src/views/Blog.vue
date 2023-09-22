@@ -6,6 +6,8 @@
 
     <div id="loading" v-if="loading">Loading...</div>
 
+    <!-- <div v-if="loading" class="spinner"></div> -->
+
     <div v-else id="content-wrapper" class="">
       <ul id="navbar" class="nav">
         <li class="nav-item m-0">
@@ -142,6 +144,15 @@ h1 {
   align-items: center;
   text-align: start;
 }
+
+/* .spinner {
+  border: 4px solid rgba(0, 0, 0, 0.3);
+  border-top: 4px solid #64ffda;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+} */
 
 #navbar {
   width: 400px;
