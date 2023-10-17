@@ -12,6 +12,8 @@
                 ease: 'easeInOut'
                 },
             }" class="mb-5"><span>02.</span> About Me</h2>
+
+
         <div v-motion
             :initial="{
                 opacity: 0,
@@ -26,11 +28,25 @@
                 ease: 'easeInOut'
                 },
             }" id="txt-wrapper">
-            <div id="txt-col" class="">
+
+            <div id="aboutrow" class="bg-success">
+                <div id="txt-col" class="">
                 <p>Hello, my name is Andrew Muchiri. I am a software engineer based in Nairobi, Kenya. I am 20 years old and currently a third year Computer Science student at Kenyatta University. I enjoy coming up with creative solutions to complex issues using various technologies. My love for writing code began when I started studying Computer Science and voila! I guess I found my passion. Besides creating beautiful and efficient web applications, I am an avid chess player and occassionally take part in chess tournaments where I have a blast! <br> I aspire to be a renowned 10x developer who prioritizes delivering softwares that exceed client expectations.</p>
-                <h4>My skills</h4>
-                <div id="skills" class="mt-3">
-                    <div id="col1">
+                </div>
+
+                <div id="img-col" class="bg-primary">
+                    <img id="myimg" class="img-fluid rounded-3" src="../assets/myimg.jpg" alt="me">
+                </div>
+            </div>
+
+            <div id="heading">
+                <h4>My Skills</h4>
+            </div>
+
+
+
+            <div id="skills" class="mt-3">
+                    <div id="col1" class="bg-primary">
                         <ul class="p-0" style="list-style:none" id="frontend">
                             <h5>Frontend Technologies</h5>
                             <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="#64ffda" class="bi bi-caret-right" viewBox="0 0 16 16">
@@ -53,6 +69,9 @@
                             </svg> Bootstrap</li>
                         </ul>
 
+                    </div>
+
+                    <div id="col2" class="bg-success">
                         <ul class="p-0" style="list-style:none" id="backend">
                             <h5>Backend Technologies</h5>
                            <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="#64ffda" class="bi bi-caret-right" viewBox="0 0 16 16">
@@ -68,7 +87,7 @@
 
                     </div>
 
-                    <div id="col2">
+                    <div id="col3" class="bg-warning">
                         <ul class="p-0" style="list-style:none">
                             <h5>Databases, Tools and Platforms</h5>
                             <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="#64ffda" class="bi bi-caret-right" viewBox="0 0 16 16">
@@ -101,14 +120,8 @@
                         </ul>
 
                     </div>
-                </div>
             </div>
 
-            <div id="img-col" class="">
-                <div id="myimg">
-                    <img class="img-fluid rounded-3" src="../assets/myimg.jpg" alt="me">
-                </div>
-            </div>
         </div>
     </div>
 </template>
@@ -130,14 +143,15 @@ export default {
 <style scoped>
 
 #wrapper2 {
-    background: #0a192f;
-    min-height: 100vh;
-    height: max-content;
+    /* background: #0a192f; */
+    background: aqua;
+    min-height: max-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align:start;
+    /* overflow: hidden; */
 }
 
 #wrapper2 h2 {
@@ -156,12 +170,19 @@ export default {
 }
 
 #txt-wrapper {
-    height: 100%;
+    background: pink;
+    height:120vh;
+    min-height: max-content;
     width: 90%;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#aboutrow {
+    height: 50%;
+    display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
 }
 
 #txt-col {
@@ -178,38 +199,66 @@ export default {
     font-family: Poppins;
 }
 
-#txt-col h4 {
-    color: #0075FF;
-    font-size: 28px;
-    font-family: Poppins;
-}
-li {
-    color:hsl(239, 57%, 85%);
-}
 #skills {
+    height: 40%;
     display: flex;
     flex-direction: row;
 }
 
-#col1 {
+#heading {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    width: 50%;
     justify-content: center;
+    align-items: center;
+    height: max-content;
+    background: red;
+}
 
+#heading h4 {
+    color: #0075FF;
+    font-size: 28px;
+    font-family: Poppins;
+}
+
+#col1 {
+    width: 33.333%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 #col2 {
-    width: 50%;
+    width: 33.333%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+#col3 {
+    width: 33.333%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+ul {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 h5 {
     color: #64ffda;
 }
 
+li {
+    color:hsl(239, 57%, 85%);
+}
+
 #img-col {
     width: 50%;
-    height: 80%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -217,13 +266,8 @@ h5 {
 }
 
 #myimg {
-    width: 400px;
-    height: 400px;
+    height: 100%;
     box-shadow: #0a192f 10px -10px 0px -3px, #64ffda 10px -10px;
-}
-#myimg:hover {
-   scale: 1.05;
-   transition: 0.8s ease-in-out;
 }
 
 @media (max-width: 992px) {
@@ -252,10 +296,11 @@ h5 {
     align-items: center;
 }
 
-    #myimg {
+#myimg {
     width: 300px;
     height: 300px;
 }
+
 #myimg:hover {
    scale: unset;
    transition: unset;
@@ -288,7 +333,7 @@ h5 {
     align-items: center;
 }
 
-    #myimg {
+#myimg {
     width: 300px;
     height: 300px;
 }
