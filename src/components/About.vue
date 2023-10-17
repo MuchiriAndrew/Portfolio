@@ -215,9 +215,9 @@ export default {
 }
 
 #heading h4 {
-    color: #0075FF;
+    color: #64ffda;
     font-size: 28px;
-    font-family: Poppins;
+    font-family: Fira Code;
 }
 
 #col1 {
