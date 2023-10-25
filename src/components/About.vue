@@ -40,7 +40,7 @@
             </div>
 
             <div id="heading">
-                <h4 class="mt-5">MY SKILLS</h4>
+                <h4 class="mt-5">My Skills</h4>
             </div>
 
             <div id="skills" class="mt-3">
@@ -219,9 +219,9 @@ export default {
 }
 
 #heading h4 {
-    color: #64ffda;
+    color: hsl(239, 57%, 85%);
     font-size: 28px;
-    font-family: Fira Code;
+    font-family: Poppins;
 }
 
 #skills {
