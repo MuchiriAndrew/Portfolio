@@ -44,7 +44,7 @@
                     </div>
                 </div>
 
-                <div v-motion
+                <!-- <div v-motion
             :initial="{
                 opacity: 0,
                 y:50
@@ -70,6 +70,34 @@
                     <div id="links">
                         <div class="rounded-3" id="btns"><a target="_blank" href="https://interactive-comments-a6k7.onrender.com/home/60">Live Demo</a></div>
                         <div class="rounded-3" id="btns"><a target="_blank" href="https://github.com/MuchiriAndrew/Interactive-Comments-Section">GitHub Repo</a></div>
+                    </div>
+                </div> -->
+
+                <div v-motion
+            :initial="{
+                opacity: 0,
+                y:50
+            }"
+            :visibleOnce="{
+                opacity: 1,
+                y:0,
+                transition: {
+                delay:200,
+                duration: 500,
+                ease: 'easeInOut'
+                },
+            }" id="column" class="col-12 col-lg-4 p-4">
+                    <div>
+                        <div id="image-div" class="rounded-3">
+                                <img class="img-fluid rounded-3" src="../assets/ip-address.jpg" alt="portfolio">
+                            </div>
+                            <h3>IP Address Tracker</h3>
+                            <p>This Web App uses the Geolocation API by IPify which displays data on an IP Address given to it and the React Leaflet API to show the location of the IP Address on the World Map. The whole project was done using React and Bootstrap</p>
+                    </div>
+
+                    <div id="links">
+                        <div class="rounded-3" id="btns"><a target="_blank" href="https://ip-address-tracker-j5c7.onrender.com/">Live Demo</a></div>
+                        <div class="rounded-3" id="btns"><a target="_blank" href="https://github.com/MuchiriAndrew/Front-End-Projects/tree/master/IP%20address%20tracker">GitHub Repo</a></div>
                     </div>
                 </div>
 
@@ -103,33 +131,7 @@
             </div>
 
             <div class="row m-0">
-                <div v-motion
-            :initial="{
-                opacity: 0,
-                y:50
-            }"
-            :visibleOnce="{
-                opacity: 1,
-                y:0,
-                transition: {
-                delay:200,
-                duration: 500,
-                ease: 'easeInOut'
-                },
-            }" id="column" class="col-12 col-lg-4 p-4">
-                    <div>
-                        <div id="image-div" class="rounded-3">
-                                <img class="img-fluid rounded-3" src="../assets/ip-address.jpg" alt="portfolio">
-                            </div>
-                            <h3>IP Address Tracker</h3>
-                            <p>This Web App uses the Geolocation API by IPify which displays data on an IP Address given to it and the React Leaflet API to show the location of the IP Address on the World Map. The whole project was done using React and Bootstrap</p>
-                    </div>
 
-                    <div id="links">
-                        <div class="rounded-3" id="btns"><a target="_blank" href="https://ip-address-tracker-j5c7.onrender.com/">Live Demo</a></div>
-                        <div class="rounded-3" id="btns"><a target="_blank" href="https://github.com/MuchiriAndrew/Front-End-Projects/tree/master/IP%20address%20tracker">GitHub Repo</a></div>
-                    </div>
-                </div>
 
                 <div v-motion
             :initial="{
@@ -258,10 +260,10 @@ export default {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
      margin-bottom: 10px;
 }
-#image-div:hover {
+/* #image-div:hover {
     scale: 1.05;
     transition: 0.8s ease-in-out;
-}
+} */
 #links {
     display: flex;
     justify-content: space-around;

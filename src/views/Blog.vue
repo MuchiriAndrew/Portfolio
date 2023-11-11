@@ -50,8 +50,8 @@ export default {
       background2: "none",
       color1:"#65ffda",
       color2:"hsl(239, 57%, 85%)",
-      articleData: [],
-      otherData:[],
+      articleData: [{"id":2,"title":"Ruby On Rails","content":"Ruby on Rails, often simply Rails, is a web application framework written in the Ruby programming language. It is designed to make programming web applications easier by making assumptions about what developers need to get started.One of the main advantages of Rails is its convention over configuration principle. This means that Rails comes with a set of conventions for how a web application should be structured, and developers can follow these conventions to get started quickly without having to make a lot of decisions about how to structure their application.Another advantage of Rails is its active and supportive community. Because Rails is open source, there are many contributors who have created a wide variety of plugins and gems (libraries) that can be easily integrated into a Rails application. This means that developers can often find pre-built solutions to common problems, which can save a lot of time and effort.In addition, Rails has a built-in testing framework that makes it easy for developers to write and run automated tests for their application. This helps to ensure that the application is working as expected and makes it easier to make changes without breaking existing functionality.Overall, Ruby on Rails is a powerful and flexible web application framework that can help developers to create high-quality, maintainable web applications quickly and easily.","timestamp":"Thursday 10th August 4.21PM","created_at":"2023-08-10T13:21:30.854Z","updated_at":"2023-08-10T13:21:30.854Z","source":"Extracted from ChatGPT"}],
+      otherData:[{"id":4,"title":"Live long enough to see yourself become a villain??","content":"“He who fights with monsters might take care lest he thereby become a monster. And if you gaze for long into an abyss, the abyss gazes also into you.” - Friedrich Nietzsche.A villain uses brutal tactics to impose his will. Should you battle that villain and destroy him, the brutality of battle stays with you into your future interactions. If you are not careful, you are likely to use that brutality to impose your own will. Thus becoming the villain. Let’s say a dragon is terrorizing a village for years. The dragon comes by night, wrecks havoc, and flies off with a young girl every time it visits. Finally, a brave warrior steps up and offers to set off to kill the dragon in its lair and return the young girls. The brave warrior ventures into the wilderness to find the dragon, only to discover there are countless dragons in the the wilderness. He becomes proficient in battling dragons, which is brutal and devastating every time. He develops tactics and learns how to become vicious so that he survives, and can keep on with his mission. Finally, he reaches the dragons lair and does battle, eventually destroying the beast in a epic and bloody fight that leaves him scarred. The brave warrior returns the young girls to the village where he promptly is made king and glorified by the people. He then constructs a wall around the village to keep out dragons, then he places all the young girls into a guarded tower where they can be protected from dragons. He imposes a curfew and posts senturies who make sure people aren’t leaving the safety of the walls or walking out at night to be picked off by a dragon. It’s not long before the villagers feel imprisoned and voice their concern. The brave warrior reminds them of the horrors the dragon caused and how his treatment of them is for their own safety. The villagers begin to resent the warrior. They rebel but are easily dispatched by the experienced dragon slaying warrior who again expresses to them he is only acting in their best interest. Eventually a brave young warrior from within the prison state emerges and goes to war with the tyrannical king, himself learning the brutality of war before emerging triumphant and scarred, intent on sparing his village from the mistakes of the past he establishes rules to impose on his village… It is the endless death and rebirth of society, marked by the defeat of old enemies and the rise of new ones. The brave warriors who die fighting are spared the painful future of becoming the villain","timestamp":"Thursday 10th August 4.08PM","created_at":"2023-08-10T13:06:36.001Z","updated_at":"2023-08-10T13:09:21.455Z","source":"Extracted from Quora"}],
       renderedData:[],
       loading:true,
       isSelected:false,
@@ -82,25 +82,25 @@ export default {
       this.currentItem = item
     },
 
-    async fetchArticles() {
-      const response = await fetch("https://blog.andrewmuchiri.com/articles");
-      this.articleData = await response.json();
-    },
+    // async fetchArticles() {
+    //   const response = await fetch("https://blog.andrewmuchiri.com/articles");
+    //   this.articleData = await response.json();
+    // },
 
-    async fetchOthers() {
-      const response = await fetch("https://blog.andrewmuchiri.com/others");
-      this.otherData = await response.json();
-    },
+    // async fetchOthers() {
+    //   const response = await fetch("https://blog.andrewmuchiri.com/others");
+    //   this.otherData = await response.json();
+    // },
 
-    async loadData() {
-      await this.fetchArticles();
-      await this.fetchOthers();
-    },
+    // async loadData() {
+    //   await this.fetchArticles();
+    //   await this.fetchOthers();
+    // },
   },
 
   async mounted() {
     try {
-      await this.loadData();
+      // await this.loadData();
       this.loading = false;
       this.renderedData = this.articleData
     } catch (error) {

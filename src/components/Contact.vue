@@ -166,7 +166,7 @@
                 duration: 400,
                 ease: 'easeInOut'
                 },
-            }">Designed and Created by Andrew Muchiri</p>
+            }">Designed and Built by Andrew Muchiri</p>
 
         </div>
 

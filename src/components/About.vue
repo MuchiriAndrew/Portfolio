@@ -39,70 +39,92 @@
                 </div>
             </div>
 
-            <div id="heading">
+            <!-- <div id="heading">
                 <h4 class="mt-5">My Skills</h4>
-            </div>
+            </div> -->
 
-            <div id="skills" class="mt-3">
+            <div id="skills" class="mt-3 ">
+                    <div class="" id="heading">
+                        <h4 class="mt-5">SKILLS</h4>
+                    </div>
+
                     <div id="col1" class="">
                         <ul class="p-0" style="list-style:none" id="frontend">
-                            <h5>FRONTEND TECHNOLOGIES</h5>
-                            <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="#64ffda" class="bi bi-caret-right" viewBox="0 0 16 16">
-                            <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
-                            </svg> HTML/CSS</li>
+                            <h5>LANGUAGES</h5>
                             <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="#64ffda" class="bi bi-caret-right" viewBox="0 0 16 16">
                             <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
                             </svg> JavaScript</li>
                             <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="#64ffda" class="bi bi-caret-right" viewBox="0 0 16 16">
                             <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
-                            </svg> React</li>
+                            </svg> HTML</li>
                             <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="#64ffda" class="bi bi-caret-right" viewBox="0 0 16 16">
                             <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
-                            </svg> Vuejs</li>
+                            </svg> CSS</li>
                             <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="#64ffda" class="bi bi-caret-right" viewBox="0 0 16 16">
                             <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
-                            </svg> WordPress</li>
+                            </svg> PHP</li>
                             <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="#64ffda" class="bi bi-caret-right" viewBox="0 0 16 16">
                             <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
-                            </svg> Bootstrap</li>
+                            </svg> Ruby</li>
+                            <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="#64ffda" class="bi bi-caret-right" viewBox="0 0 16 16">
+                            <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
+                            </svg> Java</li>
+                            <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="#64ffda" class="bi bi-caret-right" viewBox="0 0 16 16">
+                            <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
+                            </svg> SQL</li>
                         </ul>
 
                     </div>
 
                     <div id="col2" class="">
                         <ul class="p-0" style="list-style:none" id="backend">
-                            <h5>BACKEND TECHNOLOGIES</h5>
+                            <h5>FRAMEWORKS</h5>
+                           <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="#64ffda" class="bi bi-caret-right" viewBox="0 0 16 16">
+                            <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
+                            </svg> Vuejs</li>
+                           <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="#64ffda" class="bi bi-caret-right" viewBox="0 0 16 16">
+                            <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
+                            </svg> React</li>
                            <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="#64ffda" class="bi bi-caret-right" viewBox="0 0 16 16">
                             <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
                             </svg> Nodejs</li>
                            <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="#64ffda" class="bi bi-caret-right" viewBox="0 0 16 16">
                             <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
-                            </svg> Ruby</li>
+                            </svg> Ruby On Rails</li>
                            <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="#64ffda" class="bi bi-caret-right" viewBox="0 0 16 16">
                             <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
-                            </svg> Ruby on Rails</li>
+                            </svg> Laravel</li>
+                           <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="#64ffda" class="bi bi-caret-right" viewBox="0 0 16 16">
+                            <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
+                            </svg> Bootstrap</li>
+                           <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="#64ffda" class="bi bi-caret-right" viewBox="0 0 16 16">
+                            <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
+                            </svg> TailwindCSS</li>
                         </ul>
 
                     </div>
 
                     <div id="col3" class="">
                         <ul class="p-0" style="list-style:none">
-                            <h5>DATABASES, TOOLS AND PLATFORMS</h5>
-                            <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="#64ffda" class="bi bi-caret-right" viewBox="0 0 16 16">
-                            <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
-                            </svg> SQL</li>
+                            <h5>DATABASES & TOOLS</h5>
                             <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="#64ffda" class="bi bi-caret-right" viewBox="0 0 16 16">
                             <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
                             </svg> MongoDB</li>
                             <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="#64ffda" class="bi bi-caret-right" viewBox="0 0 16 16">
                             <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
+                            </svg> MySQL</li>
+                            <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="#64ffda" class="bi bi-caret-right" viewBox="0 0 16 16">
+                            <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
+                            </svg> WordPress</li>
+                            <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="#64ffda" class="bi bi-caret-right" viewBox="0 0 16 16">
+                            <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
                             </svg> Render</li>
                             <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="#64ffda" class="bi bi-caret-right" viewBox="0 0 16 16">
                             <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
-                            </svg> Amazon Web Services</li>
+                            </svg> AWS EC2</li>
                             <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="#64ffda" class="bi bi-caret-right" viewBox="0 0 16 16">
                             <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
-                            </svg> Google App Engine</li>
+                            </svg> Google Cloud</li>
                             <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="#64ffda" class="bi bi-caret-right" viewBox="0 0 16 16">
                             <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
                             </svg> Nginx</li>
@@ -111,10 +133,8 @@
                             </svg> Postman</li>
                             <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="#64ffda" class="bi bi-caret-right" viewBox="0 0 16 16">
                             <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
-                            </svg> GIT</li>
-                            <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="#64ffda" class="bi bi-caret-right" viewBox="0 0 16 16">
-                            <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
-                            </svg> GitHub</li>
+                            </svg> GIT & GitHub</li>
+
                         </ul>
 
                     </div>
@@ -143,7 +163,7 @@ export default {
 #wrapper2 {
     background: #0a192f;
     /* background: aqua; */
-    min-height: max-content;
+    height: max-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -211,7 +231,7 @@ export default {
 }
 
 #heading {
-    width: 100%;
+    width: 15%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -219,8 +239,9 @@ export default {
 }
 
 #heading h4 {
-    color: hsl(239, 57%, 85%);
-    font-size: 28px;
+    /* color: hsl(239, 57%, 85%); */
+    color: #0075FF;
+    font-size: 20px;
     font-family: Poppins;
 }
 
@@ -231,20 +252,20 @@ export default {
 }
 
 #col1 {
-    width: 33.333%;
+    width: 25%;
     height: 100%;
     display: flex;
     justify-content: center;
 }
 
 #col2 {
-    width: 33.333%;
+    width: 25%;
     height: 100%;
     display: flex;
     justify-content: center;
 }
 #col3 {
-    width: 33.333%;
+    width: 25%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -260,11 +281,13 @@ ul {
 
 h5 {
     color: #64ffda;
-    font-size: 14px;
+    font-size: 18px;
+    width: max-content;
 }
 
 li {
     color:hsl(239, 57%, 85%);
+    margin-top: 7px;
 }
 
 @media (max-width: 992px) {
@@ -319,20 +342,20 @@ li {
 }
 
 #col1 {
-    width: 33.333%;
+    width: 25%;
     height: 100%;
     display: flex;
     justify-content: center;
 }
 
 #col2 {
-    width: 33.333%;
+    width: 25%;
     height: 100%;
     display: flex;
     justify-content: center;
 }
 #col3 {
-    width: 33.333%;
+    width: 25%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -350,8 +373,8 @@ ul {
 
 @media (max-width: 992px) and (max-height: 500px)  {
 #txt-wrapper {
-    min-height: max-content;
-    height: 180vh;
+    min-height: 180vh;
+    height: max-content;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -400,20 +423,20 @@ ul {
 }
 
 #col1 {
-    width: 33.333%;
+    width: 25%;
     height: 100%;
     display: flex;
     justify-content: center;
 }
 
 #col2 {
-    width: 33.333%;
+    width: 25%;
     height: 100%;
     display: flex;
     justify-content: center;
 }
 #col3 {
-    width: 33.333%;
+    width: 25%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -432,8 +455,8 @@ ul {
 
 @media (max-width: 768px) {
 #txt-wrapper {
-    /* min-height: max-content; */
-    height: 170vh;
+    min-height: 170vh;
+    height: max-content;
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -482,11 +505,21 @@ ul {
     justify-content: space-around;
 }
 
+#heading {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: max-content;
+    margin-bottom: 2rem;
+}
+
 #col1 {
     width: 100%;
     height: max-content;
     display: flex;
     justify-content: center;
+    padding: 10px;
 }
 
 #col2 {
@@ -494,12 +527,16 @@ ul {
     height: max-content;
     display: flex;
     justify-content: center;
+    padding: 10px;
+
 }
 #col3 {
     width: 100%;
     height: max-content;
     display: flex;
     justify-content: center;
+    padding: 10px;
+
 }
 
 ul {
@@ -514,7 +551,8 @@ ul {
 
 @media screen and (max-height:720px) and (max-width:768px) {
 #txt-wrapper {
-    height: 250vh;
+    height: max-content;
+    min-height: 250vh;
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -594,7 +632,8 @@ ul {
 }
 @media screen and (max-height:400px) and (max-width:768px) {
 #txt-wrapper {
-    height: 350vh;
+    height: max-content;
+    min-height: 350vh;
     width: 90%;
     display: flex;
     flex-direction: column;
