@@ -31,7 +31,7 @@
             }" id="column" class="col-12 col-lg-4 p-4">
             <div>
                 <div id="image-div" class="rounded-3 ">
-                        <img class="img-fluid rounded-3" src="../assets/portfolio.png" alt="portfolio">
+                        <img class="img-fluid rounded-3" src="../assets/portfolio.jpg" alt="portfolio">
                     </div>
                         <h3>Portfolio Website</h3>
                         <p>My personal portfolio website made using Vuejs for the frontend and Ruby on Rails for the backend on the blog page. Also used Bootstrap and the vueuse/motion library for the on scroll animations</p>
@@ -117,7 +117,7 @@
             }" id="column" class="col-12 col-lg-4 p-4">
                     <div>
                         <div id="image-div" class="rounded-3">
-                                <img class="img-fluid rounded-3" src="../assets/countries.png" alt="portfolio">
+                                <img class="img-fluid rounded-3" src="../assets/countries.jpg" alt="portfolio">
                             </div>
                             <h3>REST Countries API</h3>
                             <p>This Web app uses the REST countries 3rd party API which allows the user to search for any country by name/region and it then displays data on the country. It also uses the leaflet API which shows the country's position on the World Map. The whole project was done using React and Bootstrap</p>
@@ -149,7 +149,7 @@
             }" id="column" class="col-12 col-lg-4 p-4">
                     <div>
                             <div id="image-div" class="rounded-3">
-                                <img class="img-fluid rounded-3" src="../assets/space.png" alt="portfolio">
+                                <img class="img-fluid rounded-3" src="../assets/space.jpg" alt="portfolio">
                             </div>
                             <h3>Space Tourism Website</h3>
                             <p>A multi-page space tourism website done using React, Bootstrap and Framer Motion for the subtle animations. A purely frontend project that challenged my skills in React Router and State Management.</p>
@@ -177,7 +177,7 @@
             }" id="column" class="col-12 col-lg-4 p-4">
                     <div>
                             <div id="image-div" class="rounded-3">
-                                <img class="img-fluid rounded-3" src="../assets/ecommerce.png" alt="portfolio">
+                                <img class="img-fluid rounded-3" src="../assets/ecommerce.jpg" alt="portfolio">
                             </div>
                             <h3>E-Commerce Product Page</h3>
                             <p>Another noteworthy frontend project done using Vuejs and Bootstrap. Challenged me to work with cart functionality, using the local storage function in JavaScript and Bootstrap's Modal for the lightbox gallery</p>

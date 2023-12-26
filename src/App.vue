@@ -1,5 +1,5 @@
 <template>
-  <router-view/>
+  <router-view />
 </template>
 
 <style>
@@ -31,5 +31,3 @@
   background: #64ffda;
 }
 </style>
-
-// #0a192f

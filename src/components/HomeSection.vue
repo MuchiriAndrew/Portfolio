@@ -81,7 +81,7 @@
 export default {
   data() {
     return {
-      pdfUrl : "../MuchiriResume.pdf"
+      pdfUrl : "../resume.pdf"
     }
   },
 

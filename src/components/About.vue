@@ -31,17 +31,13 @@
 
             <div id="aboutrow" class="">
                 <div id="txt-col" class="">
-                <p>Hello, my name is Andrew Muchiri. I am a software engineer based in Nairobi, Kenya. I am 20 years old and currently a third year Computer Science student at Kenyatta University. I enjoy coming up with creative solutions to complex issues using various technologies. My love for writing code began when I started studying Computer Science and voila! I guess I found my passion. Besides creating beautiful and efficient web applications, I am an avid chess player and occassionally take part in chess tournaments where I have a blast! <br> I aspire to be a renowned 10x developer who prioritizes delivering softwares that exceed client expectations.</p>
+                <p>Hello, my name is Andrew Muchiri. I am a software engineer based in Nairobi, Kenya. I am currently a Computer Science student at Kenyatta University. I enjoy coming up with creative solutions to complex issues using various technologies. My love for writing code began when I started studying Computer Science and voila! I guess I found my passion. Besides creating beautiful and efficient web applications, I am an avid chess player and occassionally take part in chess tournaments where I have a blast! <br> I aspire to be a renowned 10x developer who prioritizes delivering softwares that exceed client expectations.</p>
                 </div>
 
                 <div id="img-col" class="">
                     <img id="myimg" class="img-fluid rounded-3" src="../assets/myimg.jpg" alt="me">
                 </div>
             </div>
-
-            <!-- <div id="heading">
-                <h4 class="mt-5">My Skills</h4>
-            </div> -->
 
             <div id="skills" class="mt-3 ">
                     <div class="" id="heading">
@@ -159,7 +155,6 @@ export default {
 </script>
 
 <style scoped>
-
 #wrapper2 {
     background: #0a192f;
     /* background: aqua; */

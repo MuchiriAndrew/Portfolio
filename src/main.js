@@ -1,14 +1,25 @@
-import { createApp } from 'vue'
-import { MotionPlugin } from '@vueuse/motion'
-import App from './App.vue'
-import router from './router'
-import 'bootstrap/dist/css/bootstrap.css'
+import { createApp } from "vue";
+import { createRouter, createWebHistory } from "vue-router";
+import App from "./App.vue";
+import { MotionPlugin } from "@vueuse/motion";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.js";
+import HomeView from "./views/HomeView.vue";
 
+const routes = [
+  {
+    path: "/",
+    name: "HomeView",
+    component: HomeView,
+  },
+];
 
-const app = createApp(App)
-app.use(router)
-app.use(MotionPlugin)
-app.mount('#app')
+const router = createRouter({
+  history: createWebHistory(),
+  routes: routes,
+});
 
-import 'bootstrap/dist/js/bootstrap.js'
-
+const app = createApp(App);
+app.use(MotionPlugin);
+app.use(router);
+app.mount("#app");
