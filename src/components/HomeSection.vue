@@ -57,7 +57,7 @@
                 duration: 400,
                 ease: 'easeInOut'
                 },
-            }">Highly motivated and hardworking software engineer with a passion for Full-Stack Web development. Proficient in using cutting-edge technologies to come up with innovative solutions. I love writing code and creating beautiful and efficient softwares. I believe that true happiness comes from closing 100 chrome tabs after solving an obscure programming bug and not from anywhere else.</span>
+            }">Highly motivated and hardworking software engineer with a passion for Full-Stack Web development. Proficient in using cutting-edge technologies to come up with innovative solutions. I love writing code and creating beautiful and efficient softwares. I believe that true happiness comes from closing 100 chrome tabs after solving an obscure programming bug.</span>
         <div v-motion
             :initial="{
                 opacity: 0,

@@ -31,7 +31,9 @@
 
             <div id="aboutrow" class="">
                 <div id="txt-col" class="">
-                <p>Hello, my name is Andrew Muchiri. I am a software engineer based in Nairobi, Kenya. I am currently a Computer Science student at Kenyatta University. I enjoy coming up with creative solutions to complex issues using various technologies. My love for writing code began when I started studying Computer Science and voila! I guess I found my passion. Besides creating beautiful and efficient web applications, I am an avid chess player and occassionally take part in chess tournaments where I have a blast! <br> I aspire to be a renowned 10x developer who prioritizes delivering softwares that exceed client expectations.</p>
+                <!-- <p>Hello, my name is Andrew Muchiri. I am a software engineer based in Nairobi, Kenya. I enjoy coming up with creative solutions to complex issues using various technologies. My love for writing code began when I started studying Computer Science and voila! I guess I found my passion. Besides creating beautiful and efficient web applications, I am an avid chess player and occassionally take part in chess tournaments where I have a blast! <br> I aspire to be a renowned 10x developer who prioritizes delivering softwares that exceed client expectations.</p> -->
+
+                <p>Hello, my name is Andrew Muchiri. I am a software engineer based in Nairobi, Kenya. I enjoy coming up with creative solutions to complex issues using various technologies. My love for writing code began when I started studying Computer Science and voila! I guess I found my passion. I have experience in various programming languages including JavaScript, Python, and Java, and I have worked on numerous projects ranging from web applications to machine learning models. I am constantly learning and keeping up with the latest trends in technology to improve my skills. Besides creating beautiful and efficient web applications, I am an avid chess player and occasionally take part in chess tournaments where I have a blast! <br> I aspire to be a renowned 10x developer who prioritizes delivering software that exceeds client expectations.</p>
                 </div>
 
                 <div id="img-col" class="">
@@ -64,7 +66,7 @@
                             </svg> Ruby</li>
                             <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="#64ffda" class="bi bi-caret-right" viewBox="0 0 16 16">
                             <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
-                            </svg> Java</li>
+                            </svg> Python</li>
                             <li> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" fill="#64ffda" class="bi bi-caret-right" viewBox="0 0 16 16">
                             <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
                             </svg> SQL</li>

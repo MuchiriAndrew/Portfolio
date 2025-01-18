@@ -11,7 +11,7 @@
                 duration: 500,
                 ease: 'easeInOut'
                 },
-            }" class="mb-5"><span>03.</span> Projects</h2>
+            }" class="mb-5"><span>03.</span> Featured Projects</h2>
         <div id="content-wrapper" class="">
             <div class="row m-0">
 
@@ -31,20 +31,22 @@
             }" id="column" class="col-12 col-lg-4 p-4">
             <div>
                 <div id="image-div" class="rounded-3 ">
-                        <img class="img-fluid rounded-3" src="../assets/portfolio.jpg" alt="portfolio">
+                        <img class="pb-5 pt-5 img-fluid rounded-3" src="../assets/mpesa_woocommerce.png" alt="portfolio">
                     </div>
-                        <h3>Portfolio Website</h3>
-                        <p>My personal portfolio website made using Vuejs for the frontend and Ruby on Rails for the backend on the blog page. Also used Bootstrap and the vueuse/motion library for the on scroll animations</p>
+                        <h3>MPESA WooCommerce Plugin</h3>
+                        <p>
+                            This is a custom WooCommerce plugin that allows users to pay for their orders using MPESA. The plugin uses the MPESA API to initiate the payment and the WooCommerce API to update the order status once the payment is complete
+                        </p>
             </div>
 
 
                     <div id="links">
-                        <div class="rounded-3" id="btns"><a target="_blank" href="https://andrew-muchiri.onrender.com/">Live Demo</a></div>
-                        <div class="rounded-3" id="btns"><a target="_blank" href="https://github.com/MuchiriAndrew/Portfolio">GitHub Repo</a></div>
+                        <div class="rounded-3" id="btns"><a target="_blank" href="https://mpesa-demo-wordpress.projects.muchiriandrew.tech/shop">Live Demo</a></div>
+                        <!-- <div class="rounded-3" id="btns"><a target="_blank" href="https://github.com/MuchiriAndrew/Portfolio">GitHub Repo</a></div> -->
                     </div>
                 </div>
 
-                <!-- <div v-motion
+                <div v-motion
             :initial="{
                 opacity: 0,
                 y:50
@@ -60,18 +62,20 @@
             }" id="column" class="col-12 col-lg-4 p-4 mb-4">
                     <div>
                         <div id="image-div" class="rounded-3">
-                                <img class="img-fluid rounded-3" src="../assets/comments.png" alt="portfolio">
+                                <img class="img-fluid rounded-3" src="../assets/comments.jpg" alt="portfolio">
                             </div>
-                            <h3>Interactive comments</h3>
-                            <p>This was a project I worked on together with my talented friend <a id="collab" href="https://github.com/Gerald-006">Gerald Jackson</a>. A fullstack social media app in which users can create their own accounts and be able to post, update and delete their comments as well as reply to other people's comments. The frontend was done using Vuejs and the backend using Ruby on Rails</p>
+                            <h3>Mini Social Forum</h3>
+                            <p>
+                                This full-stack project was done using Vuejs and laravel using inertiajs for the frontend. It is a mini social forum where users can create posts, comment on posts and like posts. It also has a user profile page where users can update their profile information
+                            </p>
 
                     </div>
 
                     <div id="links">
-                        <div class="rounded-3" id="btns"><a target="_blank" href="https://interactive-comments-a6k7.onrender.com/home/60">Live Demo</a></div>
-                        <div class="rounded-3" id="btns"><a target="_blank" href="https://github.com/MuchiriAndrew/Interactive-Comments-Section">GitHub Repo</a></div>
+                        <div class="rounded-3" id="btns"><a target="_blank" href="https://interactive-comments.projects.muchiriandrew.tech/">Live Demo</a></div>
+                        <div class="rounded-3" id="btns"><a target="_blank" href="https://github.com/MuchiriAndrew/mini-sm-forum">GitHub Repo</a></div>
                     </div>
-                </div> -->
+                </div>
 
                 <div v-motion
             :initial="{
@@ -101,36 +105,10 @@
                     </div>
                 </div>
 
-                <div v-motion
-            :initial="{
-                opacity: 0,
-                y:50
-            }"
-            :visibleOnce="{
-                opacity: 1,
-                y:0,
-                transition: {
-                delay:400,
-                duration: 500,
-                ease: 'easeInOut'
-                },
-            }" id="column" class="col-12 col-lg-4 p-4">
-                    <div>
-                        <div id="image-div" class="rounded-3">
-                                <img class="img-fluid rounded-3" src="../assets/countries.jpg" alt="portfolio">
-                            </div>
-                            <h3>REST Countries API</h3>
-                            <p>This Web app uses the REST countries 3rd party API which allows the user to search for any country by name/region and it then displays data on the country. It also uses the leaflet API which shows the country's position on the World Map. The whole project was done using React and Bootstrap</p>
-                    </div>
-
-                    <div id="links">
-                        <div class="rounded-3" id="btns"><a target="_blank" href="https://rest-countries-api-project.onrender.com/">Live Demo</a></div>
-                        <div class="rounded-3" id="btns"><a target="_blank" href="https://github.com/MuchiriAndrew/Front-End-Projects/tree/master/REST%20countries%20API%20project">GitHub Repo</a></div>
-                    </div>
-                </div>
+                
             </div>
 
-            <div class="row m-0">
+            <div class="row m-0 ">
 
 
                 <div v-motion
@@ -188,8 +166,69 @@
                         <div class="rounded-3" id="btns"><a target="_blank" href="https://github.com/MuchiriAndrew/Front-End-Projects/tree/master/e-commerce%20product%20page">GitHub Repo</a></div>
                     </div>
                 </div>
+
+                <div v-motion
+            :initial="{
+                opacity: 0,
+                y:50
+            }"
+            :visibleOnce="{
+                opacity: 1,
+                y:0,
+                transition: {
+                delay:400,
+                duration: 500,
+                ease: 'easeInOut'
+                },
+            }" id="column" class="col-12 col-lg-4 p-4">
+                    <div>
+                        <div id="image-div" class="rounded-3">
+                                <img class="img-fluid rounded-3" src="../assets/countries.jpg" alt="portfolio">
+                            </div>
+                            <h3>REST Countries API</h3>
+                            <p>This Web app uses the REST countries 3rd party API which allows the user to search for any country by name/region and it then displays data on the country. It also uses the leaflet API which shows the country's position on the World Map. The whole project was done using React and Bootstrap</p>
+                    </div>
+
+                    <div id="links">
+                        <div class="rounded-3" id="btns"><a target="_blank" href="https://rest-countries-api-project.onrender.com/">Live Demo</a></div>
+                        <div class="rounded-3" id="btns"><a target="_blank" href="https://github.com/MuchiriAndrew/Front-End-Projects/tree/master/REST%20countries%20API%20project">GitHub Repo</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row m-0">
+                <div v-motion
+            :initial="{
+                opacity: 0,
+                y:50
+            }"
+            :visibleOnce="{
+                opacity: 1,
+                y:0,
+                transition: {
+                delay:200,
+                duration: 500,
+                ease: 'easeInOut'
+                },
+            }" id="column" class="col-12 col-lg-4 p-4">
+            <div>
+                <div id="image-div" class="rounded-3 ">
+                        <img class="img-fluid rounded-3" src="../assets/portfolio.jpg" alt="portfolio">
+                    </div>
+                        <h3>Portfolio Website</h3>
+                        <p>My personal portfolio website made using Vuejs for the frontend and Ruby on Rails for the backend on the blog page. Also used Bootstrap and the vueuse/motion library for the on scroll animations</p>
+            </div>
+
+
+                    <div id="links">
+                        <div class="rounded-3" id="btns"><a target="_blank" href="#">Live Demo</a></div>
+                        <div class="rounded-3" id="btns"><a target="_blank" href="https://github.com/MuchiriAndrew/Portfolio">GitHub Repo</a></div>
+                    </div>
+                </div>
+
+                
             </div>
         </div>
+        
     </div>
 </template>
 
