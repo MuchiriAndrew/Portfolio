@@ -1,6 +1,6 @@
 <template>
   <footer class="border-t border-gray-700/50 bg-surface">
-    <div class="max-w-6xl mx-auto px-4 sm:px-0  py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
         <div class="space-y-1">
           <p class="font-semibold text-white">{{ footer.name }}</p>
@@ -8,7 +8,7 @@
           <p class="text-muted text-sm">{{ footer.role }}</p>
         </div>
         <div>
-          <p class="text-muted text-sm mb-2">Media</p>
+          <!-- <p class="text-muted text-sm mb-2">Media</p> -->
           <div class="flex gap-4">
             <a
               v-for="link in socialLinks"
@@ -18,7 +18,7 @@
               rel="noopener noreferrer"
               class="text-muted hover:text-primary transition-colors"
             >
-              <SocialIcon :platform="link.platform" />
+              <SocialIcon :platform="link.platform" :logo="link.logo" />
             </a>
           </div>
         </div>

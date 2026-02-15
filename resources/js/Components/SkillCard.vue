@@ -1,6 +1,6 @@
 <template>
   <div
-    class="rounded-lg border border-gray-600/50 bg-surface-light flex flex-col items-center justify-center p-6 aspect-square min-h-[120px] transition-colors hover:border-primary/50"
+    class=" border border-gray-600/50 bg-surface-light flex flex-col items-center justify-center p-6 aspect-square min-h-[120px] transition-colors hover:border-primary/50"
   >
     <div class="flex-1 flex items-center justify-center w-full mb-3">
       <img

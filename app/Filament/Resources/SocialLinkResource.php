@@ -33,11 +33,17 @@ class SocialLinkResource extends Resource
                         'linkedin' => 'LinkedIn',
                         'figma' => 'Figma',
                         'dribbble' => 'Dribbble',
+                        'email' => 'Email',
                         'other' => 'Other',
                     ])
                     ->required(),
                 Forms\Components\TextInput::make('label'),
                 Forms\Components\TextInput::make('url'),
+                Forms\Components\FileUpload::make('logo')
+                    ->directory('social-logos')
+                    ->acceptedFileTypes(['image/svg+xml', 'image/png', 'image/jpeg', 'image/webp', 'image/gif'])
+                    ->columnSpanFull()
+                    ->helperText('SVG recommended: colors and hover can be styled from the frontend.'),
                 Forms\Components\TextInput::make('sort_order')
                     ->required()
                     ->numeric()
@@ -49,6 +55,9 @@ class SocialLinkResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\ImageColumn::make('logo')
+                    ->circular()
+                    ->defaultImageUrl(fn ($record) => 'https://ui-avatars.com/api/?name=' . urlencode($record->platform ?? '')),
                 Tables\Columns\TextColumn::make('platform')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('label')

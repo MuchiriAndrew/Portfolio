@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactFormSubmittedMail;
+use App\Models\ContactSubmission;
 use App\Models\FunFact;
 use App\Models\Project;
 use App\Models\SiteSetting;
 use App\Models\Skill;
 use App\Models\SocialLink;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Inertia\Inertia;
 
 class PageController extends Controller
@@ -22,7 +25,13 @@ class PageController extends Controller
         foreach ($keys as $key) {
             $settings[$key] = SiteSetting::get($key);
         }
-        $socialLinks = SocialLink::orderBy('sort_order')->get();
+        $socialLinks = SocialLink::orderBy('sort_order')->get()->map(fn ($link) => [
+            'id' => $link->id,
+            'platform' => $link->platform,
+            'label' => $link->label,
+            'url' => $link->url,
+            'logo' => $link->logo ? '/storage/' . $link->logo : null,
+        ]);
 
         return [
             'siteName' => $settings['site_name'] ?? 'Portfolio',
@@ -131,6 +140,76 @@ class PageController extends Controller
 
         return Inertia::render('Contact', array_merge($shared, [
             'contact' => $contact,
+        ]));
+    }
+
+    private const CONTACT_FORWARD_EMAIL = 'kariukia225@gmail.com';
+
+    public function contactSubmit(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'email'],
+            'title' => ['required', 'string', 'max:255'],
+            'message' => ['required', 'string', 'max:10000'],
+        ]);
+
+        $submission = ContactSubmission::create($validated);
+
+        try {
+            Mail::to(self::CONTACT_FORWARD_EMAIL)->send(new ContactFormSubmittedMail($submission));
+        } catch (\Throwable $e) {
+            report($e);
+            return back()->withErrors(['email' => 'Your message was saved but we could not send the notification. Please try again later.']);
+        }
+
+        return back()->with('contactSuccess', true);
+    }
+
+    private const WORKS_PER_PAGE = 12;
+
+    private function projectToArray(Project $p): array
+    {
+        return [
+            'id' => $p->id,
+            'slug' => $p->slug,
+            'title' => $p->title,
+            'description' => $p->description,
+            'tech_stack' => $p->tech_stack,
+            'image' => $p->image ? '/storage/' . $p->image : null,
+            'live_url' => $p->live_url,
+            'github_url' => $p->github_url,
+            'cached_url' => $p->cached_url,
+        ];
+    }
+
+    public function projectsIndex(Request $request)
+    {
+        $paginator = Project::where('is_published', true)
+            ->orderBy('sort_order')
+            ->paginate(self::WORKS_PER_PAGE);
+
+        $projects = $paginator->getCollection()->map(fn ($p) => $this->projectToArray($p))->values()->all();
+
+        if ($request->wantsJson()) {
+            return response()->json([
+                'data' => $projects,
+                'meta' => [
+                    'current_page' => $paginator->currentPage(),
+                    'last_page' => $paginator->lastPage(),
+                    'next_page_url' => $paginator->nextPageUrl(),
+                ],
+            ]);
+        }
+
+        $shared = $this->getSharedData();
+        return Inertia::render('Projects', array_merge($shared, [
+            'projects' => $projects,
+            'meta' => [
+                'current_page' => $paginator->currentPage(),
+                'last_page' => $paginator->lastPage(),
+                'next_page_url' => $paginator->nextPageUrl(),
+            ],
         ]));
     }
 

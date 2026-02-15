@@ -12,7 +12,7 @@
         class="text-muted hover:text-primary transition-colors"
         :aria-label="link.platform"
       >
-        <SocialIcon :platform="link.platform" />
+        <SocialIcon :platform="link.platform" :logo="link.logo" />
       </a>
       <div class="w-px flex-1 min-h-[100px] bg-gray-600" />
     </aside>
@@ -20,7 +20,7 @@
     <AppHeader />
 
     <main class="flex-1 pt-14 md:pt-16">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
         <slot />
       </div>
     </main>

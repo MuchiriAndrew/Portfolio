@@ -1,5 +1,5 @@
 <template>
-  <div v-if="text" class="relative mt-[112px] pb-14 md:pb-16 w-3/4 flex flex-col items-end justify-center">
+  <div v-if="text" class="w-full relative mt-[112px] pb-14 md:pb-16 flex flex-col items-center lg:items-end justify-center">
     <!-- Main quote box -->
     <div class="relative border border-muted px-8 py-8 text-center">
       <!-- Large opening quote marks (top-left) -->

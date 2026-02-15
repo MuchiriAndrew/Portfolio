@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class SocialLink extends Model
 {
-    protected $fillable = ['platform', 'label', 'url', 'sort_order'];
+    protected $fillable = ['platform', 'label', 'url', 'logo', 'sort_order'];
 }
