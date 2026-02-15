@@ -23,3 +23,66 @@
     --color-primary: #C778DD;
     --color-muted: #ABB2BF;
 }
+
+/* Rich text from Filament editor: line breaks, lists, links */
+.rich-text {
+    color: var(--color-muted);
+}
+.rich-text p {
+    margin-bottom: 0.75em;
+}
+.rich-text p:last-child {
+    margin-bottom: 0;
+}
+.rich-text ul, .rich-text ol {
+    margin-bottom: 0.75em;
+    padding-left: 1.5em;
+}
+.rich-text li {
+    margin-bottom: 0.25em;
+}
+.rich-text a {
+    color: var(--color-primary);
+}
+
+/* Animated underline: grow from left to right on hover (portfolio layout only) */
+#layout-wrapper a {
+    text-decoration: none;
+    position: relative;
+}
+#layout-wrapper a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0.05em;
+    width: 0;
+    height: 1px;
+    background-color: currentColor;
+    transition: width 0.25s ease;
+}
+#layout-wrapper a:hover::after {
+    width: 100%;
+}
+.rich-text strong {
+    font-weight: 600;
+    color: inherit;
+}
+.rich-text.rich-text--light {
+    color: #f8f8f2;
+}
+.rich-text.rich-text--light a {
+    color: var(--color-primary);
+}
+
+/* Remove browser autofill background completely – match page dark background */
+.contact-field:-webkit-autofill,
+.contact-field:-webkit-autofill:hover,
+.contact-field:-webkit-autofill:focus,
+.contact-field:-webkit-autofill:active {
+    -webkit-text-fill-color: #f8f8f2 !important;
+    caret-color: #f8f8f2;
+    background-color: #282C33 !important;
+    -webkit-box-shadow: 0 0 0 9999px #282C33 inset !important;
+    box-shadow: 0 0 0 9999px #282C33 inset !important;
+    transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s !important;
+}

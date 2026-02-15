@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="relative border px-4 pt-3 pb-3 transition-colors"
+      class="relative border bg-[#282C33] px-4 pt-3 pb-3 transition-colors"
       :class="[
         error ? 'border-red-500' : 'border-gray-500 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary',
       ]"
@@ -20,7 +20,7 @@
         :name="name"
         :autocomplete="autocomplete"
         :aria-label="placeholder || undefined"
-        class="block w-full bg-transparent text-white focus:outline-none pt-0.5"
+        class="contact-field block w-full bg-transparent text-white focus:outline-none pt-0.5"
         :class="isActive ? 'placeholder:opacity-0' : ''"
         v-bind="$attrs"
         @input="$emit('update:modelValue', ($event.target || $event).value)"

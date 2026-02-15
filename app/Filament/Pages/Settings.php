@@ -28,7 +28,7 @@ class Settings extends Page implements HasForms
     {
         $keys = [
             'site_name', 'hero_title', 'hero_highlight_1', 'hero_highlight_2', 'hero_description',
-            'hero_cta_text', 'hero_image', 'hero_status_text', 'quote_text', 'quote_author',
+            'hero_cta_text', 'hero_image', 'hero_status_text',
             'about_greeting', 'about_paragraph_1', 'about_paragraph_2', 'about_image',
             'contact_intro', 'support_number', 'discord_username', 'contact_email',
             'footer_name', 'footer_email', 'footer_role', 'copyright_text',
@@ -50,26 +50,41 @@ class Settings extends Page implements HasForms
                         Forms\Components\TextInput::make('hero_title')->label('Hero title (e.g. "Andrew is a")'),
                         Forms\Components\TextInput::make('hero_highlight_1')->label('Highlight 1 (e.g. web designer)'),
                         Forms\Components\TextInput::make('hero_highlight_2')->label('Highlight 2 (e.g. front-end developer)'),
-                        Forms\Components\Textarea::make('hero_description')->label('Hero description'),
+                        Forms\Components\RichEditor::make('hero_description')->label('Hero description')->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList'])->columnSpanFull(),
                         Forms\Components\TextInput::make('hero_cta_text')->label('CTA button text'),
-                        Forms\Components\FileUpload::make('hero_image')->label('Hero image')->image()->directory('hero'),
+                        Forms\Components\FileUpload::make('hero_image')
+                        ->label('Hero image')
+                        ->image()
+                        ->directory('hero')
+                        ->imageEditor()
+                        ->imageCropAspectRatio('4:3')
+                        ->imageResizeTargetWidth(800)
+                        ->imageResizeTargetHeight(600)
+                        ->imageResizeUpscale(false)
+                        ->downloadable()
+                        ->openable(),
                         Forms\Components\TextInput::make('hero_status_text')->label('Status (e.g. Currently working on Portfolio)'),
-                    ])->columns(1),
-                Forms\Components\Section::make('Quote')
-                    ->schema([
-                        Forms\Components\Textarea::make('quote_text')->label('Quote text'),
-                        Forms\Components\TextInput::make('quote_author')->label('Quote author'),
                     ])->columns(1),
                 Forms\Components\Section::make('About')
                     ->schema([
-                        Forms\Components\TextInput::make('about_greeting')->label('Greeting (e.g. Hello, i\'m Elias!)'),
-                        Forms\Components\Textarea::make('about_paragraph_1')->label('About paragraph 1'),
-                        Forms\Components\Textarea::make('about_paragraph_2')->label('About paragraph 2'),
-                        Forms\Components\FileUpload::make('about_image')->label('About image')->image()->directory('about'),
+                        Forms\Components\RichEditor::make('about_greeting')->label('Greeting (e.g. Hello, i\'m Elias!)')->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link'])->columnSpanFull(),
+                        Forms\Components\RichEditor::make('about_paragraph_1')->label('About paragraph 1')->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList'])->columnSpanFull(),
+                        Forms\Components\RichEditor::make('about_paragraph_2')->label('About paragraph 2')->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList'])->columnSpanFull(),
+                        Forms\Components\FileUpload::make('about_image')
+                        ->label('About image')
+                        ->image()
+                        ->directory('about')
+                        ->imageEditor()
+                        ->imageCropAspectRatio('3:4')
+                        ->imageResizeTargetWidth(600)
+                        ->imageResizeTargetHeight(800)
+                        ->imageResizeUpscale(false)
+                        ->downloadable()
+                        ->openable(),
                     ])->columns(1),
                 Forms\Components\Section::make('Contact')
                     ->schema([
-                        Forms\Components\Textarea::make('contact_intro')->label('Contact intro text'),
+                        Forms\Components\RichEditor::make('contact_intro')->label('Contact intro text')->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList'])->columnSpanFull(),
                         Forms\Components\TextInput::make('support_number')->label('Support me here (e.g. card number)'),
                         Forms\Components\TextInput::make('discord_username')->label('Discord (e.g. Elias#1234)'),
                         Forms\Components\TextInput::make('contact_email')->label('Contact email'),
@@ -79,7 +94,7 @@ class Settings extends Page implements HasForms
                         Forms\Components\TextInput::make('footer_name')->label('Footer name'),
                         Forms\Components\TextInput::make('footer_email')->label('Footer email'),
                         Forms\Components\TextInput::make('footer_role')->label('Footer role'),
-                        Forms\Components\TextInput::make('copyright_text')->label('Copyright text'),
+                        Forms\Components\RichEditor::make('copyright_text')->label('Copyright text')->toolbarButtons(['bold', 'italic', 'underline', 'link'])->columnSpanFull(),
                     ])->columns(1),
             ])
             ->statePath('data');

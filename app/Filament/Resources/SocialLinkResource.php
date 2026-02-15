@@ -43,7 +43,9 @@ class SocialLinkResource extends Resource
                     ->directory('social-logos')
                     ->acceptedFileTypes(['image/svg+xml', 'image/png', 'image/jpeg', 'image/webp', 'image/gif'])
                     ->columnSpanFull()
-                    ->helperText('SVG recommended: colors and hover can be styled from the frontend.'),
+                    ->helperText('SVG recommended: colors and hover can be styled from the frontend.')
+                    ->downloadable()
+                    ->openable(),
                 Forms\Components\TextInput::make('sort_order')
                     ->required()
                     ->numeric()

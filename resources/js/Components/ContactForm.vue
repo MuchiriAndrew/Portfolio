@@ -46,7 +46,7 @@
         <button
           type="submit"
           :disabled="sending"
-          class="border-2 border-primary bg-transparent px-6 py-3 text-white font-medium transition-colors hover:bg-primary cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+          class="border-2 border-primary bg-transparent px-6 py-3 text-white font-medium transition-colors hover:bg-primary hover:scale-105 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {{ sending ? 'Sending…' : 'Send' }}
         </button>

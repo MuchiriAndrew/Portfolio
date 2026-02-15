@@ -1,8 +1,9 @@
 <template>
   <div class="min-h-screen bg-surface text-gray-100 flex flex-col">
+
     <!-- Left sidebar (desktop) -->
-    <aside class="fixed left-0 top-1/2 -translate-y-1/2 z-30 hidden lg:flex flex-col items-center gap-6 pl-6">
-      <div class="w-px flex-1 min-h-[100px] bg-gray-600" />
+    <aside class="fixed left-0 top-0 z-99 hidden lg:flex flex-col items-center gap-6 pl-6">
+      <div class="w-px flex-1 min-h-[200px] bg-gray-600" />
       <a
         v-for="link in socialLinks"
         :key="link.id"
@@ -14,12 +15,11 @@
       >
         <SocialIcon :platform="link.platform" :logo="link.logo" />
       </a>
-      <div class="w-px flex-1 min-h-[100px] bg-gray-600" />
     </aside>
 
     <AppHeader />
 
-    <main class="flex-1 pt-14 md:pt-16">
+    <main class="flex-1 pt-14 md:pt-16" id="main-wrapper">
       <div class="mx-auto max-w-7xl px-4 sm:px-6">
         <slot />
       </div>
@@ -38,4 +38,21 @@ import SocialIcon from '@/Components/SocialIcon.vue'
 
 const page = usePage()
 const socialLinks = computed(() => page.props.socialLinks || [])
+const backgroundImageUrl = '/images/background.png'
 </script>
+
+
+<style scoped>
+#main-wrapper {
+  background-image: url('/images/background.png');
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/*  for small screens */
+@media (max-width: 768px) {
+  #main-wrapper {
+    background-image: none;
+  }
+}
+</style>

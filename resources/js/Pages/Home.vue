@@ -1,5 +1,6 @@
 <template>
-  <PortfolioLayout>
+  <PortfolioLayout >
+    <Head title="Andrew Muchiri" />
     <!-- Hero -->
     <section id="home" class="py-12 md:py-20 flex flex-col items-center">
       <div class="grid lg:grid-cols-2 gap-12 items-center justify-between">
@@ -11,8 +12,13 @@
             <span class="text-primary">{{ hero.highlight2 || 'front-end developer' }}</span>
           </h1>
 
-          <p class="text-muted mt-4 text-[16px]">
-            {{ hero.description || 'He crafts responsive websites where technologies meet creativity' }}
+          <div
+            v-if="hero.description"
+            class="rich-text text-[16px] mt-4 text-muted"
+            v-html="hero.description"
+          />
+          <p v-else class="text-muted mt-4 text-[16px]">
+            He crafts responsive websites where technologies meet creativity
           </p>
 
           <a
@@ -27,7 +33,7 @@
         <div class="relative flex flex-col justify-center items-end">
           <div class="relative ">
                 <img
-                  :src="heroImageUrl"
+                  :src="hero.image"
                   alt="Hero"
                   id="hero-image"
                   class="w-full h-full object-cover"
@@ -65,11 +71,8 @@
       </div>
 
       <!-- Quote -->
-     <div class="flex flex-col items-center justify-center">
-      <QuoteSection
-        :text="quote.text"
-          :author="quote.author ? `— ${quote.author}` : ''"
-        />
+      <div class="flex flex-col items-center justify-center">
+        <QuoteSection :quotes="quotes" />
       </div>
     </section>
 
@@ -104,48 +107,8 @@
           :name="skill.name"
           :image="skill.image"
         />
-        <SkillCard
-          v-for="skill in skills"
-          :key="skill.id"
-          :name="skill.name"
-          :image="skill.image"
-        />
-        <SkillCard
-          v-for="skill in skills"
-          :key="skill.id"
-          :name="skill.name"
-          :image="skill.image"
-        />
-        <SkillCard
-          v-for="skill in skills"
-          :key="skill.id"
-          :name="skill.name"
-          :image="skill.image"
-        />
-        <SkillCard
-          v-for="skill in skills"
-          :key="skill.id"
-          :name="skill.name"
-          :image="skill.image"
-        />
-        <SkillCard
-          v-for="skill in skills"
-          :key="skill.id"
-          :name="skill.name"
-          :image="skill.image"
-        />
-        <SkillCard
-          v-for="skill in skills"
-          :key="skill.id"
-          :name="skill.name"
-          :image="skill.image"
-        />
-        <SkillCard
-          v-for="skill in skills"
-          :key="skill.id"
-          :name="skill.name"
-          :image="skill.image"
-        />
+
+
       </div>
 
 
@@ -156,9 +119,9 @@
       <SectionHeading title="about-me" hash="#" />
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <p v-if="about.greeting" class="text-xl text-white font-medium mb-4">{{ about.greeting }}</p>
-          <p class="text-muted mb-4">{{ about.paragraph1 }}</p>
-          <p class="text-muted mb-6">{{ about.paragraph2 }}</p>
+          <div v-if="about.greeting" class="rich-text rich-text--light text-xl font-medium mb-4" v-html="about.greeting" />
+          <div v-if="about.paragraph1" class="rich-text mb-4" v-html="about.paragraph1" />
+          <div v-if="about.paragraph2" class="rich-text mb-6" v-html="about.paragraph2" />
           <a
             href="/about"
             class="text-primary hover:underline inline-flex items-center gap-1"
@@ -193,49 +156,48 @@
 
         </div>
       </div>
+
+      <!-- Career history (preview) -->
+      <CareerHistory
+        v-if="experiences.length > 0 || education.length > 0"
+        :experiences="experiences"
+        :education="education"
+      />
     </section>
 
     <!-- Contact (preview) -->
     <section id="contacts" class="py-16">
-      <SectionHeading title="contacts" hash="#" />
+      <SectionHeading title="contact" hash="#" />
       <div class="grid md:grid-cols-2 gap-8">
-        <p class="text-muted">
-          {{ contact.intro || "I'm interested in freelance opportunities. However, if you have other request or question, don't hesitate to contact me" }}
-        </p>
+        <div>
+          <div v-if="contact.intro" class="rich-text text-muted" v-html="contact.intro" />
+          <p v-else class="text-muted">I'm interested in freelance opportunities. However, if you have other request or question, don't hesitate to contact me.</p>
+        </div>
 
         <ContactForm :buttonPosition="'end'" />
-
-
-        <!-- <div class="rounded-lg border border-gray-600 bg-surface-light p-6 space-y-4">
-          <p class="text-white font-medium">Message me here</p>
-          <div v-if="contact.discord" class="flex items-center gap-2 text-muted text-sm">
-            <span class="w-5 h-5 rounded bg-gray-600 flex items-center justify-center text-xs">D</span>
-            {{ contact.discord }}
-          </div>
-          <div v-if="contact.email" class="flex items-center gap-2 text-muted text-sm">
-            <span class="w-5 h-5 rounded bg-gray-600 flex items-center justify-center text-xs">@</span>
-            <a :href="'mailto:' + contact.email" class="hover:text-primary">{{ contact.email }}</a>
-          </div>
-        </div> -->
       </div>
     </section>
   </PortfolioLayout>
 </template>
 
 <script setup>
+import { Head } from '@inertiajs/vue3'
 import PortfolioLayout from '@/Layouts/PortfolioLayout.vue'
 import ProjectCard from '@/Components/ProjectCard.vue'
 import QuoteSection from '@/Components/QuoteSection.vue'
+import CareerHistory from '@/Components/CareerHistory.vue'
 import SectionHeading from '@/Components/SectionHeading.vue'
 import SkillCard from '@/Components/SkillCard.vue'
 import ContactForm from '@/Components/ContactForm.vue'
 defineProps({
   hero: { type: Object, default: () => ({}) },
-  quote: { type: Object, default: () => ({}) },
+  quotes: { type: Array, default: () => [] },
   about: { type: Object, default: () => ({}) },
   contact: { type: Object, default: () => ({}) },
   projects: { type: Array, default: () => [] },
   skills: { type: Array, default: () => [] },
+  experiences: { type: Array, default: () => [] },
+  education: { type: Array, default: () => [] },
 })
 
 // Public folder path – use string so Vite doesn't try to resolve it as an import

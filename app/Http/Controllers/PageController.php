@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Mail\ContactFormSubmittedMail;
 use App\Models\ContactSubmission;
+use App\Models\Education;
+use App\Models\Experience;
 use App\Models\FunFact;
 use App\Models\Project;
+use App\Models\Quote;
 use App\Models\SiteSetting;
 use App\Models\Skill;
 use App\Models\SocialLink;
@@ -58,10 +61,11 @@ class PageController extends Controller
             'statusText' => SiteSetting::get('hero_status_text'),
         ];
 
-        $quote = [
-            'text' => SiteSetting::get('quote_text'),
-            'author' => SiteSetting::get('quote_author'),
-        ];
+        $quotes = Quote::orderBy('sort_order')->get()->map(fn ($q) => [
+            'id' => $q->id,
+            'text' => $q->text,
+            'author' => $q->author,
+        ])->values()->all();
 
         $about = [
             'greeting' => SiteSetting::get('about_greeting'),
@@ -86,7 +90,6 @@ class PageController extends Controller
             'image' => $p->image ? '/storage/' . $p->image : null,
             'live_url' => $p->live_url,
             'github_url' => $p->github_url,
-            'cached_url' => $p->cached_url,
         ]);
 
         $skills = Skill::orderBy('sort_order')->get()->map(fn ($s) => [
@@ -95,13 +98,32 @@ class PageController extends Controller
             'image' => $s->image ? '/storage/' . $s->image : null,
         ]);
 
+        $experiences = Experience::orderBy('sort_order')->get()->map(fn ($e) => [
+            'id' => $e->id,
+            'company' => $e->company,
+            'title' => $e->title,
+            'role_tag' => $e->role_tag,
+            'date_range' => $e->date_range,
+            'tech_stack' => $e->tech_stack,
+            'description' => $e->description,
+        ])->values()->all();
+        $education = Education::orderBy('sort_order')->get()->map(fn ($e) => [
+            'id' => $e->id,
+            'institution' => $e->institution,
+            'degree' => $e->degree,
+            'date_range' => $e->date_range,
+            'description' => $e->description,
+        ])->values()->all();
+
         return Inertia::render('Home', array_merge($shared, [
             'hero' => $hero,
-            'quote' => $quote,
+            'quotes' => $quotes,
             'about' => $about,
             'contact' => $contact,
             'projects' => $projects,
             'skills' => $skills,
+            'experiences' => $experiences,
+            'education' => $education,
         ]));
     }
 
@@ -120,11 +142,29 @@ class PageController extends Controller
             'image' => $s->image ? '/storage/' . $s->image : null,
         ]);
         $funFacts = FunFact::orderBy('sort_order')->get()->pluck('text');
+        $experiences = Experience::orderBy('sort_order')->get()->map(fn ($e) => [
+            'id' => $e->id,
+            'company' => $e->company,
+            'title' => $e->title,
+            'role_tag' => $e->role_tag,
+            'date_range' => $e->date_range,
+            'tech_stack' => $e->tech_stack,
+            'description' => $e->description,
+        ])->values()->all();
+        $education = Education::orderBy('sort_order')->get()->map(fn ($e) => [
+            'id' => $e->id,
+            'institution' => $e->institution,
+            'degree' => $e->degree,
+            'date_range' => $e->date_range,
+            'description' => $e->description,
+        ])->values()->all();
 
         return Inertia::render('About', array_merge($shared, [
             'about' => $about,
             'skills' => $skills,
             'funFacts' => $funFacts,
+            'experiences' => $experiences,
+            'education' => $education,
         ]));
     }
 
@@ -179,7 +219,6 @@ class PageController extends Controller
             'image' => $p->image ? '/storage/' . $p->image : null,
             'live_url' => $p->live_url,
             'github_url' => $p->github_url,
-            'cached_url' => $p->cached_url,
         ];
     }
 
@@ -229,6 +268,8 @@ class PageController extends Controller
                 'tech_stack' => $project->tech_stack,
                 'live_url' => $project->live_url,
                 'github_url' => $project->github_url,
+                'admin_url' => $project->admin_url,
+                'admin_button_title' => $project->admin_button_title ?? 'Admin',
             ],
         ]));
     }

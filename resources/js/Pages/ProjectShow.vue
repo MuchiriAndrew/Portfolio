@@ -1,5 +1,6 @@
 <template>
   <PortfolioLayout>
+    <Head :title="`${project.title} - Andrew Muchiri`" />
     <article class="py-12 md:py-20">
       <header class="mb-8">
         <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">{{ project.title }}</h1>
@@ -12,13 +13,13 @@
             {{ tech }}
           </span>
         </div>
-        <div class="flex flex-wrap gap-4">
+        <div class="flex flex-wrap gap-3">
           <a
             v-if="project.live_url"
             :href="project.live_url"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-primary hover:underline inline-flex items-center gap-1"
+            class="text-sm text-primary inline-flex items-center gap-1 border border-primary py-2 px-4 justify-center transition-colors hover:bg-primary/10"
           >
             Live
             <span aria-hidden="true">→</span>
@@ -28,9 +29,19 @@
             :href="project.github_url"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-primary hover:underline inline-flex items-center gap-1"
+            class="text-sm text-primary inline-flex items-center gap-1 border border-primary py-2 px-4 justify-center transition-colors hover:bg-primary/10"
           >
             GitHub
+            <span aria-hidden="true">→</span>
+          </a>
+          <a
+            v-if="project.admin_url"
+            :href="project.admin_url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm text-primary inline-flex items-center gap-1 border border-primary py-2 px-4 justify-center transition-colors hover:bg-primary/10"
+          >
+            {{ project.admin_button_title || 'Admin' }}
             <span aria-hidden="true">→</span>
           </a>
         </div>
@@ -54,6 +65,7 @@
 
 <script setup>
 import { computed } from 'vue'
+import { Head } from '@inertiajs/vue3'
 import PortfolioLayout from '@/Layouts/PortfolioLayout.vue'
 
 const props = defineProps({

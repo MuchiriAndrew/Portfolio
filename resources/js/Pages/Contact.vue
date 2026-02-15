@@ -1,5 +1,6 @@
 <template>
   <PortfolioLayout>
+    <Head title="Contact - Andrew Muchiri" />
     <div class="py-12 flex flex-col gap-12">
         <!-- Contact Description -->
         <div class="flex flex-col gap-2">
@@ -9,7 +10,8 @@
             <p class="text-muted text-lg">Who am i?</p>
 
             <p class="text-muted max-w-xl">
-              {{ contact.intro || "I'm interested in freelance opportunities. However, if you have other request or question, don't hesitate to contact me" }}
+              <div v-if="contact.intro" class="rich-text text-muted" v-html="contact.intro" />
+            <p v-else class="text-muted">I'm interested in freelance opportunities. However, if you have other request or question, don't hesitate to contact me.</p>
             </p>
         </div>
 
@@ -43,6 +45,7 @@
 </template>
 
 <script setup>
+import { Head } from '@inertiajs/vue3'
 import PortfolioLayout from '@/Layouts/PortfolioLayout.vue'
 import ContactForm from '@/Components/ContactForm.vue'
 import SocialIcon from '@/Components/SocialIcon.vue'

@@ -3,7 +3,8 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
         <div class="space-y-1">
-          <p class="font-semibold text-white">{{ footer.name }}</p>
+          <!-- <p class="font-semibold text-white">{{ footer.name }}</p> -->
+          <img :src="logoUrl" alt="Andrew Muchiri" class="w-15 h-15">
           <a :href="'mailto:' + footer.email" class="text-muted hover:text-primary text-sm">{{ footer.email }}</a>
           <p class="text-muted text-sm">{{ footer.role }}</p>
         </div>
@@ -23,7 +24,12 @@
           </div>
         </div>
       </div>
-      <p class="text-center text-muted text-sm mt-8">{{ footer.copyright }}</p>
+      <div
+        v-if="footer.copyright"
+        class="rich-text text-center text-muted text-sm mt-8 [&_p]:mb-0 [&_a]:text-primary"
+        v-html="footer.copyright"
+      />
+      <p v-else class="text-center text-muted text-sm mt-8">© {{ new Date().getFullYear() }}. Made with care.</p>
     </div>
   </footer>
 </template>
@@ -36,4 +42,6 @@ import SocialIcon from '@/Components/SocialIcon.vue'
 const page = usePage()
 const footer = computed(() => page.props.footer || {})
 const socialLinks = computed(() => page.props.socialLinks || [])
+
+const logoUrl = computed(() => page.props.logoUrl || '/images/am-logo.png')
 </script>

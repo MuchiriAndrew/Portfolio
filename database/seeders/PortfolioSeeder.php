@@ -2,8 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\Education;
+use App\Models\Experience;
 use App\Models\FunFact;
 use App\Models\Project;
+use App\Models\Quote;
 use App\Models\SiteSetting;
 use App\Models\Skill;
 use App\Models\SocialLink;
@@ -21,8 +24,6 @@ class PortfolioSeeder extends Seeder
             'hero_description' => 'He crafts responsive websites where technologies meet creativity',
             'hero_cta_text' => 'Contact me !!',
             'hero_status_text' => 'Currently working on Portfolio',
-            'quote_text' => 'With great power comes great electricity bill',
-            'quote_author' => 'Dr. Who',
             'about_greeting' => "Hello, i'm Andrew!",
             'about_paragraph_1' => "I'm a self-taught front-end developer. I can develop responsive websites from scratch and raise them into modern user-friendly web experiences.",
             'about_paragraph_2' => 'Transforming my creativity and knowledge into websites has been my passion. I always strive to learn about the newest technologies and frameworks.',
@@ -37,6 +38,32 @@ class PortfolioSeeder extends Seeder
         foreach ($settings as $key => $value) {
             SiteSetting::set($key, $value);
         }
+
+        $quotes = [
+            ['text' => '<p>With great power comes great electricity bill.</p>', 'author' => '— Dr. Who', 'sort_order' => 0],
+            ['text' => '<p>Code is like humor. When you have to explain it, it’s bad.</p>', 'author' => '— Cory House', 'sort_order' => 1],
+        ];
+        foreach ($quotes as $q) {
+            Quote::create($q);
+        }
+
+        Experience::create([
+            'company' => 'Belva Digital',
+            'title' => 'Senior Frontend Developer',
+            'role_tag' => null,
+            'date_range' => 'Jan 2025 - Present',
+            'tech_stack' => 'Next.js, Vue.js, TypeScript, Tailwind CSS',
+            'description' => '<ul><li>Led development of scalable frontend applications using Next.js, Vue.js, TypeScript, and Tailwind CSS</li><li>Collaborated with UI/UX designers to convert Figma wireframes into accessible, high-performance interfaces</li><li>Optimized frontend codebase and applied performance monitoring tools</li></ul>',
+            'sort_order' => 0,
+        ]);
+
+        Education::create([
+            'institution' => 'Example University',
+            'degree' => 'BSc Computer Science',
+            'date_range' => '2015 - 2019',
+            'description' => '<p>Focus on software engineering and web technologies.</p>',
+            'sort_order' => 0,
+        ]);
 
         $skillNames = [
             'JavaScript', 'TypeScript', 'Python', 'PHP', 'Vue', 'React', 'Laravel', 'Next.js',
@@ -72,7 +99,6 @@ class PortfolioSeeder extends Seeder
             'description' => 'This portfolio site built with Laravel, Inertia, Vue and Filament.',
             'tech_stack' => 'HTML Tailwind Vue Laravel Inertia',
             'live_url' => null,
-            'cached_url' => null,
             'sort_order' => 0,
             'is_published' => true,
         ]);

@@ -15,7 +15,8 @@ class Project extends Model
         'tech_stack',
         'live_url',
         'github_url',
-        'cached_url',
+        'admin_url',
+        'admin_button_title',
         'sort_order',
         'is_published',
     ];

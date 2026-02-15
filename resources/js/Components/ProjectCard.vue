@@ -1,6 +1,6 @@
 <template>
     <article
-        class="border border-muted bg-surface-light overflow-hidden flex flex-col w-full">
+        class="border border-muted hover:border-primary hover:translate-y-[-3px] transition-all duration-300 bg-surface-light overflow-hidden flex flex-col w-full">
 
 
 
@@ -62,7 +62,6 @@ const props = defineProps({
     slug: { type: String, default: null },
     liveUrl: { type: String, default: null },
     githubUrl: { type: String, default: null },
-    cachedUrl: { type: String, default: null },
 })
 
 const techList = computed(() =>

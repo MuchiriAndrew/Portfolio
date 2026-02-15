@@ -38,7 +38,14 @@ class ProjectResource extends Resource
                     ->columnSpanFull(),
                 Forms\Components\FileUpload::make('image')
                     ->image()
-                    ->directory('projects'),
+                    ->directory('projects')
+                    ->imageEditor()
+                    ->imageCropAspectRatio('16:9')
+                    ->imageResizeTargetWidth(1200)
+                    ->imageResizeTargetHeight(675)
+                    ->imageResizeUpscale(false)
+                    ->downloadable()
+                    ->openable(),
                 Forms\Components\TextInput::make('tech_stack'),
                 Forms\Components\TextInput::make('live_url')
                     ->url()
@@ -46,8 +53,12 @@ class ProjectResource extends Resource
                 Forms\Components\TextInput::make('github_url')
                     ->url()
                     ->label('GitHub URL'),
-                Forms\Components\TextInput::make('cached_url')
-                    ->url(),
+                Forms\Components\TextInput::make('admin_url')
+                    ->url()
+                    ->label('Admin link (if project has a backend)'),
+                Forms\Components\TextInput::make('admin_button_title')
+                    ->label('Admin button title (e.g. Admin, Dashboard)')
+                    ->placeholder('Admin'),
                 Forms\Components\TextInput::make('sort_order')
                     ->required()
                     ->numeric()
@@ -74,7 +85,7 @@ class ProjectResource extends Resource
                 Tables\Columns\TextColumn::make('github_url')
                     ->searchable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('cached_url')
+                Tables\Columns\TextColumn::make('admin_url')
                     ->searchable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('sort_order')

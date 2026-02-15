@@ -30,7 +30,14 @@ class SkillResource extends Resource
                 Forms\Components\FileUpload::make('image')
                     ->image()
                     ->directory('skills')
-                    ->label('Skill icon / logo'),
+                    ->label('Skill icon / logo')
+                    ->imageEditor()
+                    ->imageCropAspectRatio('1:1')
+                    ->imageResizeTargetWidth(256)
+                    ->imageResizeTargetHeight(256)
+                    ->imageResizeUpscale(false)
+                    ->downloadable()
+                    ->openable(),
                 Forms\Components\TextInput::make('sort_order')
                     ->numeric()
                     ->default(0),

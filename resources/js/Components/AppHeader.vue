@@ -5,7 +5,8 @@
 
             <Link href="/" class="flex items-center gap-2 text-white font-semibold">
                 <!-- <span class="w-8 h-8 border border-gray-500 rounded flex items-center justify-center text-xs">E</span> -->
-                {{ siteName }}
+                <!-- {{ siteName }} -->
+                <img :src="logoUrl" alt="Andrew Muchiri" class="w-15 h-15">
             </Link>
 
             <!-- Desktop nav -->
@@ -47,18 +48,13 @@
                         </button>
                     </div>
                     <nav class="flex flex-col gap-1 p-4">
+
                         <Link v-for="item in navItems" :key="item.name" :href="item.href"
                             :class="[isActive(item) ? 'text-primary' : 'text-muted']"
                             class="py-3 px-2 text-lg font-medium" @click="mobileMenuOpen = false">
                             {{ item.label }}
                         </Link>
-                        <div class="py-3 px-2 text-muted flex items-center gap-2">
-                            <span>EN</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </div>
+
                     </nav>
                     <div class="mt-auto p-4 border-t border-gray-700 flex gap-4">
                         <a v-for="link in socialLinks" :key="link.id" :href="link.url || '#'" target="_blank"
@@ -129,6 +125,8 @@ function isActive(item) {
     if (item.name === 'contact') return page.url.startsWith('/contact')
     return false
 }
+
+const logoUrl = computed(() => page.props.logoUrl || '/images/am-logo.png')
 </script>
 
 <style scoped>
