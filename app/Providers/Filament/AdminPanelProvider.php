@@ -35,7 +35,7 @@ class AdminPanelProvider extends PanelProvider
             ->brandName('Andrew Muchiri')
             // ->brandLogo(asset('img/ziarapro-logo.png'))
             // ->brandLogoHeight('2rem')
-            ->favicon(asset('favicon.ico'))
+            ->favicon(secure_asset('favicon.ico'))
             ->colors([
                 'primary' => '#C778DD',
                 'gray' => '#282C33',

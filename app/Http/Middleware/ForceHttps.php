@@ -10,10 +10,16 @@ class ForceHttps
 {
     public function handle(Request $request, Closure $next)
     {
-        // Always force HTTPS in production to ensure asset URLs are generated correctly
-        if (env('APP_ENV') !== 'local') {
-            URL::forceScheme('https');
+        if (app()->environment('local')) {
+            return $next($request);
         }
+
+        // Force the request to report HTTPS (fixes URL generation when behind reverse proxy)
+        $request->server->set('HTTPS', 'on');
+        $request->server->set('REQUEST_SCHEME', 'https');
+        $request->server->set('SERVER_PORT', '443');
+
+        URL::forceScheme('https');
 
         return $next($request);
     }
