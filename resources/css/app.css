@@ -1,5 +1,12 @@
 @import 'tailwindcss';
 
+@layer base {
+    html,
+    body {
+        font-family: var(--font-sans);
+    }
+}
+
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 @source '../**/*.blade.php';
@@ -7,10 +14,12 @@
 @source '../**/*.vue';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: 'Fira Code', ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Monaco, Consolas, monospace;
 
-    /* Custom Colors */
-    --color-primary: #64ffda;
-    --color-secondary: green;
+    /* Portfolio theme */
+    --color-surface: #282C33;
+    --color-surface-light: #32363e;
+    --color-accent: #C778DD;
+    --color-primary: #C778DD;
+    --color-muted: #ABB2BF;
 }

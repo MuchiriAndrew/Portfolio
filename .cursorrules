@@ -1,0 +1,14 @@
+# Portfolio v2 – Cursor rules
+
+## Laravel Filament resources
+
+- **Reorderable tables:** Every Filament resource that lists records in a table MUST support reordering.
+  - Add a `sort_order` column (or equivalent) to the model and migration if the resource represents ordered content.
+  - In the Resource class:
+    - Call `->reorderable('sort_order')` on the table (use the actual order column name).
+    - Call `->defaultSort('sort_order')` so the list is ordered by the reorder column by default.
+    - Add `public static function canReorder(): bool { return true; }` so the reorder UI is allowed.
+  - For RelationManagers that manage ordered relations (e.g. skills under a category):
+    - Call `->reorderable('sort_order')` on the relation manager’s table.
+    - Override `protected function canReorder(): bool { return true; }` on the relation manager.
+  - Ensure the order column is in the model’s `$fillable` array so Filament can update it when reordering.
