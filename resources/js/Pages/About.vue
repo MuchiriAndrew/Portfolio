@@ -37,17 +37,13 @@
         <h2 class="text-3xl font-bold text-white mb-6">
           <span class="text-primary">#</span>skills
         </h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-          <div
-            v-for="cat in skillCategories"
-            :key="cat.name"
-            class="rounded-lg border border-gray-600/50 bg-surface-light p-4"
-          >
-            <h3 class="text-primary font-semibold mb-2">{{ cat.name }}</h3>
-            <ul class="text-muted text-sm space-y-1">
-              <li v-for="skill in cat.skills" :key="skill">{{ skill }}</li>
-            </ul>
-          </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+          <SkillCard
+            v-for="skill in skills"
+            :key="skill.id"
+            :name="skill.name"
+            :image="skill.image"
+          />
         </div>
       </section>
 
@@ -72,10 +68,11 @@
 
 <script setup>
 import PortfolioLayout from '@/Layouts/PortfolioLayout.vue'
+import SkillCard from '@/Components/SkillCard.vue'
 
 defineProps({
   about: { type: Object, default: () => ({}) },
-  skillCategories: { type: Array, default: () => [] },
+  skills: { type: Array, default: () => [] },
   funFacts: { type: Array, default: () => [] },
 })
 </script>

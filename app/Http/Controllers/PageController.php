@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\FunFact;
 use App\Models\Project;
 use App\Models\SiteSetting;
-use App\Models\SkillCategory;
+use App\Models\Skill;
 use App\Models\SocialLink;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -70,17 +70,20 @@ class PageController extends Controller
 
         $projects = Project::where('is_published', true)->orderBy('sort_order')->get()->map(fn ($p) => [
             'id' => $p->id,
+            'slug' => $p->slug,
             'title' => $p->title,
             'description' => $p->description,
             'tech_stack' => $p->tech_stack,
             'image' => $p->image ? '/storage/' . $p->image : null,
             'live_url' => $p->live_url,
+            'github_url' => $p->github_url,
             'cached_url' => $p->cached_url,
         ]);
 
-        $skillCategories = SkillCategory::with('skills')->orderBy('sort_order')->get()->map(fn ($c) => [
-            'name' => $c->name,
-            'skills' => $c->skills->pluck('name'),
+        $skills = Skill::orderBy('sort_order')->get()->map(fn ($s) => [
+            'id' => $s->id,
+            'name' => $s->name,
+            'image' => $s->image ? '/storage/' . $s->image : null,
         ]);
 
         return Inertia::render('Home', array_merge($shared, [
@@ -89,7 +92,7 @@ class PageController extends Controller
             'about' => $about,
             'contact' => $contact,
             'projects' => $projects,
-            'skillCategories' => $skillCategories,
+            'skills' => $skills,
         ]));
     }
 
@@ -102,15 +105,16 @@ class PageController extends Controller
             'paragraph2' => SiteSetting::get('about_paragraph_2'),
             'image' => SiteSetting::get('about_image') ? '/storage/' . SiteSetting::get('about_image') : null,
         ];
-        $skillCategories = SkillCategory::with('skills')->orderBy('sort_order')->get()->map(fn ($c) => [
-            'name' => $c->name,
-            'skills' => $c->skills->pluck('name'),
+        $skills = Skill::orderBy('sort_order')->get()->map(fn ($s) => [
+            'id' => $s->id,
+            'name' => $s->name,
+            'image' => $s->image ? '/storage/' . $s->image : null,
         ]);
         $funFacts = FunFact::orderBy('sort_order')->get()->pluck('text');
 
         return Inertia::render('About', array_merge($shared, [
             'about' => $about,
-            'skillCategories' => $skillCategories,
+            'skills' => $skills,
             'funFacts' => $funFacts,
         ]));
     }
@@ -127,6 +131,26 @@ class PageController extends Controller
 
         return Inertia::render('Contact', array_merge($shared, [
             'contact' => $contact,
+        ]));
+    }
+
+    public function projectShow(Project $project)
+    {
+        if (! $project->is_published) {
+            abort(404);
+        }
+        $shared = $this->getSharedData();
+        return Inertia::render('ProjectShow', array_merge($shared, [
+            'project' => [
+                'title' => $project->title,
+                'slug' => $project->slug,
+                'description' => $project->description,
+                'content' => $project->content,
+                'image' => $project->image ? '/storage/' . $project->image : null,
+                'tech_stack' => $project->tech_stack,
+                'live_url' => $project->live_url,
+                'github_url' => $project->github_url,
+            ],
         ]));
     }
 }

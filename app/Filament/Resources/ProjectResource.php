@@ -33,12 +33,21 @@ class ProjectResource extends Resource
                     ->unique(ignoreRecord: true),
                 Forms\Components\Textarea::make('description')
                     ->columnSpanFull(),
+                Forms\Components\RichEditor::make('content')
+                    ->label('Project write-up (Read More page)')
+                    ->columnSpanFull(),
                 Forms\Components\FileUpload::make('image')
                     ->image()
                     ->directory('projects'),
                 Forms\Components\TextInput::make('tech_stack'),
-                Forms\Components\TextInput::make('live_url'),
-                Forms\Components\TextInput::make('cached_url'),
+                Forms\Components\TextInput::make('live_url')
+                    ->url()
+                    ->label('Live URL'),
+                Forms\Components\TextInput::make('github_url')
+                    ->url()
+                    ->label('GitHub URL'),
+                Forms\Components\TextInput::make('cached_url')
+                    ->url(),
                 Forms\Components\TextInput::make('sort_order')
                     ->required()
                     ->numeric()
@@ -60,9 +69,14 @@ class ProjectResource extends Resource
                 Tables\Columns\TextColumn::make('tech_stack')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('live_url')
-                    ->searchable(),
+                    ->searchable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('github_url')
+                    ->searchable()
+                    ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('cached_url')
-                    ->searchable(),
+                    ->searchable()
+                    ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('sort_order')
                     ->numeric()
                     ->sortable(),

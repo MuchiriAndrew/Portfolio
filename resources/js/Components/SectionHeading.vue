@@ -7,7 +7,7 @@
             <h2 class="text-[32px] font-medium text-primary">{{ hash }}</h2>
             <h2 class="text-[32px] font-medium text-white">{{ title }}</h2>
         </div>
-        <hr class="border-primary w-[511px] ">
+        <hr class="border-primary w-[511px] hidden md:block">
     </div>
 
 

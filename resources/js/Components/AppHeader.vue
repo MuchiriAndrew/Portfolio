@@ -1,6 +1,6 @@
 <template>
   <header
-    class="fixed top-0 left-0 right-0 z-40 bg-surface/95 backdrop-blur transition-transform duration-300 ease-out"
+    class="fixed top-0 left-0 right-0 z-40 backdrop-blur transition-transform duration-300 ease-out"
     :class="{ '-translate-y-full': !headerVisible }"
   >
       <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14 md:h-16">

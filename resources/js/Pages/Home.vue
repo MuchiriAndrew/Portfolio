@@ -54,9 +54,9 @@
           <!-- Hero status text -->
           <div
             v-if="hero.statusText"
-            class="border border-muted px-4 py-3 flex items-center gap-2 w-3/4"
+            class="min-w-3/4 border border-muted px-4 py-3 flex gap-2 items-center justify-center md:justify-start"
           >
-            <span class="w-2 h-2 rounded-full bg-primary" />
+            <span class="w-2 h-2 rounded-full bg-primary animate-pulse duration-1000" />
             <span class="text-[16px] text-muted">{{ hero.statusText }}</span>
           </div>
 
@@ -74,7 +74,9 @@
     <!-- Projects -->
     <section id="projects" class="py-16">
       <SectionHeading title="projects" hash="#" view-all-link="/#projects" />
-      <div class="overflow-x-auto pb-4 -mx-4 px-4 flex gap-6 scrollbar-thin">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- <div class="overflow-x-auto pb-4 -mx-4 px-4 flex gap-6 scrollbar-thin"> -->
+
         <ProjectCard
           v-for="project in projects"
           :key="project.id"
@@ -82,8 +84,9 @@
           :description="project.description"
           :tech-stack="project.tech_stack"
           :image="project.image"
+          :slug="project.slug"
           :live-url="project.live_url"
-          :cached-url="project.cached_url"
+          :github-url="project.github_url"
         />
       </div>
     </section>
@@ -91,18 +94,59 @@
     <!-- Skills -->
     <section id="skills" class="py-16">
       <SectionHeading title="skills" hash="#" />
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-        <div
-          v-for="cat in skillCategories"
-          :key="cat.name"
-          class="rounded-lg border border-gray-600/50 bg-surface-light p-4"
-        >
-          <h3 class="text-primary font-semibold mb-2">{{ cat.name }}</h3>
-          <ul class="text-muted text-sm space-y-1">
-            <li v-for="skill in cat.skills" :key="skill">{{ skill }}</li>
-          </ul>
-        </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+        <SkillCard
+          v-for="skill in skills"
+          :key="skill.id"
+          :name="skill.name"
+          :image="skill.image"
+        />
+        <SkillCard
+          v-for="skill in skills"
+          :key="skill.id"
+          :name="skill.name"
+          :image="skill.image"
+        />
+        <SkillCard
+          v-for="skill in skills"
+          :key="skill.id"
+          :name="skill.name"
+          :image="skill.image"
+        />
+        <SkillCard
+          v-for="skill in skills"
+          :key="skill.id"
+          :name="skill.name"
+          :image="skill.image"
+        />
+        <SkillCard
+          v-for="skill in skills"
+          :key="skill.id"
+          :name="skill.name"
+          :image="skill.image"
+        />
+        <SkillCard
+          v-for="skill in skills"
+          :key="skill.id"
+          :name="skill.name"
+          :image="skill.image"
+        />
+        <SkillCard
+          v-for="skill in skills"
+          :key="skill.id"
+          :name="skill.name"
+          :image="skill.image"
+        />
+        <SkillCard
+          v-for="skill in skills"
+          :key="skill.id"
+          :name="skill.name"
+          :image="skill.image"
+        />
       </div>
+
+
     </section>
 
     <!-- About (preview) -->
@@ -161,6 +205,7 @@ import PortfolioLayout from '@/Layouts/PortfolioLayout.vue'
 import ProjectCard from '@/Components/ProjectCard.vue'
 import QuoteSection from '@/Components/QuoteSection.vue'
 import SectionHeading from '@/Components/SectionHeading.vue'
+import SkillCard from '@/Components/SkillCard.vue'
 
 defineProps({
   hero: { type: Object, default: () => ({}) },
@@ -168,7 +213,7 @@ defineProps({
   about: { type: Object, default: () => ({}) },
   contact: { type: Object, default: () => ({}) },
   projects: { type: Array, default: () => [] },
-  skillCategories: { type: Array, default: () => [] },
+  skills: { type: Array, default: () => [] },
 })
 
 // Public folder path – use string so Vite doesn't try to resolve it as an import

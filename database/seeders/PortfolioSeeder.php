@@ -6,7 +6,6 @@ use App\Models\FunFact;
 use App\Models\Project;
 use App\Models\SiteSetting;
 use App\Models\Skill;
-use App\Models\SkillCategory;
 use App\Models\SocialLink;
 use Illuminate\Database\Seeder;
 
@@ -39,20 +38,12 @@ class PortfolioSeeder extends Seeder
             SiteSetting::set($key, $value);
         }
 
-        $categories = [
-            ['name' => 'Languages', 'sort_order' => 1, 'skills' => ['TypeScript', 'Lua', 'Python', 'JavaScript']],
-            ['name' => 'Databases', 'sort_order' => 2, 'skills' => ['SQLite', 'PostgreSQL', 'Mongo']],
-            ['name' => 'Tools', 'sort_order' => 3, 'skills' => ['VSCode', 'Neovim', 'Linux', 'Figma', 'XFCE', 'Arch', 'Git', 'Font Awesome']],
-            ['name' => 'Frameworks', 'sort_order' => 4, 'skills' => ['React', 'Vue', 'Discord.js', 'Flask', 'Express.js']],
-            ['name' => 'Other', 'sort_order' => 5, 'skills' => ['HTML', 'CSS', 'EJS', 'SCSS', 'REST', 'Jinja']],
+        $skillNames = [
+            'JavaScript', 'TypeScript', 'Python', 'PHP', 'Vue', 'React', 'Laravel', 'Next.js',
+            'Tailwind CSS', 'Figma', 'Django', 'Bootstrap', 'jQuery', 'WordPress', 'HTML5', 'CSS3', 'MySQL', 'Git',
         ];
-        foreach ($categories as $cat) {
-            $skills = $cat['skills'];
-            unset($cat['skills']);
-            $c = SkillCategory::create($cat);
-            foreach ($skills as $i => $name) {
-                Skill::create(['skill_category_id' => $c->id, 'name' => $name, 'sort_order' => $i]);
-            }
+        foreach ($skillNames as $i => $name) {
+            Skill::create(['name' => $name, 'sort_order' => $i]);
         }
 
         $facts = [

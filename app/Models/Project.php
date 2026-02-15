@@ -10,9 +10,11 @@ class Project extends Model
         'title',
         'slug',
         'description',
+        'content',
         'image',
         'tech_stack',
         'live_url',
+        'github_url',
         'cached_url',
         'sort_order',
         'is_published',
@@ -23,5 +25,10 @@ class Project extends Model
         return [
             'is_published' => 'boolean',
         ];
+    }
+
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
     }
 }

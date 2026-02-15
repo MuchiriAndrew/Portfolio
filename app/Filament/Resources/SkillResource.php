@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\SkillCategoryResource\Pages;
-use App\Filament\Resources\SkillCategoryResource\RelationManagers;
-use App\Models\SkillCategory;
+use App\Filament\Resources\SkillResource\Pages;
+use App\Filament\Resources\SkillResource\RelationManagers;
+use App\Models\Skill;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,21 +13,25 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class SkillCategoryResource extends Resource
+class SkillResource extends Resource
 {
-    protected static ?string $model = SkillCategory::class;
+    protected static ?string $model = Skill::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-tag';
-    protected static ?string $navigationLabel = 'Skill Categories';
+    protected static ?string $navigationIcon = 'heroicon-o-star';
+    protected static ?string $navigationLabel = 'Skills';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
-                    ->required(),
-                Forms\Components\TextInput::make('sort_order')
                     ->required()
+                    ->maxLength(255),
+                Forms\Components\FileUpload::make('image')
+                    ->image()
+                    ->directory('skills')
+                    ->label('Skill icon / logo'),
+                Forms\Components\TextInput::make('sort_order')
                     ->numeric()
                     ->default(0),
             ]);
@@ -37,8 +41,12 @@ class SkillCategoryResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\ImageColumn::make('image')
+                    ->circular()
+                    ->defaultImageUrl(fn ($record) => 'https://ui-avatars.com/api/?name=' . urlencode($record->name ?? '')),
                 Tables\Columns\TextColumn::make('name')
-                    ->searchable(),
+                    ->searchable()
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('sort_order')
                     ->numeric()
                     ->sortable(),
@@ -74,16 +82,16 @@ class SkillCategoryResource extends Resource
     public static function getRelations(): array
     {
         return [
-            RelationManagers\SkillsRelationManager::class,
+            //
         ];
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListSkillCategories::route('/'),
-            'create' => Pages\CreateSkillCategory::route('/create'),
-            'edit' => Pages\EditSkillCategory::route('/{record}/edit'),
+            'index' => Pages\ListSkills::route('/'),
+            'create' => Pages\CreateSkill::route('/create'),
+            'edit' => Pages\EditSkill::route('/{record}/edit'),
         ];
     }
 }
