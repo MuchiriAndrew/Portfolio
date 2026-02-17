@@ -15,10 +15,11 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         // Trust reverse proxy headers (e.g. X-Forwarded-Proto) so Laravel sees HTTPS
         $middleware->trustProxies(at: '*');
-        $middleware->web(prepend: [
-            ForceHttps::class,
-        ], append: [
+
+
+        $middleware->web(append: [
             HandleInertiaRequests::class,
+            ForceHttps::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

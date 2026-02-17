@@ -10,16 +10,10 @@ class ForceHttps
 {
     public function handle(Request $request, Closure $next)
     {
-        if (app()->environment('local')) {
-            return $next($request);
+        if (!$request->secure() && env('APP_ENV') !== 'local') {
+            // return redirect()->secure($request->getRequestUri());
+            URL::forceScheme('https');
         }
-
-        // Force the request to report HTTPS (fixes URL generation when behind reverse proxy)
-        $request->server->set('HTTPS', 'on');
-        $request->server->set('REQUEST_SCHEME', 'https');
-        $request->server->set('SERVER_PORT', '443');
-
-        URL::forceScheme('https');
 
         return $next($request);
     }

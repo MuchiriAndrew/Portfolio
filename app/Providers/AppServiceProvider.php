@@ -27,10 +27,23 @@ class AppServiceProvider extends ServiceProvider
         if (! $this->app->environment('local')) {
             URL::forceScheme('https');
             $appUrl = rtrim((string) config('app.url'), '/');
-            if (str_starts_with($appUrl, 'http://')) {
-                $appUrl = 'https://' . substr($appUrl, 7);
+            // If APP_URL is literal "${APP_URL}" (e.g. unexpanded in CapRover/Docker env), use the request URL so Filament assets load
+            if ($appUrl === '' || $appUrl === '${APP_URL}' || str_contains($appUrl, '${')) {
+                try {
+                    $request = $this->app->make('request');
+                    if ($request && $request->getHttpHost()) {
+                        $appUrl = 'https://' . $request->getHttpHost();
+                    }
+                } catch (\Throwable) {
+                    // No request (e.g. console); keep existing or leave empty
+                }
             }
-            URL::forceRootUrl($appUrl);
+            if ($appUrl !== '' && ! str_contains($appUrl, '${')) {
+                if (str_starts_with($appUrl, 'http://')) {
+                    $appUrl = 'https://' . substr($appUrl, 7);
+                }
+                URL::forceRootUrl($appUrl);
+            }
         }
     }
 }
