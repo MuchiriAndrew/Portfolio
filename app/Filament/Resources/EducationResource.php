@@ -28,7 +28,7 @@ class EducationResource extends Resource
                 Forms\Components\TextInput::make('degree')->label('Degree / certification'),
                 Forms\Components\TextInput::make('date_range')->label('Date range (e.g. 2015 - 2019)'),
                 Forms\Components\RichEditor::make('description')
-                    ->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList'])
+                    ->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList', 'codeBlock'])
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('sort_order')->numeric()->default(0)->required(),
             ]);

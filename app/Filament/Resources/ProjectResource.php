@@ -35,6 +35,7 @@ class ProjectResource extends Resource
                     ->columnSpanFull(),
                 Forms\Components\RichEditor::make('content')
                     ->label('Project write-up (Read More page)')
+                    ->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList', 'codeBlock', 'blockquote', 'h2', 'h3', 'undo', 'redo'])
                     ->columnSpanFull(),
                 Forms\Components\FileUpload::make('image')
                     ->image()

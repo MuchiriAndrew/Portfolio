@@ -74,6 +74,43 @@
     color: var(--color-primary);
 }
 
+/* Code snippets from rich text editor (pre/code blocks) */
+.rich-text pre,
+.project-content pre {
+    margin: 1em 0;
+    padding: 1rem 1.25rem;
+    background: #1e1e1e;
+    border: 1px solid #3d3d3d;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: 'Fira Code', ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Monaco, Consolas, monospace;
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+.rich-text pre code,
+.project-content pre code {
+    display: block;
+    color: #f8f8f2;
+    background: none;
+    padding: 0;
+    font-size: inherit;
+    white-space: pre;
+}
+
+/* Inline code (single backticks in editor) */
+.rich-text p code,
+.rich-text li code,
+.project-content p code,
+.project-content li code {
+    padding: 0.2em 0.4em;
+    background: #32363e;
+    border-radius: 4px;
+    font-family: 'Fira Code', ui-monospace, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.9em;
+    color: #C778DD;
+}
+
 /* Remove browser autofill background completely – match page dark background */
 .contact-field:-webkit-autofill,
 .contact-field:-webkit-autofill:hover,

@@ -73,12 +73,12 @@ class Settings extends Page implements HasForms
                                 Forms\Components\Tabs\Tab::make('Home page')
                                     ->schema([
                                         Forms\Components\RichEditor::make('about_home_greeting')->label('Title / Greeting')->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link'])->columnSpanFull()->helperText('Shown in the about section on the home page.'),
-                                        Forms\Components\RichEditor::make('about_home_content')->label('Content')->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList'])->columnSpanFull()->helperText('Use Enter for new paragraphs.'),
+                                        Forms\Components\RichEditor::make('about_home_content')->label('Content')->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList', 'codeBlock'])->columnSpanFull()->helperText('Use Enter for new paragraphs. Add code blocks with the code icon.'),
                                     ]),
                                 Forms\Components\Tabs\Tab::make('About page')
                                     ->schema([
                                         Forms\Components\RichEditor::make('about_page_greeting')->label('Title / Greeting')->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link'])->columnSpanFull()->helperText('Shown at the top of the About page.'),
-                                        Forms\Components\RichEditor::make('about_page_content')->label('Content')->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList'])->columnSpanFull()->helperText('Use Enter for new paragraphs.'),
+                                        Forms\Components\RichEditor::make('about_page_content')->label('Content')->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList', 'codeBlock'])->columnSpanFull()->helperText('Use Enter for new paragraphs. Add code blocks with the code icon.'),
                                     ]),
                             ])->columnSpanFull(),
                         Forms\Components\FileUpload::make('about_image')

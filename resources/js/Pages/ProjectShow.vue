@@ -104,4 +104,32 @@ const techList = computed(() =>
   margin-bottom: 1em;
   padding-left: 1.5em;
 }
+/* Code blocks (also in app.css for .project-content; scoped override if needed) */
+.project-content :deep(pre) {
+  margin: 1em 0;
+  padding: 1rem 1.25rem;
+  background: #1e1e1e;
+  border: 1px solid #3d3d3d;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: 'Fira Code', ui-monospace, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+.project-content :deep(pre code) {
+  display: block;
+  color: #f8f8f2;
+  background: none;
+  padding: 0;
+  white-space: pre;
+}
+.project-content :deep(p code),
+.project-content :deep(li code) {
+  padding: 0.2em 0.4em;
+  background: #32363e;
+  border-radius: 4px;
+  font-family: 'Fira Code', ui-monospace, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.9em;
+  color: #C778DD;
+}
 </style>
