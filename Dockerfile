@@ -5,13 +5,6 @@ FROM webdevops/php-nginx:8.3
 SHELL ["/bin/bash", "-c"]
 
 ENV PHP_MAX_EXECUTION_TIME 110
-
-# Entrypoint to fix storage/cache permissions when using a mounted volume (CapRover)
-COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
-RUN chmod +x /usr/local/bin/docker-entrypoint.sh
-ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
-CMD ["supervisord"]
-
 # Copy the project files into the container
 COPY . /production/portfoliov2
 
