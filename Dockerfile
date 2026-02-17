@@ -56,8 +56,8 @@ EXPOSE 80
 RUN php artisan storage:link && \
     mkdir -p bootstrap/cache && \
     touch storage/logs/laravel.log && \
-    chmod -R 755 storage && \
-    chmod -R 755 bootstrap
+    chmod -R 777 storage && \
+    chmod -R 777 bootstrap
 
 ARG DB_CONNECTION
 ARG DB_HOST
