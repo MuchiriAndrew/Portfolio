@@ -23,9 +23,14 @@ class AppServiceProvider extends ServiceProvider
     {
         Inertia::setRootView('app');
 
-        // Force HTTPS for all URL generation in non-local environments (fixes mixed content behind reverse proxy)
+        // Force HTTPS and base URL in production so backend (Filament) and frontend assets load correctly behind a reverse proxy (e.g. CapRover)
         if (! $this->app->environment('local')) {
             URL::forceScheme('https');
+            $appUrl = rtrim((string) config('app.url'), '/');
+            if (str_starts_with($appUrl, 'http://')) {
+                $appUrl = 'https://' . substr($appUrl, 7);
+            }
+            URL::forceRootUrl($appUrl);
         }
     }
 }
