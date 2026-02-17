@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center justify-between gap-4 mb-6">
+  <div class="flex items-center justify-between gap-4 mb-6" data-aos="fade-up">
 
 
     <div class="flex items-center gap-4 w-3/4">

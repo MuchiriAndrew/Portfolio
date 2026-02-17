@@ -1,5 +1,7 @@
 <template>
   <div
+    :data-aos="attrs['data-aos'] || 'fade-up'"
+    :data-aos-delay="attrs['data-aos-delay']"
     class=" border border-gray-600/50 bg-surface-light flex flex-col items-center justify-center p-6 aspect-square min-h-[120px] transition-colors hover:border-primary"
   >
     <div class="flex-1 flex items-center justify-center w-full mb-3">
@@ -20,8 +22,12 @@
 </template>
 
 <script setup>
+import { useAttrs } from 'vue'
+
 defineProps({
   name: { type: String, required: true },
   image: { type: String, default: null },
 })
+
+const attrs = useAttrs()
 </script>

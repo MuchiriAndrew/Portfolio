@@ -28,9 +28,11 @@ class Settings extends Page implements HasForms
     {
         $keys = [
             'site_name', 'hero_title', 'hero_highlight_1', 'hero_highlight_2', 'hero_description',
-            'hero_cta_text', 'hero_image', 'hero_status_text',
-            'about_greeting', 'about_paragraph_1', 'about_paragraph_2', 'about_image',
-            'contact_intro', 'support_number', 'discord_username', 'contact_email',
+            'hero_cta_text', 'hero_status_text', 'hero_terminal_code',
+            'about_home_greeting', 'about_home_content', 'about_page_greeting', 'about_page_content', 'about_image',
+            'career_subtitle', 'career_title_1', 'career_title_2', 'career_intro',
+            'home_projects_limit',
+            'contact_intro', 'contact_email', 'contact_phone',
             'footer_name', 'footer_email', 'footer_role', 'copyright_text',
         ];
         $settings = [];
@@ -52,42 +54,64 @@ class Settings extends Page implements HasForms
                         Forms\Components\TextInput::make('hero_highlight_2')->label('Highlight 2 (e.g. front-end developer)'),
                         Forms\Components\RichEditor::make('hero_description')->label('Hero description')->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList'])->columnSpanFull(),
                         Forms\Components\TextInput::make('hero_cta_text')->label('CTA button text'),
-                        Forms\Components\FileUpload::make('hero_image')
-                        ->label('Hero image')
-                        ->image()
-                        ->directory('hero')
-                        ->imageEditor()
-                        ->imageCropAspectRatio('4:3')
-                        ->imageResizeTargetWidth(800)
-                        ->imageResizeTargetHeight(600)
-                        ->imageResizeUpscale(false)
-                        ->downloadable()
-                        ->openable(),
                         Forms\Components\TextInput::make('hero_status_text')->label('Status (e.g. Currently working on Portfolio)'),
+                        Forms\Components\Textarea::make('hero_terminal_code')
+                        ->label('Terminal Code Snippet')
+                        ->placeholder('const engineer = {
+  name: "Your Name",
+  role: "Full-Stack Dev & DevOps",
+  builds: "Scalable web systems"
+}')
+                        ->rows(6)
+                        ->helperText('Code snippet to display in the terminal with typing animation')
+                        ->columnSpanFull(),
                     ])->columns(1),
                 Forms\Components\Section::make('About')
                     ->schema([
-                        Forms\Components\RichEditor::make('about_greeting')->label('Greeting (e.g. Hello, i\'m Elias!)')->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link'])->columnSpanFull(),
-                        Forms\Components\RichEditor::make('about_paragraph_1')->label('About paragraph 1')->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList'])->columnSpanFull(),
-                        Forms\Components\RichEditor::make('about_paragraph_2')->label('About paragraph 2')->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList'])->columnSpanFull(),
+                        Forms\Components\Tabs::make('About content')
+                            ->tabs([
+                                Forms\Components\Tabs\Tab::make('Home page')
+                                    ->schema([
+                                        Forms\Components\RichEditor::make('about_home_greeting')->label('Title / Greeting')->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link'])->columnSpanFull()->helperText('Shown in the about section on the home page.'),
+                                        Forms\Components\RichEditor::make('about_home_content')->label('Content')->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList'])->columnSpanFull()->helperText('Use Enter for new paragraphs.'),
+                                    ]),
+                                Forms\Components\Tabs\Tab::make('About page')
+                                    ->schema([
+                                        Forms\Components\RichEditor::make('about_page_greeting')->label('Title / Greeting')->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link'])->columnSpanFull()->helperText('Shown at the top of the About page.'),
+                                        Forms\Components\RichEditor::make('about_page_content')->label('Content')->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList'])->columnSpanFull()->helperText('Use Enter for new paragraphs.'),
+                                    ]),
+                            ])->columnSpanFull(),
                         Forms\Components\FileUpload::make('about_image')
                         ->label('About image')
                         ->image()
                         ->directory('about')
                         ->imageEditor()
-                        ->imageCropAspectRatio('3:4')
-                        ->imageResizeTargetWidth(600)
-                        ->imageResizeTargetHeight(800)
                         ->imageResizeUpscale(false)
                         ->downloadable()
                         ->openable(),
                     ])->columns(1),
+                Forms\Components\Section::make('Career History')
+                    ->schema([
+                        Forms\Components\TextInput::make('career_subtitle')->label('Subtitle')->placeholder('e.g. Professional background'),
+                        Forms\Components\TextInput::make('career_title_1')->label('Title part 1 (white)')->placeholder('e.g. Career'),
+                        Forms\Components\TextInput::make('career_title_2')->label('Title part 2 (accent)')->placeholder('e.g.  History'),
+                        Forms\Components\RichEditor::make('career_intro')->label('Intro paragraph')->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList'])->columnSpanFull()->helperText('e.g. 3+ years of experience... Get in touch.'),
+                    ])->columns(1),
+                Forms\Components\Section::make('Projects')
+                    ->schema([
+                        Forms\Components\TextInput::make('home_projects_limit')
+                            ->label('Max projects on home page')
+                            ->numeric()
+                            ->minValue(1)
+                            ->maxValue(24)
+                            ->default(6)
+                            ->helperText('Number of projects to show in the Projects section on the home page (1–24).'),
+                    ])->columns(1),
                 Forms\Components\Section::make('Contact')
                     ->schema([
                         Forms\Components\RichEditor::make('contact_intro')->label('Contact intro text')->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList'])->columnSpanFull(),
-                        Forms\Components\TextInput::make('support_number')->label('Support me here (e.g. card number)'),
-                        Forms\Components\TextInput::make('discord_username')->label('Discord (e.g. Elias#1234)'),
-                        Forms\Components\TextInput::make('contact_email')->label('Contact email'),
+                        Forms\Components\TextInput::make('contact_email')->label('Contact email')->email(),
+                        Forms\Components\TextInput::make('contact_phone')->label('Contact phone'),
                     ])->columns(1),
                 Forms\Components\Section::make('Footer')
                     ->schema([

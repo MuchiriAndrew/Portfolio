@@ -22,7 +22,7 @@ class PageController extends Controller
     {
         $keys = [
             'site_name', 'footer_name', 'footer_email', 'footer_role', 'copyright_text',
-            'contact_email', 'discord_username', 'support_number',
+            'contact_email', 'contact_phone',
         ];
         $settings = [];
         foreach ($keys as $key) {
@@ -57,8 +57,8 @@ class PageController extends Controller
             'highlight2' => SiteSetting::get('hero_highlight_2'),
             'description' => SiteSetting::get('hero_description'),
             'ctaText' => SiteSetting::get('hero_cta_text') ?: 'Contact me !!',
-            'image' => SiteSetting::get('hero_image') ? '/storage/' . SiteSetting::get('hero_image') : null,
             'statusText' => SiteSetting::get('hero_status_text'),
+            'terminalCode' => SiteSetting::get('hero_terminal_code'),
         ];
 
         $quotes = Quote::orderBy('sort_order')->get()->map(fn ($q) => [
@@ -68,20 +68,29 @@ class PageController extends Controller
         ])->values()->all();
 
         $about = [
-            'greeting' => SiteSetting::get('about_greeting'),
-            'paragraph1' => SiteSetting::get('about_paragraph_1'),
-            'paragraph2' => SiteSetting::get('about_paragraph_2'),
+            'greeting' => SiteSetting::get('about_home_greeting'),
+            'content' => SiteSetting::get('about_home_content'),
             'image' => SiteSetting::get('about_image') ? '/storage/' . SiteSetting::get('about_image') : null,
+        ];
+
+        $career = [
+            'subtitle' => SiteSetting::get('career_subtitle'),
+            'title1' => SiteSetting::get('career_title_1'),
+            'title2' => SiteSetting::get('career_title_2'),
+            'intro' => SiteSetting::get('career_intro'),
         ];
 
         $contact = [
             'intro' => SiteSetting::get('contact_intro'),
-            'supportNumber' => SiteSetting::get('support_number'),
-            'discord' => SiteSetting::get('discord_username'),
             'email' => SiteSetting::get('contact_email'),
+            'phone' => SiteSetting::get('contact_phone'),
         ];
 
-        $projects = Project::where('is_published', true)->orderBy('sort_order')->get()->map(fn ($p) => [
+        $homeProjectsLimit = (int) SiteSetting::get('home_projects_limit');
+        if ($homeProjectsLimit < 1) {
+            $homeProjectsLimit = 6;
+        }
+        $projects = Project::where('is_published', true)->orderBy('sort_order')->limit($homeProjectsLimit)->get()->map(fn ($p) => [
             'id' => $p->id,
             'slug' => $p->slug,
             'title' => $p->title,
@@ -119,6 +128,7 @@ class PageController extends Controller
             'hero' => $hero,
             'quotes' => $quotes,
             'about' => $about,
+            'career' => $career,
             'contact' => $contact,
             'projects' => $projects,
             'skills' => $skills,
@@ -131,10 +141,15 @@ class PageController extends Controller
     {
         $shared = $this->getSharedData();
         $about = [
-            'greeting' => SiteSetting::get('about_greeting'),
-            'paragraph1' => SiteSetting::get('about_paragraph_1'),
-            'paragraph2' => SiteSetting::get('about_paragraph_2'),
+            'greeting' => SiteSetting::get('about_page_greeting'),
+            'content' => SiteSetting::get('about_page_content'),
             'image' => SiteSetting::get('about_image') ? '/storage/' . SiteSetting::get('about_image') : null,
+        ];
+        $career = [
+            'subtitle' => SiteSetting::get('career_subtitle'),
+            'title1' => SiteSetting::get('career_title_1'),
+            'title2' => SiteSetting::get('career_title_2'),
+            'intro' => SiteSetting::get('career_intro'),
         ];
         $skills = Skill::orderBy('sort_order')->get()->map(fn ($s) => [
             'id' => $s->id,
@@ -161,6 +176,7 @@ class PageController extends Controller
 
         return Inertia::render('About', array_merge($shared, [
             'about' => $about,
+            'career' => $career,
             'skills' => $skills,
             'funFacts' => $funFacts,
             'experiences' => $experiences,
@@ -173,9 +189,8 @@ class PageController extends Controller
         $shared = $this->getSharedData();
         $contact = [
             'intro' => SiteSetting::get('contact_intro'),
-            'supportNumber' => SiteSetting::get('support_number'),
-            'discord' => SiteSetting::get('discord_username'),
             'email' => SiteSetting::get('contact_email'),
+            'phone' => SiteSetting::get('contact_phone'),
         ];
 
         return Inertia::render('Contact', array_merge($shared, [

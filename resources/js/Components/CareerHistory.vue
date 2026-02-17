@@ -1,16 +1,14 @@
 <template>
-    <section class="my-20 flex flex-col items-center justify-center">
-        <p class="text-muted text-sm uppercase tracking-wider mb-2">Professional background</p>
+    <section class="my-20 flex flex-col items-center justify-center" data-aos="fade-up">
+        <p class="text-muted text-sm uppercase tracking-wider mb-2">{{ career.subtitle || 'Professional background' }}</p>
         <h2 class="text-3xl font-bold mb-2">
-            <span class="text-white">Career</span>
-            <span class="text-primary"> History</span>
+            <span class="text-white">{{ career.title1 || 'Career' }}</span>
+            <span class="text-primary">{{ career.title2 != null && career.title2 !== '' ? career.title2 : ' History' }}</span>
         </h2>
 
-        <div class="rich-text text-muted text-center mb-8 max-w-xl">
-            <p class="mb-2">
-                3+ years of experience in the industry. Interested in working together?
-                <a href="/contact" class="text-primary hover:underline">Get in touch</a>.
-            </p>
+        <div v-if="career.intro" class="rich-text text-muted text-center mb-8 max-w-xl" v-html="career.intro" />
+        <div v-else class="rich-text text-muted text-center mb-8 max-w-xl">
+            <p class="mb-2">3+ years of experience in the industry. Interested in working together? <a href="/contact" class="text-primary hover:underline">Get in touch</a>.</p>
         </div>
 
         <!-- Tabs -->
@@ -33,7 +31,7 @@
         <div v-show="activeTab === 'experience'" class="relative w-full">
             <div class="absolute left-[19px] top-0 bottom-0 w-px bg-primary/50" aria-hidden="true" />
             <ul class="space-y-6">
-                <li v-for="(exp, index) in experiences" :key="exp.id" class="relative pl-14">
+                <li v-for="(exp, index) in experiences" :key="exp.id" class="relative pl-14" data-aos="fade-up" :data-aos-delay="index * 50">
                     <span
                         class="absolute left-0 flex h-10 w-10 items-center justify-center rounded-full bg-primary/20 text-sm font-medium"
                         aria-hidden="true">
@@ -83,7 +81,7 @@
         <div v-show="activeTab === 'education'" class="relative w-full">
             <div class="absolute left-[19px] top-0 bottom-0 w-px bg-primary/50" aria-hidden="true" />
             <ul class="space-y-6">
-                <li v-for="edu in education" :key="edu.id" class="relative pl-14">
+                <li v-for="(edu, index) in education" :key="edu.id" class="relative pl-14" data-aos="fade-up" :data-aos-delay="index * 50">
                     <span
                         class="absolute left-0 flex h-10 w-10 items-center justify-center rounded-full bg-primary/20 text-sm font-medium"
                         aria-hidden="true">
@@ -129,6 +127,15 @@
 import { ref } from 'vue'
 
 defineProps({
+    career: {
+        type: Object,
+        default: () => ({
+            subtitle: 'Professional background',
+            title1: 'Career',
+            title2: ' History',
+            intro: '<p class="mb-2">3+ years of experience in the industry. Interested in working together? <a href="/contact" class="text-primary hover:underline">Get in touch</a>.</p>',
+        }),
+    },
     experiences: { type: Array, default: () => [] },
     education: { type: Array, default: () => [] },
 })

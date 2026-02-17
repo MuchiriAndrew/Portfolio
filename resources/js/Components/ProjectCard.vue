@@ -1,6 +1,8 @@
 <template>
     <article
-        class="border border-muted hover:border-primary hover:translate-y-[-3px] transition-all duration-300 bg-surface-light overflow-hidden flex flex-col w-full">
+        :data-aos="attrs['data-aos'] || 'fade-up'"
+        :data-aos-delay="attrs['data-aos-delay']"
+        class="border border-muted hover:border-primary hover:translate-y-[-3px] transition-all duration-300 bg-surface-light overflow-hidden flex flex-col w-full min-h-[560px]">
 
 
 
@@ -51,7 +53,7 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, useAttrs } from 'vue'
 import { Link } from '@inertiajs/vue3'
 
 const props = defineProps({
@@ -63,6 +65,8 @@ const props = defineProps({
     liveUrl: { type: String, default: null },
     githubUrl: { type: String, default: null },
 })
+
+const attrs = useAttrs()
 
 const techList = computed(() =>
     props.techStack ? props.techStack.split(/\s+/).filter(Boolean) : []

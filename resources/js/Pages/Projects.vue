@@ -3,16 +3,16 @@
 
         <Head title="Projects - Andrew Muchiri" />
         <div class="py-12 md:py-20">
-            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2" data-aos="fade-up">
                 <span class="text-primary">/</span>projects
             </h1>
 
-            <p class="text-muted text-lg mb-12">Projects I've built</p>
+            <p class="text-muted text-lg mb-12" data-aos="fade-up" data-aos-delay="50">Projects I've built</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <ProjectCard v-for="project in projectsList" :key="project.id" :title="project.title"
+                <ProjectCard v-for="(project, index) in projectsList" :key="project.id" :title="project.title"
                     :description="project.description" :tech-stack="project.tech_stack" :image="project.image"
-                    :slug="project.slug" :live-url="project.live_url" :github-url="project.github_url" />
+                    :slug="project.slug" :live-url="project.live_url" :github-url="project.github_url" :data-aos-delay="index * 50" />
             </div>
 
             <!-- Sentinel for infinite scroll -->
@@ -29,7 +29,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, watch } from 'vue'
+import { ref, onMounted, onUnmounted, watch, nextTick } from 'vue'
 import { Head } from '@inertiajs/vue3'
 import PortfolioLayout from '@/Layouts/PortfolioLayout.vue'
 import ProjectCard from '@/Components/ProjectCard.vue'
@@ -59,6 +59,11 @@ async function loadMore() {
         const json = await res.json()
         projectsList.value.push(...(json.data ?? []))
         nextPageUrl.value = json.meta?.next_page_url ?? null
+        // Refresh AOS for newly loaded items
+        await nextTick()
+        if (window.AOS) {
+            window.AOS.refresh()
+        }
     } catch (_) {
         nextPageUrl.value = null
     } finally {
