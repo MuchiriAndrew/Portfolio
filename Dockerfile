@@ -43,21 +43,27 @@ RUN npm install && npm run build
 # configure packages
 # RUN docker-php-ext-configure gd --with-freetype --with-jpeg
 
+# Create necessary directories before composer install
+RUN mkdir -p bootstrap/cache && \
+mkdir -p storage/logs && \
+mkdir -p storage/framework/sessions && \
+mkdir -p storage/framework/views && \
+mkdir -p storage/framework/cache && \
+chmod -R 775 bootstrap/cache && \
+chmod -R 775 storage
+
 # Install Composer and PHP dependencies
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
     composer install
+
+# Laravel specific commands
+RUN php artisan storage:link
 
 # Copy the project files into the container
 COPY . .
 
 EXPOSE 80
 
-# Laravel specific commands
-RUN php artisan storage:link && \
-    mkdir -p bootstrap/cache && \
-    touch storage/logs/laravel.log && \
-    chmod -R 777 storage && \
-    chmod -R 777 bootstrap
 
 ARG DB_CONNECTION
 ARG DB_HOST
