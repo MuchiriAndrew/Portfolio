@@ -278,7 +278,7 @@ class PageController extends Controller
                 'title' => $project->title,
                 'slug' => $project->slug,
                 'description' => $project->description,
-                'content' => $project->content,
+                'content' => $project->content ? (string) str($project->content)->markdown()->sanitizeHtml() : null,
                 'image' => $project->image ? '/storage/' . $project->image : null,
                 'tech_stack' => $project->tech_stack,
                 'live_url' => $project->live_url,

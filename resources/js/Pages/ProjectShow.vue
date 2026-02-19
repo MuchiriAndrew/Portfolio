@@ -51,10 +51,11 @@
         <img :src="project.image" :alt="project.title" class="w-full h-auto object-cover" />
       </div>
 
-      <p v-if="project.description" class="text-muted text-lg mb-8" data-aos="fade-up" data-aos-delay="150">{{ project.description }}</p>
+      <!-- <p v-if="project.description" class="text-muted text-lg mb-8" data-aos="fade-up" data-aos-delay="150">{{ project.description }}</p> -->
 
       <div
         v-if="project.content"
+        ref="contentRef"
         class="project-content text-muted"
         v-html="project.content"
         data-aos="fade-up"
@@ -66,16 +67,96 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, ref, watch, nextTick, onMounted } from 'vue'
 import { Head } from '@inertiajs/vue3'
+import hljs from 'highlight.js'
+import 'highlight.js/styles/vs2015.min.css'
 import PortfolioLayout from '@/Layouts/PortfolioLayout.vue'
 
 const props = defineProps({
   project: { type: Object, required: true },
 })
 
+const contentRef = ref(null)
 const techList = computed(() =>
   props.project.tech_stack ? props.project.tech_stack.split(/\s+/).filter(Boolean) : []
+)
+
+function highlightCode() {
+  if (!contentRef.value) return
+  contentRef.value.querySelectorAll('pre code').forEach((el) => {
+    hljs.highlightElement(el)
+  })
+}
+
+function makeSectionsCollapsible() {
+  const container = contentRef.value
+  if (!container || !container.children.length) return
+  const children = Array.from(container.children)
+  let i = 0
+  const preamble = []
+  while (i < children.length && children[i].tagName !== 'H2') {
+    preamble.push(children[i])
+    i++
+  }
+  const sectionList = []
+  while (i < children.length) {
+    if (children[i].tagName === 'H2') {
+      const titleEl = children[i++]
+      const content = []
+      while (i < children.length && children[i].tagName !== 'H2') {
+        content.push(children[i++])
+      }
+      sectionList.push({ titleEl, content })
+    }
+  }
+  if (sectionList.length === 0) return
+  const fragment = document.createDocumentFragment()
+  preamble.forEach((n) => fragment.appendChild(n))
+  sectionList.forEach(({ titleEl, content }) => {
+    const wrap = document.createElement('div')
+    wrap.className = 'collapsible-section border border-gray-600 rounded-lg mb-4 overflow-hidden'
+    const header = document.createElement('button')
+    header.type = 'button'
+    header.className = 'section-header w-full flex items-center justify-between gap-2 text-left px-4 py-3 font-semibold text-primary bg-gray-800/50 hover:bg-gray-800 transition-colors'
+    header.setAttribute('aria-expanded', 'true')
+    const titleWrap = document.createElement('span')
+    titleWrap.className = 'section-title'
+    titleWrap.innerHTML = titleEl.innerHTML
+    header.appendChild(titleWrap)
+    const chevron = document.createElement('span')
+    chevron.className = 'section-chevron shrink-0 transition-transform'
+    chevron.setAttribute('aria-hidden', 'true')
+    chevron.innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>'
+    header.appendChild(chevron)
+    const body = document.createElement('div')
+    body.className = 'section-body px-4 pb-4'
+    content.forEach((n) => body.appendChild(n))
+    header.addEventListener('click', () => {
+      const isHidden = body.classList.toggle('hidden')
+      chevron.classList.toggle('rotate-180', isHidden)
+      header.setAttribute('aria-expanded', String(!isHidden))
+    })
+    wrap.appendChild(header)
+    wrap.appendChild(body)
+    fragment.appendChild(wrap)
+  })
+  container.innerHTML = ''
+  container.appendChild(fragment)
+}
+
+function initContent() {
+  nextTick(() => {
+    highlightCode()
+    makeSectionsCollapsible()
+  })
+}
+
+onMounted(initContent)
+watch(
+  () => props.project.content,
+  initContent,
+  { flush: 'post' }
 )
 </script>
 
@@ -104,6 +185,20 @@ const techList = computed(() =>
   margin-bottom: 1em;
   padding-left: 1.5em;
 }
+.project-content :deep(ul) {
+  list-style-type: disc;
+}
+.project-content :deep(ul li) {
+  display: list-item;
+  list-style-type: inherit;
+}
+.project-content :deep(ol) {
+  list-style-type: decimal;
+}
+.project-content :deep(ol li) {
+  display: list-item;
+  list-style-type: inherit;
+}
 .project-content :deep(img) {
   max-width: 100%;
   height: auto;
@@ -122,12 +217,15 @@ const techList = computed(() =>
   font-size: 0.875rem;
   line-height: 1.6;
 }
+/* Let highlight.js theme color the code; only layout here */
 .project-content :deep(pre code) {
   display: block;
-  color: #f8f8f2;
   background: none;
   padding: 0;
   white-space: pre;
+}
+.project-content :deep(pre code.hljs) {
+  padding: 0;
 }
 .project-content :deep(p code),
 .project-content :deep(li code) {

@@ -33,9 +33,23 @@ class ProjectResource extends Resource
                     ->unique(ignoreRecord: true),
                 Forms\Components\Textarea::make('description')
                     ->columnSpanFull(),
-                Forms\Components\RichEditor::make('content')
+                Forms\Components\MarkdownEditor::make('content')
                     ->label('Project write-up (Read More page)')
-                    ->toolbarButtons(['attachFiles', 'bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList', 'codeBlock', 'blockquote', 'h2', 'h3', 'undo', 'redo'])
+                    ->toolbarButtons([
+                        'attachFiles',
+                        'blockquote',
+                        'bold',
+                        'bulletList',
+                        'codeBlock',
+                        'heading',
+                        'italic',
+                        'link',
+                        'orderedList',
+                        'redo',
+                        'strike',
+                        'table',
+                        'undo',
+                    ])
                     ->fileAttachmentsDisk('public')
                     ->fileAttachmentsDirectory('rich-editor')
                     ->columnSpanFull(),
