@@ -57,41 +57,41 @@ jobs:
 
 
       # Step 10: SSH into server, fix storage permissions, and run migrations
-      - name: Run database migrations
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          password: ${{ secrets.SSH_PASSWORD }}
-          script: |
-            # Find the container name for the app
-            CONTAINER_NAME=$(docker ps --filter "name=${{ secrets.APP_NAME }}" --format "{{.Names}}" | head -n 1)
+      # - name: Run database migrations
+      #   uses: appleboy/ssh-action@v1.0.0
+      #   with:
+      #     host: ${{ secrets.SSH_HOST }}
+      #     username: ${{ secrets.SSH_USERNAME }}
+      #     password: ${{ secrets.SSH_PASSWORD }}
+      #     script: |
+      #       # Find the container name for the app
+      #       CONTAINER_NAME=$(docker ps --filter "name=${{ secrets.APP_NAME }}" --format "{{.Names}}" | head -n 1)
 
-            if [ -z "$CONTAINER_NAME" ]; then
-              echo "Container not found, trying alternative method..."
-              CONTAINER_NAME=$(docker ps --format "{{.Names}}" | grep -i "${{ secrets.APP_NAME }}" | head -n 1)
-            fi
+      #       if [ -z "$CONTAINER_NAME" ]; then
+      #         echo "Container not found, trying alternative method..."
+      #         CONTAINER_NAME=$(docker ps --format "{{.Names}}" | grep -i "${{ secrets.APP_NAME }}" | head -n 1)
+      #       fi
 
-            if [ -z "$CONTAINER_NAME" ]; then
-              echo "Error: Could not find container for app ${{ secrets.APP_NAME }}"
-              docker ps
-              exit 1
-            fi
+      #       if [ -z "$CONTAINER_NAME" ]; then
+      #         echo "Error: Could not find container for app ${{ secrets.APP_NAME }}"
+      #         docker ps
+      #         exit 1
+      #       fi
 
-            echo "Found container: $CONTAINER_NAME"
+      #       echo "Found container: $CONTAINER_NAME"
 
-            # Wait a bit more for services to be ready
-            sleep 5
+      #       # Wait a bit more for services to be ready
+      #       sleep 5
 
-            # Fix storage/cache permissions (volume mount may be owned by root; www-data needs write access)
-            echo "Fixing storage and bootstrap/cache permissions..."
-            docker exec $CONTAINER_NAME chown -R www-data:www-data /production/portfoliov2/storage /production/portfoliov2/bootstrap/cache
-            docker exec $CONTAINER_NAME chmod -R 775 /production/portfoliov2/storage /production/portfoliov2/bootstrap/cache
+      #       # Fix storage/cache permissions (volume mount may be owned by root; www-data needs write access)
+      #       echo "Fixing storage and bootstrap/cache permissions..."
+      #       docker exec $CONTAINER_NAME chown -R www-data:www-data /production/portfoliov2/storage /production/portfoliov2/bootstrap/cache
+      #       docker exec $CONTAINER_NAME chmod -R 775 /production/portfoliov2/storage /production/portfoliov2/bootstrap/cache
 
-            # Run migrations
-            echo "Running database migrations..."
-            docker exec $CONTAINER_NAME php /production/portfoliov2/artisan migrate --force || {
-              echo "Migration completed with warnings (this is usually okay)"
-            }
+      #       # Run migrations
+      #       echo "Running database migrations..."
+      #       docker exec $CONTAINER_NAME php /production/portfoliov2/artisan migrate --force || {
+      #         echo "Migration completed with warnings (this is usually okay)"
+      #       }
 
-            echo "Migrations completed successfully!"
+      #       echo "Migrations completed successfully!"
