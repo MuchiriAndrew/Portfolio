@@ -27,7 +27,9 @@ class QuoteResource extends Resource
                 Forms\Components\RichEditor::make('text')
                     ->label('Quote text')
                     ->required()
-                    ->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList'])
+                    ->toolbarButtons(['attachFiles', 'bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList'])
+                    ->fileAttachmentsDisk('public')
+                    ->fileAttachmentsDirectory('rich-editor')
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('author')
                     ->label('Author (e.g. — John Doe)'),

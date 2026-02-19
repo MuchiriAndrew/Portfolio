@@ -52,7 +52,7 @@ class Settings extends Page implements HasForms
                         Forms\Components\TextInput::make('hero_title')->label('Hero title (e.g. "Andrew is a")'),
                         Forms\Components\TextInput::make('hero_highlight_1')->label('Highlight 1 (e.g. web designer)'),
                         Forms\Components\TextInput::make('hero_highlight_2')->label('Highlight 2 (e.g. front-end developer)'),
-                        Forms\Components\RichEditor::make('hero_description')->label('Hero description')->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList'])->columnSpanFull(),
+                        Forms\Components\RichEditor::make('hero_description')->label('Hero description')->toolbarButtons(['attachFiles', 'bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList'])->fileAttachmentsDisk('public')->fileAttachmentsDirectory('rich-editor')->columnSpanFull(),
                         Forms\Components\TextInput::make('hero_cta_text')->label('CTA button text'),
                         Forms\Components\TextInput::make('hero_status_text')->label('Status (e.g. Currently working on Portfolio)'),
                         Forms\Components\Textarea::make('hero_terminal_code')
@@ -73,12 +73,12 @@ class Settings extends Page implements HasForms
                                 Forms\Components\Tabs\Tab::make('Home page')
                                     ->schema([
                                         Forms\Components\RichEditor::make('about_home_greeting')->label('Title / Greeting')->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link'])->columnSpanFull()->helperText('Shown in the about section on the home page.'),
-                                        Forms\Components\RichEditor::make('about_home_content')->label('Content')->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList', 'codeBlock'])->columnSpanFull()->helperText('Use Enter for new paragraphs. Add code blocks with the code icon.'),
+                                        Forms\Components\RichEditor::make('about_home_content')->label('Content')->toolbarButtons(['attachFiles', 'bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList', 'codeBlock'])->fileAttachmentsDisk('public')->fileAttachmentsDirectory('rich-editor')->columnSpanFull()->helperText('Use Enter for new paragraphs. Add code blocks or paste/attach images.'),
                                     ]),
                                 Forms\Components\Tabs\Tab::make('About page')
                                     ->schema([
                                         Forms\Components\RichEditor::make('about_page_greeting')->label('Title / Greeting')->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link'])->columnSpanFull()->helperText('Shown at the top of the About page.'),
-                                        Forms\Components\RichEditor::make('about_page_content')->label('Content')->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList', 'codeBlock'])->columnSpanFull()->helperText('Use Enter for new paragraphs. Add code blocks with the code icon.'),
+                                        Forms\Components\RichEditor::make('about_page_content')->label('Content')->toolbarButtons(['attachFiles', 'bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList', 'codeBlock'])->fileAttachmentsDisk('public')->fileAttachmentsDirectory('rich-editor')->columnSpanFull()->helperText('Use Enter for new paragraphs. Add code blocks or paste/attach images.'),
                                     ]),
                             ])->columnSpanFull(),
                         Forms\Components\FileUpload::make('about_image')
@@ -95,7 +95,7 @@ class Settings extends Page implements HasForms
                         Forms\Components\TextInput::make('career_subtitle')->label('Subtitle')->placeholder('e.g. Professional background'),
                         Forms\Components\TextInput::make('career_title_1')->label('Title part 1 (white)')->placeholder('e.g. Career'),
                         Forms\Components\TextInput::make('career_title_2')->label('Title part 2 (accent)')->placeholder('e.g.  History'),
-                        Forms\Components\RichEditor::make('career_intro')->label('Intro paragraph')->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList'])->columnSpanFull()->helperText('e.g. 3+ years of experience... Get in touch.'),
+                        Forms\Components\RichEditor::make('career_intro')->label('Intro paragraph')->toolbarButtons(['attachFiles', 'bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList'])->fileAttachmentsDisk('public')->fileAttachmentsDirectory('rich-editor')->columnSpanFull()->helperText('e.g. 3+ years of experience... Get in touch.'),
                     ])->columns(1),
                 Forms\Components\Section::make('Projects')
                     ->schema([
@@ -109,7 +109,7 @@ class Settings extends Page implements HasForms
                     ])->columns(1),
                 Forms\Components\Section::make('Contact')
                     ->schema([
-                        Forms\Components\RichEditor::make('contact_intro')->label('Contact intro text')->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList'])->columnSpanFull(),
+                        Forms\Components\RichEditor::make('contact_intro')->label('Contact intro text')->toolbarButtons(['attachFiles', 'bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList'])->fileAttachmentsDisk('public')->fileAttachmentsDirectory('rich-editor')->columnSpanFull(),
                         Forms\Components\TextInput::make('contact_email')->label('Contact email')->email(),
                         Forms\Components\TextInput::make('contact_phone')->label('Contact phone'),
                     ])->columns(1),

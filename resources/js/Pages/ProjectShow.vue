@@ -104,6 +104,12 @@ const techList = computed(() =>
   margin-bottom: 1em;
   padding-left: 1.5em;
 }
+.project-content :deep(img) {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin: 0.75em 0;
+}
 /* Code blocks (also in app.css for .project-content; scoped override if needed) */
 .project-content :deep(pre) {
   margin: 1em 0;

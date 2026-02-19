@@ -30,7 +30,9 @@ class ExperienceResource extends Resource
                 Forms\Components\TextInput::make('date_range')->label('Date range (e.g. Jan 2025 - Present)'),
                 Forms\Components\TextInput::make('tech_stack')->label('Tech stack (comma-separated, e.g. Next.js, Vue.js, TypeScript)'),
                 Forms\Components\RichEditor::make('description')
-                    ->toolbarButtons(['bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList', 'codeBlock'])
+                    ->toolbarButtons(['attachFiles', 'bold', 'italic', 'underline', 'strike', 'link', 'bulletList', 'orderedList', 'codeBlock'])
+                    ->fileAttachmentsDisk('public')
+                    ->fileAttachmentsDirectory('rich-editor')
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('sort_order')->numeric()->default(0)->required(),
             ]);

@@ -74,6 +74,16 @@
     color: var(--color-primary);
 }
 
+/* Images pasted/attached in rich text editor */
+.rich-text img,
+.project-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin: 0.75em 0;
+    display: block;
+}
+
 /* Code snippets from rich text editor (pre/code blocks) */
 .rich-text pre,
 .project-content pre {
