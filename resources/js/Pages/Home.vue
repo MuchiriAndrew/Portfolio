@@ -24,6 +24,12 @@
                         class="inline-block mt-6 py-[12px] px-[24px] border border-primary hover:bg-primary text-white text-[16px] font-medium hover:border-primary hover:text-white hover:scale-105 transition-all duration-300">
                         {{ hero.ctaText || 'Contact me' }}
                     </a>
+
+
+                    <a href="/contact"
+                        class="inline-block mt-6 py-[12px] px-[24px] border border-primary hover:bg-primary text-white text-[16px] font-medium hover:border-primary hover:text-white hover:scale-105 transition-all duration-300">
+                        Download Resume!
+                    </a>
                 </div>
 
 
